@@ -13,8 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
-                    URLが不正です。
+                    @if (session('reserve_error'))
+                    <div class="container mt-2">
+                        <div class="alert alert-danger">
+                        {{session('reserve_error')}}
+                        </div>
+                    </div>
+                    @endif
 
                     <div class="pt-3">
                         <a class="btn btn-outline-info" href="{{ url('/') }}" role="button">戻る</a>

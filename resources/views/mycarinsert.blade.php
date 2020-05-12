@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

@@ -112,14 +112,14 @@ class ReserveController extends Controller
                 $order->schedule = "2";
             };
         } elseif($request->shift == "3") {
-            if($calendar_db->schedule2 >= $calendar_db->schedule2_max){
+            if($calendar_db->schedule3 >= $calendar_db->schedule3_max){
                 return view('error')
                 ->with('reserve_error', "この時間帯の予約上限を超えました。時間帯を変更するか日時を変更してください。");
             } else {
                 $order->schedule = "3";
             };
         } elseif($request->shift == "4") {
-            if($calendar_db->schedule2 >= $calendar_db->schedule2_max){
+            if($calendar_db->schedule3 >= $calendar_db->schedule4_max){
                 return view('error')
                 ->with('reserve_error', "この時間帯の予約上限を超えました。時間帯を変更するか日時を変更してください。");
             } else {
