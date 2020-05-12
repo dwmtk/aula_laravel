@@ -48,8 +48,9 @@
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
-
                         </div>
+
+                        <label id="hidden_area" style="display:none"></label>
 
                         <div class="form-group row">
                             <label for="car_age" class="col-md-4 col-form-label text-md-right">年式 <span class="badge badge-danger">必須</span></label>
