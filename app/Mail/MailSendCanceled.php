@@ -34,7 +34,7 @@ class MailSendCanceled extends Mailable
         "出張洗車キャンセル完了のご連絡【　". $this->user->name ."様｜洗車日:" . date('Y/m/d',  strtotime($this->order->order_date)) . "　】";
 
         return $this->text('emails.canceled')
-        ->from('welcome@aula.email','Aula')
+        ->from('welcome@aula.email','aula')
         ->subject($subject)
         ->with([
             'order' => $this->order,

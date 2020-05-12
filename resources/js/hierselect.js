@@ -1,73 +1,77 @@
 $(function() {
 
-	// ���[�J�[���ύX���ꂽ�甭��
+	// ???[?J?[????X????????
 	$('select[name="car_maker"]').change(function() {
 
-	    // ���K�w�̗v�f�������l�ɕύX����B
+	    // ???K?w??v?f???????l???X????B
 	    $('select[name="car_name"]').prop("selectedIndex", 0);
 	    $('select[name="car_age"]').prop("selectedIndex", 0);
 	    
-	    // 1���̊K�w�̗v�f��ύX�ɕύX����B
+	    // 1?????K?w??v?f???X????X????B
 	    $('select[name="car_name"]').prop('disabled', false);
 	    
-	    // 2���̊K�w�̗v�f��ύX�s�ɕύX����B
+	    // 2?????K?w??v?f???X?s????X????B
 	    $('select[name="car_age"]').prop('disabled', true);
 	    
-	    // �I������Ă��郁�[�J�[�̃N���X�����擾
+	    // ?I?????????��?[?J?[??N???X?????��
 	    var makerName = $('select[name="car_maker"] option:selected').val();
 	    
-	    // �Ԗ��̗v�f�����擾
+	    // ?????v?f?????��
 	    var count = $('select[name="car_name"]').children().length;
 
-	    // �Ԗ��̗v�f�����Afor���ŉ�
+	    // ?????v?f?????Afor?????
 	    for (var i=0; i<count; i++) {
 	        
 	        var carName = $('select[name="car_name"] option:eq(' + i + ')');
 
 	        if(carName.attr("class") === makerName) {
-	            // �I���������[�J�[�Ɠ����N���X���������ꍇ
-	            
-	            // �Ԗ��̗v�f��\��
-	            carName.show();
+							// ?I?????????[?J?[??????N???X??????????
+							carName.css('display','');
+							// carName.unwrap();
+	            // ?????v?f??\??
+	            // carName.show();
 	        }else {
-	            // �I���������[�J�[�ƃN���X����������ꍇ
-	            
-	            // �Ԗ��̗v�f���\��
-	            carName.hide();
+							// ?I?????????[?J?[??N???X???????????
+							carName.css({'display':'none'});
+							// carName.wrap('<span class="selector-hide">');
+	            // ?????v?f???\??
+	            // carName.hide();
 	        }
 	    }
 	    
 	})
-	// �Ԗ����ύX���ꂽ�甭��
+	// ???????X????????
 	$('select[name="car_name"]').change(function() {
 
-	    // ���K�w�̗v�f�������l�ɕύX����B
+	    // ???K?w??v?f???????l???X????B
 	    $('select[name="car_age"]').prop("selectedIndex", 0);
 
-	    // 1���̊K�w�̗v�f��ύX�ɕύX����B
+	    // 1?????K?w??v?f???X????X????B
 	    $('select[name="car_age"]').prop('disabled', false);
 
-	    // �I������Ă���Ԗ��̃N���X�����擾
+	    // ?I??????????????N???X?????��
 	    var carName = $('select[name="car_name"] option:selected').val();
 	    
-	    // �N���̗v�f�����擾
+	    // ?N????v?f?????��
 	    var count = $('select[name="car_age"]').children().length;
 
-	    // �N���̗v�f�����Afor���ŉ�
+	    // ?N????v?f?????Afor?????
 	    for (var i=0; i<count; i++) {
 	        
 	        var carAge = $('select[name="car_age"] option:eq(' + i + ')');
 
 	        if(carAge.attr("class") === carName) {
-	            // �I�������Ԏ�Ɠ����N���X���������ꍇ
-	            
-	            // �s�s�̗v�f��\��
-	            carAge.show();
+							// ?I??????????????N???X??????????
+							carAge.css('display','');
+	            // carAge.unwrap();
+	            // ?s?s??v?f??\??
+	            // carAge.show();
 	        }else {
-	            // �I���������ƃN���X����������ꍇ
-	            
-	            // �s�s�̗v�f���\��
-	            carAge.hide();
+							// ?I??????????N???X???????????
+							carAge.css({'display':'none'});
+	            // carAge.wrap('<span class="selector-hide">');
+	            // ?s?s??v?f???\??
+	            // carAge.hide();
 	        }
 	    }
 	    

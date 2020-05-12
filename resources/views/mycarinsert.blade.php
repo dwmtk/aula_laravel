@@ -55,7 +55,7 @@
                             <label for="car_age" class="col-md-4 col-form-label text-md-right">年式 <span class="badge badge-danger">必須</span></label>
 
                                 <select id="car_age" name="car_age" class="col-md-6 form-control @error('car_age') is-invalid @enderror" value="{{ old('car_age') }}" required autocomplete="car_age" autofocus disabled>
-                                    <option value="" selected="selected" class="default">--選択してください--</option>
+                                <option value="" selected="selected" class="default">--選択してください--</option>
                                     @foreach ($car_ages as $car_age)
                                     <option value="{{ $car_age->car_age }}" class="{{ $car_age->car_name }}">{{ $car_age->car_age }}</option>
                                     @endforeach
