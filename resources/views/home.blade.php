@@ -14,7 +14,22 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    
+
+                    @if (session('cancel_success'))
+                        <div class="container mt-2">
+                        <div class="alert alert-primary">
+                            {{session('cancel_success')}}
+                        </div>
+                        </div>
+                    @endif
+                    @if (session('reserved_success'))
+                        <div class="container mt-2">
+                        <div class="alert alert-success">
+                            {{session('reserved_success')}}
+                        </div>
+                        </div>
+                    @endif
+
                     <p>現在の予約状況</p>
                     @forelse ($orders as $order)
                     <div class="card mb-3 border-secondary">

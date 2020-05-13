@@ -61,3 +61,4 @@ Route::post('/personalupdatepassword','PersonalController@personalupdatepassword
 Route::get('/manage','ManageController@info');
 Route::get('/manage/{order_id}','ManageController@washconfirm');
 Route::get('/washed/{order_id}','ManageController@washed');
+Route::post('/manageselect','ManageController@selected');

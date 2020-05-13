@@ -74,7 +74,7 @@
                             <label for="car_number" class="col-md-4 col-form-label text-md-right">ナンバー <span class="badge badge-danger">必須</span></label>
 
 
-                                <input id="car_number" type="text" class="col-md-6 form-control @error('car_number') is-invalid @enderror" name="car_number" value="{{ old('car_number') }}" placeholder="12-34" required autocomplete="car_number" autofocus>
+                                <input id="car_number" type="text" class="col-md-6 form-control @error('car_number') is-invalid @enderror" name="car_number" value="{{ old('car_number') }}" placeholder="あ1234" required autocomplete="car_number" autofocus>
 
                                 @error('car_number')
                                     <span class="invalid-feedback" role="alert">

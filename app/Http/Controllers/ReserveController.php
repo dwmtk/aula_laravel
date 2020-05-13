@@ -47,7 +47,8 @@ class ReserveController extends Controller
         }
 
         $todate = date("Ymd",strtotime($fromdate . "+1 month"));
-        $calendars = M_Calendars::whereBetween('calendar', [$fromdate, $todate])->get();
+        $calendars = M_Calendars::whereBetween('calendar', [$fromdate, $todate])->
+        where('working_day', '0')->get();
 
         return view('reserve')
         ->with([
@@ -273,7 +274,8 @@ class ReserveController extends Controller
             };
             $calendar_db->save();
             ReserveController::send($order, Auth::user()->where('id', Auth::id())->first());
-            return view('reserved');
+            return redirect('home')
+            ->with('reserved_success','洗車予約が完了しました。');
 
         } else {
             // ステータスを支払い前に選択
@@ -330,7 +332,8 @@ class ReserveController extends Controller
 
             ReserveController::send($order, Auth::user()->where('id', Auth::id())->first());
 
-            return redirect('home');
+            return redirect('home')
+            ->with('reserved_success','洗車予約が完了しました。');;
 
         } catch (\Exception $ex) {
             dd($ex);
@@ -374,10 +377,22 @@ class ReserveController extends Controller
         $order->status = "9";
         $order->save();
         $user = Auth::user()->where('id', Auth::id())->first();
-        $user->tsuke_pay = $order->final_price;
+        $user->tsuke_pay = $user->tsuke_pay + $order->price;
         $user->save();
+        $calendar_db = M_Calendars::where('calendar', $order->order_date)->first();
+        if($order->schedule == "1"){
+            $calendar_db->schedule1 = $calendar_db->schedule1 - 1;
+        } elseif($order->schedule == "2") {
+            $calendar_db->schedule2 = $calendar_db->schedule2 - 1;
+        } elseif($order->schedule == "3") {
+            $calendar_db->schedule3 = $calendar_db->schedule3 - 1;
+        } elseif($order->schedule == "4") {
+            $calendar_db->schedule4 = $calendar_db->schedule4 - 1;
+        };
+        $calendar_db->save();
         ReserveController::send2($order, $user);
-        return redirect('home');
+        return redirect('home')
+        ->with('cancel_success', 'キャンセルが完了しました。');
     }
 
     public function send($order, $user){

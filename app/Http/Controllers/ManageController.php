@@ -46,6 +46,24 @@ class ManageController extends Controller
 
         return redirect('manage');
     }
+    public function selected(Request $request){        
+        $this -> Validate($request, [
+            'email' => ['required', 'string', 'max:255'],
+        ]);
+        // 検索機能
+        $users = Auth::user()->where('email', 'LIKE', "%{$request->email}%")->get();
+        $user_ids = array();
+        foreach ($users as $user){
+            $user_ids[] = $user->id;
+        }
+        $orders = \DB::table('t__orders')->join('users', 't__orders.user_id', '=', 'users.id')
+        ->whereIn('status',[1,2,9])
+        ->whereIn('user_id',$user_ids)
+        ->orderBy('order_date')
+        ->orderBy('schedule')->get();
+
+        return view('manage')->with('orders', $orders);
+    }
     public function send($order, $user){
         $to = [
             [

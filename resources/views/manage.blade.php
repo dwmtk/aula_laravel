@@ -12,7 +12,30 @@
             </div>
         @endif
         
-        <h2>洗車予定一覧</h2>
+        <div class="col-12 text-center">
+            <h2>洗車予定一覧</h2>
+        </div>
+        <form method="POST" action="{{ url('/manageselect') }}">
+            @csrf
+            <div class="form-row py-2">
+            <label for="email" class="col-form-label text-md-right">メールアドレス</label>
+            <div class="col-md-6">
+                <input id="email" type="text" class="col form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="contact@aula.work" required autocomplete="email">
+
+                @error('email')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">
+                    検索
+                </button>
+            </div>
+            </div>
+
+        </form>
 
         <table class="table">
             <thead>
