@@ -19,11 +19,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <style>
-        .selector-hide {
-            display: none;
-        }
-    </style>
 </head>
 <body>
     <!-- <div id="app"> -->

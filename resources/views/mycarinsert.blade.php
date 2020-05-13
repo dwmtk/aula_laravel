@@ -68,6 +68,7 @@
                                 @enderror
 
                         </div>
+                        <label id="hidden_area2" style="display:none"></label>
 
                         <div class="form-group row">
                             <label for="car_number" class="col-md-4 col-form-label text-md-right">ナンバー <span class="badge badge-danger">必須</span></label>

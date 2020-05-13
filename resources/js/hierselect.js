@@ -1,23 +1,45 @@
 $(function() {
-
-
 	$('select[name="car_maker"]').on('change', evt => {
-	    $('select[name="car_name"]').prop("selectedIndex", 0);
-	    $('select[name="car_age"]').prop("selectedIndex", 0);
-	    $('select[name="car_name"]').prop('disabled', false);
-	    $('select[name="car_age"]').prop('disabled', true);
+		$('select[name="car_name"]').prop("selectedIndex", 0);
+		$('select[name="car_age"]').prop("selectedIndex", 0);
+		$('select[name="car_name"]').prop('disabled', false);
+		$('select[name="car_age"]').prop('disabled', true);
     let val = $('select[name="car_maker"]').val();
     // 全て退避
     $('select[name="car_name"]').find('option').each((idx, elem) => {
-        $('#hidden_area').prepend(elem);
+			if($(elem).hasClass('default')){
+				return;
+			}
+			$('#hidden_area').prepend(elem);
     });
     $('#hidden_area').find('option').each((idx, elem) => {
-        if($(elem).attr("class").indexOf(val) != -1){
-            // オプションをselect2へ移動
-            $('select[name="car_name"]').prepend(elem);
-        } 
+
+			if($(elem).attr("class").indexOf(val) != -1){
+					// オプションをselect2へ移動
+				$('select[name="car_name"]').prepend(elem);
+			} 
     });
-});
+	});
+	$('select[name="car_name"]').on('change', evt => {
+		$('select[name="car_age"]').prop("selectedIndex", 0);
+		$('select[name="car_age"]').prop('disabled', false);
+    let val = $('select[name="car_name"]').val();
+    // 全て退避
+    $('select[name="car_age"]').find('option').each((idx, elem) => {
+			if($(elem).hasClass('default')){
+				return;
+			}
+      $('#hidden_area2').prepend(elem);
+    });
+    $('#hidden_area2').find('option').each((idx, elem) => {
+			if($(elem).attr("class").indexOf(val) != -1){
+					// オプションをselect2へ移動
+					$('select[name="car_age"]').prepend(elem);
+			} 
+    });
+	});
+
+
 
 	// // ???[?J?[????X????????
 	// $('select[name="car_maker"]').change(function() {
@@ -46,13 +68,18 @@ $(function() {
 	//         if(carName.attr("class") === makerName) {
 	// 						// ?I?????????[?J?[??????N???X??????????
 	// 						// carName.css('display','');
-	// 						carName.unwrap();
+	// 						if (carName.parent().find("span") !== NULL){
+	// 							carName.unwrap();
+	// 						}
+
 	//             // ?????v?f??\??
 	//             // carName.show();
 	//         }else {
 	// 						// ?I?????????[?J?[??N???X???????????
 	// 						// carName.css({'display':'none'});
-	// 						carName.wrap('<span class="selector-hide">');
+	// 						if (carName.parent().find("span") == NULL){
+	// 							carName.wrap('<span class="selector-hide">');
+	// 						}
 	//             // ?????v?f???\??
 	//             // carName.hide();
 	//         }

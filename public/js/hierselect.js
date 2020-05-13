@@ -102,12 +102,35 @@ $(function () {
     var val = $('select[name="car_maker"]').val(); // �S�đޔ�
 
     $('select[name="car_name"]').find('option').each(function (idx, elem) {
+      if ($(elem).hasClass('default')) {
+        return;
+      }
+
       $('#hidden_area').prepend(elem);
     });
     $('#hidden_area').find('option').each(function (idx, elem) {
       if ($(elem).attr("class").indexOf(val) != -1) {
         // �I�v�V������select2�ֈړ�
         $('select[name="car_name"]').prepend(elem);
+      }
+    });
+  });
+  $('select[name="car_name"]').on('change', function (evt) {
+    $('select[name="car_age"]').prop("selectedIndex", 0);
+    $('select[name="car_age"]').prop('disabled', false);
+    var val = $('select[name="car_name"]').val(); // �S�đޔ�
+
+    $('select[name="car_age"]').find('option').each(function (idx, elem) {
+      if ($(elem).hasClass('default')) {
+        return;
+      }
+
+      $('#hidden_area2').prepend(elem);
+    });
+    $('#hidden_area2').find('option').each(function (idx, elem) {
+      if ($(elem).attr("class").indexOf(val) != -1) {
+        // �I�v�V������select2�ֈړ�
+        $('select[name="car_age"]').prepend(elem);
       }
     });
   }); // // ???[?J?[????X????????
@@ -129,13 +152,17 @@ $(function () {
   //         if(carName.attr("class") === makerName) {
   // 						// ?I?????????[?J?[??????N???X??????????
   // 						// carName.css('display','');
-  // 						carName.unwrap();
+  // 						if (carName.parent().find("span") !== NULL){
+  // 							carName.unwrap();
+  // 						}
   //             // ?????v?f??\??
   //             // carName.show();
   //         }else {
   // 						// ?I?????????[?J?[??N???X???????????
   // 						// carName.css({'display':'none'});
-  // 						carName.wrap('<span class="selector-hide">');
+  // 						if (carName.parent().find("span") == NULL){
+  // 							carName.wrap('<span class="selector-hide">');
+  // 						}
   //             // ?????v?f???\??
   //             // carName.hide();
   //         }
