@@ -96,24 +96,39 @@
 $(function () {
   $('select[name="car_maker"]').on('change', function (evt) {
     $('select[name="car_name"]').prop("selectedIndex", 0);
-    $('select[name="car_age"]').prop("selectedIndex", 0);
     $('select[name="car_name"]').prop('disabled', false);
-    $('select[name="car_age"]').prop('disabled', true);
     var val = $('select[name="car_maker"]').val(); // �S�đޔ�
 
     $('select[name="car_name"]').find('option').each(function (idx, elem) {
+      $('#hidden_area').prepend(elem);
+    }); // �Y������Ԗ���߂�
+
+    $('#hidden_area').find('option').each(function (idx, elem) {
       if ($(elem).hasClass('default')) {
+        // �I�����Ă�����������ԏ�Ɏ����Ă��邽�߂̋L�q
         return;
       }
 
-      $('#hidden_area').prepend(elem);
-    });
-    $('#hidden_area').find('option').each(function (idx, elem) {
       if ($(elem).attr("class").indexOf(val) != -1) {
-        // �I�v�V������select2�ֈړ�
+        // �I�v�V������car_name�ֈړ�
         $('select[name="car_name"]').prepend(elem);
       }
+    }); // �I�����Ă���������߂�
+
+    $('#hidden_area').find('option').each(function (idx, elem) {
+      if ($(elem).hasClass('default')) {
+        // �I�����Ă�����������ԏ�Ɏ����Ă��邽�߂̋L�q
+        $('select[name="car_name"]').prepend(elem);
+      }
+    }); // ���[�J�[���I�����ꂽ��A�N����I�����Ă��������ɕύX����
+
+    $('#hidden_area2').find('option').each(function (idx, elem) {
+      if ($(elem).hasClass('default')) {
+        $('select[name="car_age"]').prepend(elem);
+      }
     });
+    $('select[name="car_age"]').prop("selectedIndex", 0);
+    $('select[name="car_age"]').prop('disabled', true);
   });
   $('select[name="car_name"]').on('change', function (evt) {
     $('select[name="car_age"]').prop("selectedIndex", 0);
@@ -121,15 +136,24 @@ $(function () {
     var val = $('select[name="car_name"]').val(); // �S�đޔ�
 
     $('select[name="car_age"]').find('option').each(function (idx, elem) {
+      $('#hidden_area2').prepend(elem);
+    }); // �Y���N����߂�
+
+    $('#hidden_area2').find('option').each(function (idx, elem) {
       if ($(elem).hasClass('default')) {
+        // �I�����Ă�����������ԏ�Ɏ����Ă��邽�߂̋L�q
         return;
       }
 
-      $('#hidden_area2').prepend(elem);
-    });
-    $('#hidden_area2').find('option').each(function (idx, elem) {
       if ($(elem).attr("class").indexOf(val) != -1) {
         // �I�v�V������select2�ֈړ�
+        $('select[name="car_age"]').prepend(elem);
+      }
+    }); // �I�����Ă���������߂�
+
+    $('#hidden_area2').find('option').each(function (idx, elem) {
+      if ($(elem).hasClass('default')) {
+        // �I�����Ă�����������ԏ�Ɏ����Ă��邽�߂̋L�q
         $('select[name="car_age"]').prepend(elem);
       }
     });

@@ -1,42 +1,72 @@
 $(function() {
 	$('select[name="car_maker"]').on('change', evt => {
 		$('select[name="car_name"]').prop("selectedIndex", 0);
-		$('select[name="car_age"]').prop("selectedIndex", 0);
 		$('select[name="car_name"]').prop('disabled', false);
-		$('select[name="car_age"]').prop('disabled', true);
+
     let val = $('select[name="car_maker"]').val();
     // 全て退避
     $('select[name="car_name"]').find('option').each((idx, elem) => {
+
+			$('#hidden_area').prepend(elem);
+		});
+		// 該当する車名を戻す
+    $('#hidden_area').find('option').each((idx, elem) => {
 			if($(elem).hasClass('default')){
+				// 選択してくださいを一番上に持ってくるための記述
 				return;
 			}
-			$('#hidden_area').prepend(elem);
-    });
-    $('#hidden_area').find('option').each((idx, elem) => {
-
 			if($(elem).attr("class").indexOf(val) != -1){
-					// オプションをselect2へ移動
+				// オプションをcar_nameへ移動
 				$('select[name="car_name"]').prepend(elem);
 			} 
-    });
+		});
+		// 選択してくださいを戻す
+		$('#hidden_area').find('option').each((idx, elem) => {
+			if($(elem).hasClass('default')){
+				// 選択してくださいを一番上に持ってくるための記述
+				$('select[name="car_name"]').prepend(elem);
+			}
+		});
+		// メーカーが選択されたら、年式を選択してくださいに変更する
+		$('#hidden_area2').find('option').each((idx, elem) => {
+			
+			if($(elem).hasClass('default')){
+
+				$('select[name="car_age"]').prepend(elem);
+			}
+		});
+		$('select[name="car_age"]').prop("selectedIndex", 0);
+		$('select[name="car_age"]').prop('disabled', true);
+
 	});
+
+
 	$('select[name="car_name"]').on('change', evt => {
 		$('select[name="car_age"]').prop("selectedIndex", 0);
 		$('select[name="car_age"]').prop('disabled', false);
     let val = $('select[name="car_name"]').val();
     // 全て退避
     $('select[name="car_age"]').find('option').each((idx, elem) => {
+      $('#hidden_area2').prepend(elem);
+		});
+		// 該当年式を戻す
+    $('#hidden_area2').find('option').each((idx, elem) => {
 			if($(elem).hasClass('default')){
+				// 選択してくださいを一番上に持ってくるための記述
 				return;
 			}
-      $('#hidden_area2').prepend(elem);
-    });
-    $('#hidden_area2').find('option').each((idx, elem) => {
 			if($(elem).attr("class").indexOf(val) != -1){
 					// オプションをselect2へ移動
 					$('select[name="car_age"]').prepend(elem);
-			} 
-    });
+			}
+		});
+		// 選択してくださいを戻す
+		$('#hidden_area2').find('option').each((idx, elem) => {
+			if($(elem).hasClass('default')){
+				// 選択してくださいを一番上に持ってくるための記述
+				$('select[name="car_age"]').prepend(elem);
+			}
+		});
 	});
 
 
