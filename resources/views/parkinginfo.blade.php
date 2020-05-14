@@ -42,7 +42,7 @@
                         @empty
                         <tbody>
                         <tr>
-                            <td colspan="6">Myカーを登録してください。</td>
+                            <td colspan="6">駐車場を登録してください。</td>
                         </tr>
                         </tbody>
                         @endforelse

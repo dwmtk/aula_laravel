@@ -73,6 +73,11 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .img-responsive {
+                display: block;
+                height: auto;
+                max-width: 100%;
+            }
         </style>
     </head>
     <body>
@@ -94,7 +99,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <img class="logo" src="{{ asset('img/aula_logo.jpg') }}" alt="">
+                    <img class="logo img-responsive" src="{{ asset('img/aula_logo.png') }}" alt="">
                 </div>
             </div>      
         </div>
