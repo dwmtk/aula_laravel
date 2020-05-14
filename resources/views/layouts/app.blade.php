@@ -9,21 +9,32 @@
 
     <title>aula</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+     <!-- Scripts  <script src="{{ asset('js/app.js') }}" defer></script> -->
+
+    
+
     
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
+  
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        nav {
+        border-top: solid 10px #428bca;
+        }
+        .navbar-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+        }
+    </style>
+
 </head>
 <body>
     <!-- <div id="app"> -->
     <div>
-        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img class="logo" src="{{ asset('img/aula_logo_white_sm.png') }}" alt="" size="20">
@@ -54,6 +65,7 @@
                                 </li>
                             @endif
                         @else
+                            <!--
                             @if(Auth::user()->user_type == "1" || Auth::user()->user_type == "2")
                             <a class="navbar-brand text-white pr-2" href="{{ url('/manage') }}">
                                 <font size="4">管理者ページ</font>
@@ -62,13 +74,22 @@
                             <a class="navbar-brand text-white pr-2" href="{{ url('/home') }}">
                                 <font size="4">マイページ</font>
                             </a>
-                            @endif
+                            @endif -->
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}  様 <span class="caret"></span>
                                 </a>
 
-                                <div class="dropdown-menu dropdown-menu-right bg-dark " aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item text-white" href="{{ url('/home') }}">
+                                        マイページ
+                                    </a>
+
+                                    @if(Auth::user()->user_type == "1" || Auth::user()->user_type == "2")
+                                    <a class="dropdown-item text-white" href="{{ url('/manage') }}">
+                                        管理者ページ
+                                    </a>   
+                                    @endif
                                     <a class="dropdown-item text-white" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -90,5 +111,10 @@
             @yield('content')
         </main>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div class="text-center pt-5">
+                    <div class="text-center py-5">
                         <p>プライバシーポリシー</p>
                         <p>
                         あああああああああああああああああああああああああああ<br>
@@ -26,12 +26,7 @@
                         あああああああああああああああああああああああああああ<br>
                         あああああああああああああああああああああああああああ<br>
                         </p>
-                    </div>
-
-                    <div class="pt-3">
-                        <a class="btn btn-outline-info" href="{{ url('/') }}" role="button">戻る</a>
-                    </div>
-                    
+                    </div>                 
                 </div>
             </div>
         </div>

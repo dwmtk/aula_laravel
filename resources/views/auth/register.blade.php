@@ -91,7 +91,7 @@
 
                         <div class="form-check text-center my-3">
                             <input class="form-check-input" type="checkbox" id="privacyPolicyCheck" required>
-                            <label class="form-check-label" for="privacyPolicyCheck"><a href="{{ url('/privacypolicy') }}">プライバシーポリシー</a>に同意する。</label>
+                            <label class="form-check-label" for="privacyPolicyCheck"><a href="{{ url('/privacypolicy') }}" target="_blank">プライバシーポリシー</a>に同意する。</label>
                         </div>
 
                         <div class="form-group row">
