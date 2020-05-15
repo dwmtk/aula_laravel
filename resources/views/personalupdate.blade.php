@@ -80,9 +80,10 @@
                                 </button>
                             </div>
                         </div>
-                    <div class="">
-                        <a class="btn btn-outline-info" href="{{ url('personalinfo') }}" role="button">戻る</a>
-                    </div>
+                    </form>
+                </div>
+                <div class="card-footer" style="background: #E8F3FF;">
+                    @include('layouts.menu')
                 </div>
             </div>
         </div>

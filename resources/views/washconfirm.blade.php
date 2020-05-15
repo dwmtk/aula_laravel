@@ -56,7 +56,6 @@
                     <div class="pt-3">
                         <a class="btn btn-outline-info" href="{{ url('/manage') }}" role="button">戻る</a>
                     </div>
-                    
                 </div>
             </div>
         </div>

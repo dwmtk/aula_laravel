@@ -28,6 +28,9 @@
                         </p>
                     </div>                 
                 </div>
+                <div class="card-footer" style="background: #E8F3FF;">
+                    @include('layouts.menu')
+                </div>
             </div>
         </div>
     </div>

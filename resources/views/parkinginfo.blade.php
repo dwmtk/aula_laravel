@@ -51,10 +51,11 @@
                     <div class="text-center">
                         <a class="btn btn-outline-info" href="{{ url('parkinginsert') }}" role="button">駐車場追加</a>
                     </div>
-                    <div class="">
-                        <a class="btn btn-outline-info" href="{{ url('home') }}" role="button">戻る</a>
-                    </div>
+
                     
+                </div>
+                <div class="card-footer" style="background: #E8F3FF;">
+                    @include('layouts.menu')
                 </div>
             </div>
         </div>

@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Myカー情報管理</div>
+                <div class="card-header"><a href="{{ url('/home') }}"><i class="fas fa-arrow-left pr-3 text-primary"></i></a>Myカー情報管理</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -49,9 +49,9 @@
                     <div class="text-center">
                         <a class="btn btn-outline-info" href="{{ url('mycarinsert') }}" role="button">Myカー追加</a>
                     </div>
-                    <div class="">
-                        <a class="btn btn-outline-info" href="{{ url('home') }}" role="button">戻る</a>
-                    </div>
+                </div>
+                <div class="card-footer" style="background: #E8F3FF;">
+                    @include('layouts.menu')
                 </div>
             </div>
         </div>

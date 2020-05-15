@@ -34,11 +34,10 @@
                         <a class="btn btn-outline-info" href="{{ url('personalupdate') }}" role="button">個人情報変更</a>
                         <a class="btn btn-outline-info" href="{{ url('personalupdatepassword') }}" role="button">パスワード変更</a>
                     </div>
-                    <div class="">
-                        <a class="btn btn-outline-info" href="{{ url('home') }}" role="button">戻る</a>
-                    </div>
                 </div>
-
+                <div class="card-footer" style="background: #E8F3FF;">
+                    @include('layouts.menu')
+                </div>
             </div>
         </div>
     </div>

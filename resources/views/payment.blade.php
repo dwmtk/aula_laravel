@@ -44,12 +44,11 @@
                     </div>
                     </div>
                     </div>
-                    <div class="pt-3">
-                        <a class="btn btn-outline-info" href="{{ url('home') }}" role="button">戻る</a>
-                    </div>
                 </div>
 
-
+                <div class="card-footer" style="background: #E8F3FF;">
+                    @include('layouts.menu')
+                </div>
             </div>
         </div>
     </div>
