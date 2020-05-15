@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header" style="background: #E8F3FF;"><a href="{{ url('/') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>マイページ</div>
+                <div class="card-header"><a href="{{ url('/') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>マイページ</div>
 
                 <div class="card-body">
                     @if (session('status'))

@@ -1,4 +1,4 @@
-<div class="d-flex flex-row justify-content-around  align-self-stretch flex-wrap align-content-center">
+<div class="py-2 d-flex flex-row justify-content-around  align-self-stretch flex-wrap align-content-center">
 
 <div class="p-2" style="border-color: #031de2;">
 <a href="{{ url('reserve') }}">
