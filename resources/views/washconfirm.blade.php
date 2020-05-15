@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">洗車確認</div>
+                <div class="card-header"><a href="{{ url('/manage') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>洗車確認</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -52,9 +52,6 @@
                     <p class="text-center pt-3">※上記のチェックポイントを確認後、洗車完了すること※</p>
                     <div class="text-center">
                     <a class="btn btn-primary" href="{{ action('ManageController@washed', $order->order_id) }}" role="button">洗車完了</a>
-                    </div>
-                    <div class="pt-3">
-                        <a class="btn btn-outline-info" href="{{ url('/manage') }}" role="button">戻る</a>
                     </div>
                 </div>
             </div>

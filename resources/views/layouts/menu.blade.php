@@ -17,7 +17,7 @@
 
 <div class="p-2">
 <a href="{{ url('mycarinfo') }}">
-<i class="fas fa-key pr-2 fa-lg"></i>Myカー情報</a>
+<i class="fas fa-key pr-2 fa-lg"></i>マイカー情報</a>
 </div>
 
 <div class="p-2">

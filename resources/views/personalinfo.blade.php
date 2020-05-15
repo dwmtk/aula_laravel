@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">個人情報管理</div>
+                <div class="card-header"><a href="{{ url('/home') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>個人情報管理</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -20,7 +20,7 @@
                         </div>
                         </div>
                     @endif
-
+                    <p><i class="fas fa-user p-2"></i>登録者情報</p>
                     <table class="table">
                     <tbody>
                         <tr><th scope="row">氏名</th><td>{{ Auth::user()->name }}</td></tr>
@@ -31,8 +31,8 @@
                         </tbody>
                     </table>
                     <div class="text-center">
-                        <a class="btn btn-outline-info" href="{{ url('personalupdate') }}" role="button">個人情報変更</a>
-                        <a class="btn btn-outline-info" href="{{ url('personalupdatepassword') }}" role="button">パスワード変更</a>
+                        <a class="btn btn-outline-info" href="{{ url('personalupdate') }}" role="button"><i class="fas fa-bell pr-2"></i>個人情報変更</a>
+                        <a class="btn btn-outline-info" href="{{ url('personalupdatepassword') }}" role="button"><i class="fas fa-cog pr-2"></i>パスワード変更</a>
                     </div>
                 </div>
                 <div class="card-footer" style="background: #E8F3FF;">

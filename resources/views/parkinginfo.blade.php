@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">駐車場管理</div>
+                <div class="card-header"><a href="{{ url('/home') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>駐車場管理</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,6 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <p><i class="fas fa-link p-2"></i>登録済みの駐車場情報</p>
                     <table class="table">
                         <thead>
                             <tr>
@@ -49,7 +50,7 @@
 
                     </table>
                     <div class="text-center">
-                        <a class="btn btn-outline-info" href="{{ url('parkinginsert') }}" role="button">駐車場追加</a>
+                        <a class="btn btn-outline-info" href="{{ url('parkinginsert') }}" role="button"><i class="fas fa-plus pr-2"></i>新しく駐車場を登録する</a>
                     </div>
 
                     

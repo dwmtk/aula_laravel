@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><a href="{{ url('/home') }}"><i class="fas fa-arrow-left pr-3 text-primary"></i></a>Myカー情報管理</div>
+                <div class="card-header"><a href="{{ url('/home') }}"><i class="fas fa-arrow-left pr-3 text-primary"></i></a>マイカー情報管理</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -13,6 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <p><i class="fas fa-link p-2"></i>登録済みのマイカー情報</p>
                     <table class="table table-responsive">
                         <thead>
                             <tr>
@@ -47,7 +48,7 @@
 
                     </table>
                     <div class="text-center">
-                        <a class="btn btn-outline-info" href="{{ url('mycarinsert') }}" role="button">Myカー追加</a>
+                        <a class="btn btn-outline-info" href="{{ url('mycarinsert') }}" role="button"><i class="fas fa-plus pr-2"></i>新しくマイカーを登録する</a>
                     </div>
                 </div>
                 <div class="card-footer" style="background: #E8F3FF;">

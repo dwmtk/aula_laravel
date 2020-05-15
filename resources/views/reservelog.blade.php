@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">予約履歴</div>
+                <div class="card-header"><a href="{{ url('/home') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>予約履歴</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +15,7 @@
                         </div>
                     @endif
                     
-                    <p>過去の予約履歴</p>
+                    <p><i class="fas fa-link p-2"></i>過去の予約履歴</p>
                     @forelse ($orders as $order)
                     <div class="card mb-3 border-secondary">
                         <div class="card-header bg-white text-center">

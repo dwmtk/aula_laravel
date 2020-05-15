@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">予約キャンセル</div>
+                <div class="card-header"><a href="{{ url('/home') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>予約キャンセル</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -15,7 +15,7 @@
                         </div>
                     @endif
                     
-                    <p>キャンセルする予約内容</p>
+                    <p><i class="fas fa-link p-2"></i>キャンセルする予約内容</p>
                     
                     <table class="table table-sm table-primary table-borderless">
                     <tr><th scope="row">日付</th><td>{{ date('Y年m月d日',  strtotime($order->order_date)) }}</td></tr>

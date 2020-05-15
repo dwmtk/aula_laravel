@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">駐車場追加</div>
+                <div class="card-header"><a href="{{ url('/parkinginfo') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>駐車場追加</div>
 
                 <div class="card-body">
                     @if (session('status'))

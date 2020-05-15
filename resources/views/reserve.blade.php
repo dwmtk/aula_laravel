@@ -19,7 +19,7 @@
                         @csrf
 
                         <div class="form-group row">
-                            <label for="calendar" class="col-md-4 col-form-label text-md-right">日付 <span class="badge badge-danger">必須</span></label>
+                            <label for="calendar" class="col-md-4 col-form-label text-md-right"><i class="far fa-calendar-alt pr-1"></i>日付 <span class="badge badge-danger">必須</span></label>
                             <div class="col-md-6">
                                 <select id="calendar" name="calendar" class="form-control @error('calendar') is-invalid @enderror"  value="{{ old('calendar') }}"  autocomplete="calendar" autofocus required>
                                     <option selected="selected" value="">--選択してください--</option>
@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="shift" class="col-md-4 col-form-label text-md-right">シフト <span class="badge badge-danger">必須</span></label>
+                            <label for="shift" class="col-md-4 col-form-label text-md-right"><i class="far fa-calendar-alt pr-1"></i>シフト <span class="badge badge-danger">必須</span></label>
                             <div class="col-md-6">
                                 <select id="shift" name="shift" class="form-control @error('shift') is-invalid @enderror"  value="{{ old('shift') }}" autocomplete="shift" autofocus required>
                                     <option selected="selected" value="">--選択してください--</option>
@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="mycar" class="col-md-4 col-form-label text-md-right">マイカー情報 <span class="badge badge-danger mycar_badge_onoff">必須</span></label>
+                            <label for="mycar" class="col-md-4 col-form-label text-md-right"><i class="fas fa-user pr-1"></i>マイカー情報 <span class="badge badge-danger mycar_badge_onoff">必須</span></label>
                             <div class="col-md-6">
                                 <select id="mycar" name="mycar" class="form-control @error('mycar') is-invalid @enderror"  value="{{ old('mycar') }}" required autocomplete="mycar" autofocus>
                                     <option selected="selected" class="0,0,0" value="">--選択してください--</option>
@@ -167,7 +167,7 @@
                         </div>
 
                         <div class="form-group row mt-5">
-                            <label for="parking" class="col-md-4 col-form-label text-md-right">駐車場情報 <span class="badge badge-danger parking_badge_onoff">必須</span></label>
+                            <label for="parking" class="col-md-4 col-form-label text-md-right"><i class="fas fa-car pr-1"></i>駐車場情報 <span class="badge badge-danger parking_badge_onoff">必須</span></label>
                             <div class="col-md-6">
                                 <select id="parking" name="parking" class="form-control @error('parking') is-invalid @enderror"  value="{{ old('parking') }}" required autocomplete="parking" autofocus>
                                     <option selected="selected" value="">--選択してください--</option>
@@ -277,16 +277,16 @@
 
                         <div class="container mt-5">
                             <div class="row justify-content-center">
-                                <p class="col-md-6 text-md-right text-sm-center">洗車金額：</p>
+                                <p class="col-md-6 text-md-right text-sm-center"><i class="fas fa-pencil-alt pr-1"></i>洗車金額：</p>
                                 <p class="col-md-6 text-md-left text-sm-center price">￥0</p>
                                 <input type="hidden" name="price" value="0" id="price">
                             </div>
                             <div class="row justify-content-center">
-                                <p class="col-md-6 text-md-right text-sm-center">前回キャンセル金額：</p>
+                                <p class="col-md-6 text-md-right text-sm-center"><i class="fas fa-pencil-alt pr-1"></i>前回キャンセル金額：</p>
                                 <p class="col-md-6 text-md-left text-sm-center">￥－{{ Auth::user()->tsuke_pay }}</p>
                             </div>
                             <div class="row justify-content-center">
-                                <p class="col-md-6 text-md-right text-sm-center">お支払金額：</p>
+                                <p class="col-md-6 text-md-right text-sm-center"><i class="fas fa-pencil-alt pr-1"></i>お支払金額：</p>
                                 <p class="col-md-6 text-md-left text-sm-center final_price">￥0</p>
                                 <input type="hidden" name="final_price" value="0" id="final_price">
                             </div>

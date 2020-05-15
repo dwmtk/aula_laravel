@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">個人情報変更</div>
+                <div class="card-header"><a href="{{ url('/personalinfo') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>個人情報変更</div>
 
                 <div class="card-body">
                     @if (session('status'))
