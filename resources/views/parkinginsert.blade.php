@@ -87,12 +87,12 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="parking_deteil" class="col-md-4 col-form-label text-md-right">詳細 <span class="badge badge-secondary">任意</span></label>
+                            <label for="parking_detail" class="col-md-4 col-form-label text-md-right">詳細 <span class="badge badge-secondary">任意</span></label>
 
                             <div class="col-md-6">
-                            <textarea id="parking_deteil" class="form-control @error('parking_deteil') is-invalid @enderror" name="parking_deteil" value="{{ old('parking_deteil') }}" placeholder="入って左手の2番" autocomplete="parking_deteil" rows="3"></textarea>
+                            <textarea id="parking_detail" class="form-control @error('parking_detail') is-invalid @enderror" name="parking_detail" value="{{ old('parking_detail') }}" placeholder="入って左手の2番" autocomplete="parking_detail" rows="3"></textarea>
 
-                                @error('parking_deteil')
+                                @error('parking_detail')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
