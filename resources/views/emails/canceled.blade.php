@@ -1,3 +1,5 @@
+aula<{{ config('app.url') }}>
+
 {{ $user->name }} 様
 
 この度、aulaの出張洗車をご利用いただきありがとうございます。

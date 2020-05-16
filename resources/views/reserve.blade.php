@@ -128,6 +128,8 @@
                             </div>
                         </div>
 
+                        <label id="hidden_area" style="display:none"></label>
+
                         <div class="form-group row mycar_onoff">
                             <label for="car_number" class="col-md-4 col-form-label text-md-right">ナンバー <span class="badge badge-danger">必須</span></label>
 
@@ -141,6 +143,8 @@
                                 @enderror
                             </div>
                         </div>
+                        
+                        <label id="hidden_area2" style="display:none"></label>
 
                         <div class="form-group row mycar_onoff">
                             <label for="car_color" class="col-md-4 col-form-label text-md-right">色 <span class="badge badge-danger">必須</span></label>
@@ -338,185 +342,6 @@
                         </div>
                     </form>
 
-
-
-                    <script>
-                        $(function() {
-                            // 初期表示を非表示にする
-                            $(".parking_onoff").hide();
-                            $('#parking_onoff_check').change(function() {
-                                if ( $('#parking_onoff_check').prop('checked') ){
-                                    // 表示する
-                                    $(".parking_onoff").show();
-                                    $("#parking").prop('disabled', true);
-                                    $('#parking').prop("selectedIndex", 0);
-                                    $(".parking_badge_onoff").hide();
-                                    $("#parking_postcode").prop('required', true);
-                                    $("#parking_prefecture").prop('required', true);
-                                    $("#parking_city").prop('required', true);
-                                    $("#parking_address").prop('required', true);
-                                }
-                                else
-                                {
-                                    // 非表示にする
-                                    $(".parking_onoff").hide();
-                                    $("#parking").prop('disabled', false);
-                                    $(".parking_badge_onoff").show();
-                                    $("#parking_postcode").prop('required', false);
-                                    $("#parking_prefecture").prop('required', false);
-                                    $("#parking_city").prop('required', false);
-                                    $("#parking_address").prop('required', false);
-                                }
-                            });
-                        });
-                        $(function() {
-                            $('#mycar').change(function() {
-                                var size = $('#mycar option:selected').attr('class');
-                                var sizes = size.split(",");
-                                var length = Number(sizes[0]);
-                                var height = Number(sizes[1]);
-                                var width = Number(sizes[2]);
-                                var price = (height*width*2 + height*length*2 + length*width) *100;
-                                var final_price = price - {{ Auth::user()->tsuke_pay }};
-                                if(final_price < 0){
-                                    final_price = 0;
-                                };
-                                $(".price").text("￥" + price.toLocaleString());
-                                $(".final_price").text("￥" + final_price.toLocaleString());
-                                $("#price").val(price);
-                                $("#final_price").val(final_price);
-                            });
-                        });
-                        $(function() {
-                            // 初期表示を非表示にする
-                            $(".mycar_onoff").hide();
-                            $('#mycar_onoff_check').change(function() {
-                                if ( $('#mycar_onoff_check').prop('checked') ){
-                                    // 表示する
-                                    $(".mycar_onoff").show();
-                                    $("#mycar").prop('disabled', true);
-                                    $("#car_maker").prop('required', true);
-                                    $("#car_name").prop('required', true);
-                                    $("#car_age").prop('required', true);
-                                    $("#car_number").prop('required', true);
-                                    $("#car_color").prop('required', true);
-                                    $('#mycar').prop("selectedIndex", 0);
-                                    $(".mycar_badge_onoff").hide();
-                                    $(".price").text("￥0");
-                                    $(".final_price").text("￥0");
-                                }
-                                else
-                                {
-                                    // 非表示にする
-                                    $(".mycar_onoff").hide();
-                                    $("#mycar").prop('disabled', false);
-                                    $("#car_maker").prop('required', false);
-                                    $("#car_name").prop('required', false);
-                                    $("#car_age").prop('required', false);
-                                    $("#car_number").prop('required', false);
-                                    $("#car_color").prop('required', false);
-                                    $(".mycar_badge_onoff").show();
-                                    $(".price").text("￥0");
-                                    $(".final_price").text("￥0");
-                                }
-                            });
-                        });
-                        $(function() {
-                            $('#car_maker').change(function() {
-                                $(".price").text("￥0");
-                                $(".final_price").text("￥0");
-                            });
-                            $('#car_name').change(function() {
-                                $(".price").text("￥0");
-                                $(".final_price").text("￥0");
-                            });
-                        });
-                        $(function() {
-                            $('#car_age').change(function() {
-                                var size = $('#car_age option:selected').val();
-                                var sizes = size.split(",");
-                                var length = Number(sizes[0]);
-                                var height = Number(sizes[1]);
-                                var width = Number(sizes[2]);
-                                var price = (height*width*2 + height*length*2 + length*width) *100;
-                                var final_price = price - {{ Auth::user()->tsuke_pay }};
-                                if(final_price < 0){
-                                    final_price = 0;
-                                };
-                                $(".price").text("￥" + price.toLocaleString());
-                                $(".final_price").text("￥" + final_price.toLocaleString());
-                                $("#price").val(price);
-                                $("#final_price").val(final_price);
-                            });
-                        });
-                    </script>
-
-                    <script>
-                        $(function() {
-                            $('#calendar').change(function() {
-                                $('#0').text($('#calendar option:selected').text());
-                            });
-                            $('#shift').change(function() {
-                                $('#1').text($('#shift option:selected').text());
-                            });
-                            $('#mycar').change(function() {
-                                var mycar = $('#mycar option:selected').text()
-                                var mycars = mycar.split(",");
-                                
-                                $('#2').text(mycars[0]);
-                                $('#3').text(mycars[1]);
-                                $('#4').text(mycars[2]+"～"+mycars[3]);
-                                $('#5').text(mycars[4]);
-                                $('#6').text(mycars[5]);
-                            });
-                            $('#car_maker').change(function() {
-                                $('#2').text($('#car_maker option:selected').text());
-                            });
-                            $('#car_name').change(function() {
-                                $('#3').text($('#car_name option:selected').text());
-                            });
-                            $('#car_age').change(function() {
-                                $('#4').text($('#car_age option:selected').text());
-                            });
-                            $('#car_number').change(function() {
-                                $('#5').text($('#car_number').val());
-                            });
-                            $('#car_color').change(function() {
-                                $('#6').text($('#car_color option:selected').text());
-                            });
-                            $('#parking').change(function() {
-                                var parking = $('#parking option:selected').text()
-                                var parkings = parking.split(",");
-                                
-                                $('#7').text(parkings[0]);
-                                $('#8').text(parkings[1]);
-                                $('#9').text(parkings[2]);
-                                $('#10').text(parkings[3]);
-                                $('#11').text(parkings[4]);
-                                $('#12').text(parkings[5]);
-                            });
-                            $('#parking_postcode').change(function() {
-                                $('#7').text($('#parking_postcode').val());
-                            });
-                            $('#parking_prefecture').change(function() {
-                                $('#8').text($('#parking_prefecture').val());
-                            });
-                            $('#parking_city').change(function() {
-                                $('#9').text($('#parking_city').val());
-                            });
-                            $('#parking_address').change(function() {
-                                $('#10').text($('#parking_address').val());
-                            });
-                            $('#parking_building').change(function() {
-                                $('#11').text($('#parking_building').val());
-                            });
-                            $('#parking_detail').change(function() {
-                                $('#12').text($('#parking_detail').val());
-                            });
-                        });
-                    </script>
-                    <script src="{{ asset('/js/hierselect.js') }}"></script>
-            
                 </div>
                 <div class="card-footer" style="background: #E8F3FF;">
                     @include('layouts.menu')
@@ -525,4 +350,184 @@
         </div>
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="{{ asset('/js/hierselect.js') }}"></script>
+<script>
+$(function() {
+    // 初期表示を非表示にする
+    $(".parking_onoff").hide();
+    $('#parking_onoff_check').change(function() {
+        if ( $('#parking_onoff_check').prop('checked') ){
+            // 表示する
+            $(".parking_onoff").show();
+            $("#parking").prop('disabled', true);
+            $('#parking').prop("selectedIndex", 0);
+            $(".parking_badge_onoff").hide();
+            $("#parking_postcode").prop('required', true);
+            $("#parking_prefecture").prop('required', true);
+            $("#parking_city").prop('required', true);
+            $("#parking_address").prop('required', true);
+        }
+        else
+        {
+            // 非表示にする
+            $(".parking_onoff").hide();
+            $("#parking").prop('disabled', false);
+            $(".parking_badge_onoff").show();
+            $("#parking_postcode").prop('required', false);
+            $("#parking_prefecture").prop('required', false);
+            $("#parking_city").prop('required', false);
+            $("#parking_address").prop('required', false);
+        }
+    });
+});
+$(function() {
+    $('#mycar').change(function() {
+        var size = $('#mycar option:selected').attr('class');
+        var sizes = size.split(",");
+        var length = Number(sizes[0]);
+        var height = Number(sizes[1]);
+        var width = Number(sizes[2]);
+        var price = (height*width*2 + height*length*2 + length*width) *100;
+        var final_price = price - {{ Auth::user()->tsuke_pay }};
+        if(final_price < 0){
+            final_price = 0;
+        };
+        $(".price").text("￥" + price.toLocaleString());
+        $(".final_price").text("￥" + final_price.toLocaleString());
+        $("#price").val(price);
+        $("#final_price").val(final_price);
+    });
+});
+$(function() {
+    // 初期表示を非表示にする
+    $(".mycar_onoff").hide();
+    $('#mycar_onoff_check').change(function() {
+        if ( $('#mycar_onoff_check').prop('checked') ){
+            // 表示する
+            $(".mycar_onoff").show();
+            $("#mycar").prop('disabled', true);
+            $("#car_maker").prop('required', true);
+            $("#car_name").prop('required', true);
+            $("#car_age").prop('required', true);
+            $("#car_number").prop('required', true);
+            $("#car_color").prop('required', true);
+            $('#mycar').prop("selectedIndex", 0);
+            $(".mycar_badge_onoff").hide();
+            $(".price").text("￥0");
+            $(".final_price").text("￥0");
+        }
+        else
+        {
+            // 非表示にする
+            $(".mycar_onoff").hide();
+            $("#mycar").prop('disabled', false);
+            $("#car_maker").prop('required', false);
+            $("#car_name").prop('required', false);
+            $("#car_age").prop('required', false);
+            $("#car_number").prop('required', false);
+            $("#car_color").prop('required', false);
+            $(".mycar_badge_onoff").show();
+            $(".price").text("￥0");
+            $(".final_price").text("￥0");
+        }
+    });
+});
+$(function() {
+    $('#car_maker').change(function() {
+        $(".price").text("￥0");
+        $(".final_price").text("￥0");
+    });
+    $('#car_name').change(function() {
+        $(".price").text("￥0");
+        $(".final_price").text("￥0");
+    });
+});
+$(function() {
+    $('#car_age').change(function() {
+        var size = $('#car_age option:selected').val();
+        var sizes = size.split(",");
+        var length = Number(sizes[0]);
+        var height = Number(sizes[1]);
+        var width = Number(sizes[2]);
+        var price = (height*width*2 + height*length*2 + length*width) *100;
+        var final_price = price - {{ Auth::user()->tsuke_pay }};
+        if(final_price < 0){
+            final_price = 0;
+        };
+        $(".price").text("￥" + price.toLocaleString());
+        $(".final_price").text("￥" + final_price.toLocaleString());
+        $("#price").val(price);
+        $("#final_price").val(final_price);
+    });
+});
+</script>
+
+<script>
+    $(function() {
+        $('#calendar').change(function() {
+            $('#0').text($('#calendar option:selected').text());
+        });
+        $('#shift').change(function() {
+            $('#1').text($('#shift option:selected').text());
+        });
+        $('#mycar').change(function() {
+            var mycar = $('#mycar option:selected').text()
+            var mycars = mycar.split(",");
+            
+            $('#2').text(mycars[0]);
+            $('#3').text(mycars[1]);
+            $('#4').text(mycars[2]+"～"+mycars[3]);
+            $('#5').text(mycars[4]);
+            $('#6').text(mycars[5]);
+        });
+        $('#car_maker').change(function() {
+            $('#2').text($('#car_maker option:selected').text());
+        });
+        $('#car_name').change(function() {
+            $('#3').text($('#car_name option:selected').text());
+        });
+        $('#car_age').change(function() {
+            $('#4').text($('#car_age option:selected').text());
+        });
+        $('#car_number').change(function() {
+            $('#5').text($('#car_number').val());
+        });
+        $('#car_color').change(function() {
+            $('#6').text($('#car_color option:selected').text());
+        });
+        $('#parking').change(function() {
+            var parking = $('#parking option:selected').text()
+            var parkings = parking.split(",");
+            
+            $('#7').text(parkings[0]);
+            $('#8').text(parkings[1]);
+            $('#9').text(parkings[2]);
+            $('#10').text(parkings[3]);
+            $('#11').text(parkings[4]);
+            $('#12').text(parkings[5]);
+        });
+        $('#parking_postcode').change(function() {
+            $('#7').text($('#parking_postcode').val());
+        });
+        $('#parking_prefecture').change(function() {
+            $('#8').text($('#parking_prefecture').val());
+        });
+        $('#parking_city').change(function() {
+            $('#9').text($('#parking_city').val());
+        });
+        $('#parking_address').change(function() {
+            $('#10').text($('#parking_address').val());
+        });
+        $('#parking_building').change(function() {
+            $('#11').text($('#parking_building').val());
+        });
+        $('#parking_detail').change(function() {
+            $('#12').text($('#parking_detail').val());
+        });
+    });
+</script>
+
 @endsection
