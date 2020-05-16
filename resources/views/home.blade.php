@@ -32,12 +32,16 @@
 
                     <p><i class="fas fa-link p-2"></i>現在の予約状況</p>
                     @forelse ($orders as $order)
-                    <div class="card mb-3 border-secondary">
-                        <div class="card-header bg-white text-center">No. {{ $loop->iteration }}</div>
-                        <div class="card-body">
-                            <table class="table table-sm table-primary table-borderless">
-                            <tr><th scope="row">日付</th><td>{{ date('Y年m月d日',  strtotime($order->order_date)) }}</td></tr>
-                            <tr><th scope="row">時間帯</th>
+                    <div class="card mb-3">
+                        <!--<div class="card-header bg-white text-center">No. {{ $loop->iteration }}</div>-->
+                        <div class="card-body p-2">
+                            <p class="card-title text-center mb-1"><u>No. {{ $loop->iteration }}</u></p>
+
+                            <div class="d-block pt-3 pb-0" style="background: #E8F3FF; border-radius: 8px;">
+                            <div class="mx-auto" style="max-width:250px;">
+                            <table class="table table-sm table-borderless">
+                            <tr><td scope="row" style="width:68px;">洗車日：</td><td>{{ date('Y年m月d日',  strtotime($order->order_date)) }}</td></tr>
+                            <tr><td scope="row">時間帯：</td>
                             <td>
                                 @if ( $order->schedule == 1)
                                 08:00～11:00
@@ -48,12 +52,20 @@
                                 @elseif ( $order->schedule == 4)
                                 @endif
                             </td></tr>
-                            <tr><th scope="row">洗車車両</th><td>{{ $order->car_maker }}, {{ $order->car_number }}</td></tr>
-                            <tr><th scope="row">駐車場</th><td>{{ $order->parking_prefecture }} {{ $order->parking_city }} {{ $order->parking_address }}</td></tr>
-                            </table>
-                            <div class="text-center">
-                            <a class="btn btn-sm btn-primary btn-lg" href="{{ action('ReserveController@cancelform', $order->order_id) }}" role="button">予約キャンセル</a>
+                            <tr><td scope="row">車両：</td><td>{{ $order->car_maker }}, {{ $order->car_number }}</td></tr>
+                            <tr><td scope="row">駐車場：</td><td>{{ $order->parking_prefecture }} {{ $order->parking_city }} {{ $order->parking_address }}</td></tr>
+                            <tr><td colspan="2">
+                            <div class="d-flex text-center mx-auto" style="max-width:250px;">
+                            <a class="btn btn-sm btn-primary btn-lg flex-fill p-2" href="{{ action('ReserveController@cancelform', $order->order_id) }}" role="button" >予約キャンセル</a>
                             </div>
+                            </td></tr>
+                            </table>
+
+                            </div>
+                            
+                            </div>
+
+
                         </div>
                     </div>
                     @empty
