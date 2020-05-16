@@ -29,6 +29,16 @@
                         </div>
                         </div>
                     @endif
+                    @if( Auth::user()->tsuke_pay != 0 )
+                    <div class="pb-3 text-center">
+                    <div class="alert alert-primary" role="alert">
+                        <p>【お知らせ】前回キャンセル分のポイントが残っています</p>
+                        <a class="btn btn-primary p-2" href="{{ url('reserve') }}" role="button">
+                        <i class="fas fa-car pr-2 fa-lg"></i>
+                        洗車予約を行う</a>
+                    </div>
+                    </div>
+                    @endif
 
                     <p><i class="fas fa-link p-2"></i>現在の予約状況</p>
                     @forelse ($orders as $order)

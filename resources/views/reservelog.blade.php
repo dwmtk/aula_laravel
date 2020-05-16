@@ -26,7 +26,7 @@
                             @else
                             @endif</u></p>
 
-                            <div class="d-block pt-3 pb-0" style="
+                            <div class="d-block pt-3 pb-1" style="
                             @if ( $order->status == 2 )
                             background: #E8F3FF; 
                             @elseif ($order->status == 9 )
