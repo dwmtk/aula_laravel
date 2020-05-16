@@ -14,6 +14,45 @@
                         </div>
                     @endif
                     <p><i class="fas fa-link p-2"></i>登録済みの駐車場情報</p>
+                    @forelse ($parkings as $parking)
+                    <div class="card mb-3">
+                        <div class="card-body p-2">
+                            <p class="card-title text-center mb-1"><u>No. {{ $loop->iteration }}</u></p>
+
+                            <div class="d-block pt-3 pb-0" style="background: #EDEFF2; border-radius: 8px;">
+                            <div class="mx-auto" style="max-width:250px;">
+                            <table class="table table-sm table-borderless">
+                            <tr><td scope="row" style="width:85px;">郵便番号：</td><td>{{ $parking->parking_postcode }}</td></tr>
+                            <tr><td scope="row">都道府県：</td><td>{{ $parking->parking_prefecture }}</td></tr>
+                            <tr><td scope="row">市区町村：</td><td>{{ $parking->parking_city }}</td></tr>
+                            <tr><td scope="row">番地：</td><td>{{ $parking->parking_address }}</td></tr>
+                            <tr><td scope="row">建物名：</td><td>{{ $parking->parking_building }}</td></tr>
+                            <tr><td scope="row">詳細：</td><td>{{ $parking->parking_detail }}</td></tr>
+
+                            <tr><td colspan="2">
+                            <div class="d-flex text-center mx-auto" style="max-width:250px;">
+                            <a class="btn btn-sm btn-primary btn-lg flex-fill p-2 mr-1" href="{{ action('ParkingController@updateform', $parking->parking_id) }}" role="button" >編集する</a>
+                            <a class="btn btn-sm btn-primary btn-lg flex-fill p-2" href="{{ action('ParkingController@delete', $parking->parking_id) }}" role="button" >解除する</a>
+                            </div>
+                            </td></tr>
+
+                            </table>
+
+                            </div>
+                            
+                            </div>
+
+
+                        </div>
+                    </div>
+                    @empty
+
+                        <p>・駐車場が登録されていません。</p>
+
+                    @endforelse
+
+                    <!--
+                    <p><i class="fas fa-link p-2"></i>登録済みの駐車場情報</p>
                     <table class="table">
                         <thead>
                             <tr>
@@ -49,7 +88,8 @@
                         @endforelse
 
                     </table>
-                    <div class="text-center">
+                    -->
+                    <div class="text-center pt-2">
                         <a class="btn btn-outline-info" href="{{ url('parkinginsert') }}" role="button"><i class="fas fa-plus pr-2"></i>新しく駐車場を登録する</a>
                     </div>
 
