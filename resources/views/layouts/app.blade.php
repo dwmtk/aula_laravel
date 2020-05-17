@@ -168,7 +168,7 @@
     @else
     <div class="footer_bar fixed-bottom bg-dark badge-notify">
         <span>
-        <a class="btn btn-dark btn-sm p-2" href="{{ url('reserve') }}" role="button">
+        <a class="btn btn-dark p-2" href="{{ url('reserve') }}" role="button">
         <i class="fas fa-car pr-2 fa-lg"></i>
         今すぐ洗車予約を行う</a>
         </span>
