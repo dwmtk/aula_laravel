@@ -111,9 +111,10 @@ $(function () {
     $('#hidden_area').find('option').each(function (idx, elem) {
       if ($(elem).hasClass('default')) {
         return;
-      }
+      } // if($(elem).attr("class").indexOf(val) != -1){
 
-      if ($(elem).attr("class").indexOf(val) != -1) {
+
+      if ($(elem).attr("class") === val) {
         $('select[name="car_name"]').append(elem).clone();
       }
     });
@@ -135,9 +136,10 @@ $(function () {
     $('#hidden_area2').find('option').each(function (idx, elem) {
       if ($(elem).hasClass('default')) {
         return;
-      }
+      } // if($(elem).attr("class").indexOf(val) != -1){
 
-      if ($(elem).attr("class").indexOf(val) != -1) {
+
+      if ($(elem).attr("class") === val) {
         $('select[name="car_age"]').append(elem).clone();
       }
     });

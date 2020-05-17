@@ -30,7 +30,7 @@
                         @elseif ( $order->schedule == 4)
                         @endif
                     </td></tr>
-                    <tr><th scope="row">洗車車両</th><td>{{ $order->car_maker }}, {{ $order->car_number }}</td></tr>
+                    <tr><th scope="row">洗車車両</th><td>{{ $order->car_name }}, {{ $order->car_number }}</td></tr>
                     <tr><th scope="row">駐車場</th><td>{{ $order->parking_prefecture }} {{ $order->parking_city }} {{ $order->parking_address }}</td></tr>
                     </table>
 

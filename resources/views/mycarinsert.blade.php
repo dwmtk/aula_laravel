@@ -15,6 +15,8 @@
                         </div>
                     @endif
 
+
+
                     <form method="POST" action="{{ url('/mycarinsert') }}">
                         @csrf
                         <div class="form-group row">
@@ -129,5 +131,46 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<script src="{{ asset('/js/hierselect.js') }}"></script>    
+<script src="{{ asset('/js/hierselect.js') }}"></script>
+
+<script>
+searchWord = function(){
+  var searchResult,
+      searchText = $(this).val(), // 検索ボックスに入力された値
+      targetText,
+      hitNum;
+ 
+  // 検索結果を格納するための配列を用意
+  searchResult = [];
+ 
+  // 検索結果エリアの表示を空にする
+  $('#search-result__list').empty();
+  $('.search-result__hit-num').empty();
+ 
+  // 検索ボックスに値が入ってる場合
+  if (searchText != '') {
+    $('.target-area li').each(function() {
+      targetText = $(this).text();
+ 
+      // 検索対象となるリストに入力された文字列が存在するかどうかを判断
+      if (targetText.indexOf(searchText) != -1) {
+        // 存在する場合はそのリストのテキストを用意した配列に格納
+        searchResult.push(targetText);
+      }
+    });
+ 
+    // 検索結果をページに出力
+    for (var i = 0; i < searchResult.length; i ++) {
+      $('<span>').text(searchResult[i]).appendTo('#search-result__list');
+    }
+ 
+    // ヒットの件数をページに出力
+    hitNum = '<span>検索結果</span>：' + searchResult.length + '件見つかりました。';
+    $('.search-result__hit-num').append(hitNum);
+  }
+};
+ 
+// searchWordの実行
+$('#search-text').on('input', searchWord);
+</script>
 @endsection
