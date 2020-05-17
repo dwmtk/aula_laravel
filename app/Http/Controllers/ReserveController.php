@@ -32,9 +32,11 @@ class ReserveController extends Controller
         $car_names = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_maker','car_name')
         ->groupBy('car_maker','car_name')
         ->orderBy('car_id_min')->get();
-        $car_ages = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_name', 'car_length', 'car_height', 'car_width', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
-        ->groupBy('car_name',\DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中'))"))
-        ->orderBy('car_id_min')->get();
+        $car_ages = M_Cars::select('car_id', 'car_maker','car_name', 'car_length', 'car_height', 'car_width', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
+        ->orderBy('car_id')->get();
+        // $car_ages = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_name', 'car_length', 'car_height', 'car_width', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
+        // ->groupBy('car_name',\DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中'))"))
+        // ->orderBy('car_id_min')->get();
         // $car_makers = M_Cars::select('car_maker')->groupBy('car_maker')->get();
         // $car_names = M_Cars::select('car_maker','car_name')->groupBy('car_maker','car_name')->get();
         // $car_ages = M_Cars::select('car_name', 'car_length', 'car_height', 'car_width', 'car_id', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))

@@ -1,6 +1,6 @@
 <div class="py-2 d-flex flex-row justify-content-around  align-self-stretch flex-wrap align-content-center">
 
-<div class="p-2" style="border-color: #031de2;">
+<div class="p-2">
 <a href="{{ url('reserve') }}">
 <i class="fas fa-car pr-2 fa-lg"></i>洗車予約</a>
 </div>

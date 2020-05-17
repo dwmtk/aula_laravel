@@ -27,7 +27,18 @@
         .navbar-toggler .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
         }
+        .footer_bar {
+        border-bottom: solid 10px #428bca;
+        }
+        .badge_notify{
+            position:relative;
+        }
+        .badge-notify_{
 
+            position:relative;
+            top: -1px;
+            left: -7px;
+        }
         /* .table-background-p {
             position: relative;
         }
@@ -134,7 +145,12 @@
             @yield('content')
         </main>
     </div>
-    <footer class="text-center text-muted pt-5">
+    <footer class="text-center text-muted pt-5 
+    @guest
+    @else
+    pb-5
+    @endguest
+    ">
     <div class="d-flex flex-row justify-content-center">
         <i class="fab fa-twitter-square p-1 fa-2x"></i>
         <i class="fab fa-youtube p-1 fa-2x"></i>
@@ -147,7 +163,20 @@
         <i class="fab fa-facebook-square p-1 fa-2x" style="color:#3C5A99;"></i>
         -->
     </div>
-        <p class="pt-2">Copyright 2020 aula</p>
+    <p class="pt-2">Copyright 2020 aula</p>
+    @guest
+    @else
+    <div class="footer_bar fixed-bottom bg-dark badge-notify">
+        <span>
+        <a class="btn btn-dark btn-sm p-2" href="{{ url('reserve') }}" role="button">
+        <i class="fas fa-car pr-2 fa-lg"></i>
+        今すぐ洗車予約を行う</a>
+        </span>
+        @if(Auth::user()->tsuke_pay != 0)
+        <span class="badge badge-pill badge-light badge-notify_">P￥{{ Auth::user()->tsuke_pay }}</span>
+        @endif
+    </div>
+    @endguest
     </footer>
     
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

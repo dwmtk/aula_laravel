@@ -22,18 +22,17 @@
                         <div class="form-group row">
                             <label for="car_maker" class="col-md-4 col-form-label text-md-right">メーカー <span class="badge badge-danger">必須</span></label>
                      
-                                <select id="car_maker" name="car_maker" class="col-md-6 form-control @error('car_maker') is-invalid @enderror" value="{{ old('car_maker') }}" required autocomplete="car_maker" autofocus>
-                                    <option value="" selected="selected" class="default">--選択してください--</option>
-                                    @foreach ($car_makers as $car_maker)
-                                    <option value="{{ $car_maker->car_maker }}" class="{{ $car_maker->car_maker }}">{{ $car_maker->car_maker }}</option>
-                                    @endforeach
-                                </select>
-                                @error('car_maker')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-             
+                            <select id="car_maker" name="car_maker" class="col-md-6 form-control @error('car_maker') is-invalid @enderror" value="{{ old('car_maker') }}" required autocomplete="car_maker" autofocus>
+                                <option value="" selected="selected" class="default">--選択してください--</option>
+                                @foreach ($car_makers as $car_maker)
+                                <option value="{{ $car_maker->car_maker }}" class="{{ $car_maker->car_maker }}">{{ $car_maker->car_maker }}</option>
+                                @endforeach
+                            </select>
+                            @error('car_maker')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
 
                         <div class="form-group row">
@@ -42,7 +41,7 @@
                                 <select id="car_name" name="car_name" class="col-md-6 form-control @error('car_name') is-invalid @enderror" value="{{ old('car_name') }}" required autocomplete="car_name" autofocus disabled>
                                 <option value="" selected="selected" class="default">--選択してください--</option>
                                 @foreach ($car_names as $car_name)
-                                <option value="{{ $car_name->car_name }}" class="{{ $car_name->car_maker }}">{{ $car_name->car_name }}</option>
+                                <option value="{{ $car_name->car_maker }}___{{ $car_name->car_name }}" class="{{ $car_name->car_maker }}">{{ $car_name->car_name }}</option>
                                 @endforeach
                                 </select>
                                 @error('car_name')
@@ -60,7 +59,7 @@
                                 <select id="car_age" name="car_age" class="col-md-6 form-control @error('car_age') is-invalid @enderror" value="{{ old('car_age') }}" required autocomplete="car_age" autofocus disabled>
                                 <option value="" selected="selected" class="default">--選択してください--</option>
                                     @foreach ($car_ages as $car_age)
-                                    <option value="{{ $car_age->car_age }}" class="{{ $car_age->car_name }}">{{ $car_age->car_age }}</option>
+                                    <option value="{{ $car_age->car_id }}" class="{{ $car_age->car_maker }}___{{ $car_age->car_name }}">{{ $car_age->car_age }}</option>
                                     @endforeach
                                 </select>
                                 @error('car_age')

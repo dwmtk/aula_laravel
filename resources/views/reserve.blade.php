@@ -100,7 +100,7 @@
                                 <select id="car_name" name="car_name" class="form-control @error('car_name') is-invalid @enderror" value="{{ old('car_name') }}" autocomplete="car_name" autofocus disabled>
                                 <option value="" selected="selected" class="default">--選択してください--</option>
                                 @foreach ($car_names as $car_name)
-                                <option value="{{ $car_name->car_name }}" class="{{ $car_name->car_maker }}">{{ $car_name->car_name }}</option>
+                                <option value="{{ $car_name->car_maker }}___{{ $car_name->car_name }}" class="{{ $car_name->car_maker }}">{{ $car_name->car_name }}</option>
                                 @endforeach
                                 </select>
                                 @error('car_name')
@@ -117,7 +117,7 @@
                                 <select id="car_age" name="car_age" class="form-control @error('car_age') is-invalid @enderror" value="{{ old('car_age') }}" autocomplete="car_age" autofocus disabled>
                                     <option value="" selected="selected" class="default">--選択してください--</option>
                                     @foreach ($car_ages as $car_age)
-                                    <option value="{{ $car_age->car_length }},{{ $car_age->car_height }},{{ $car_age->car_width }},{{ $car_age->car_id }}" class="{{ $car_age->car_name }}">{{ $car_age->car_age }}</option>
+                                    <option value="{{ $car_age->car_length }},{{ $car_age->car_height }},{{ $car_age->car_width }},{{ $car_age->car_id }}" class="{{ $car_age->car_maker }}___{{ $car_age->car_name }}">{{ $car_age->car_age }}</option>
                                     @endforeach
                                 </select>
                                 @error('car_age')

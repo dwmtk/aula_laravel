@@ -33,9 +33,11 @@ class MyCarController extends Controller
         $car_names = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_maker','car_name')
         ->groupBy('car_maker','car_name')
         ->orderBy('car_id_min')->get();
-        $car_ages = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_name', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
-        ->groupBy('car_name',\DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中'))"))
-        ->orderBy('car_id_min')->get();
+        $car_ages = M_Cars::select('car_id', 'car_maker','car_name', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
+        ->orderBy('car_id')->get();
+        // $car_ages = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_maker','car_name', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
+        // ->groupBy('car_name',\DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中'))"))
+        // ->orderBy('car_id_min')->get();
         
         return view('mycarinsert')
         ->with([
@@ -55,14 +57,21 @@ class MyCarController extends Controller
             'car_number' => ['required','string', 'max:5'],
             'car_color' => ['required','string', 'max:1'],
         ]);
-        $car_age_start = mb_strstr($request->car_age,'～',true);
-        $car_age_end = mb_substr(mb_strstr($request->car_age,'～',false),1);
-        
-        // 車種DBから情報取得
-        $car = M_Cars::where('car_maker', $request->car_maker)
-        ->where('car_name', $request->car_name)
-        ->where('car_age_start', $car_age_start)
+
+        // 入力データを一部加工
+        // $car_name = explode('___', $request->car_name)[1];
+        // $car_age_start = mb_strstr($request->car_age,'～',true);
+        // $car_age_end = mb_substr(mb_strstr($request->car_age,'～',false),1);
+        // dd($request, $car_name);
+
+        // 車種情報よりデータ取得
+        $car = M_Cars::where('car_id', $request->car_age)
         ->first();
+        
+        // $car = M_Cars::where('car_maker', $request->car_maker)
+        // ->where('car_name', $car_name)
+        // ->where('car_age_start', $car_age_start)
+        // ->first();
         // dd($car);
         // Myカー登録
         $mycar = new T_MyCars();
