@@ -173,7 +173,7 @@
         今すぐ洗車予約を行う</a>
         </span>
         @if(Auth::user()->tsuke_pay != 0)
-        <span class="badge badge-pill badge-light badge-notify_">P￥{{ Auth::user()->tsuke_pay }}</span>
+        <span class="badge badge-pill badge-light badge-notify_">P ¥{{ Auth::user()->tsuke_pay }}</span>
         @endif
     </div>
     @endguest
