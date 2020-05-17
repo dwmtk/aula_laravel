@@ -27,13 +27,6 @@ class MyCarController extends Controller
     {
         
         // 車種DBからプルダウン用のデータを取得
-        // $car_makers = \DB::select('select MIN( CAST( car_id AS SIGNED ) ) , car_maker from m__cars
-        // group by car_maker order by MIN( CAST( car_id AS SIGNED ) )');
-        // $car_names = \DB::select('select MIN( CAST( car_id AS SIGNED ) ) , car_maker , car_name from m__cars
-        // group by car_maker, car_name order by MIN( CAST( car_id AS SIGNED ) )');
-        // $car_ages = \DB::select('select MIN( CAST( car_id AS SIGNED ) ) , car_maker from m__cars
-        // group by car_maker order by MIN( CAST( car_id AS SIGNED ) )');
-
         $car_makers = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min') , 'car_maker')
         ->groupBy('car_maker')
         ->orderBy('car_id_min')->get();
@@ -43,7 +36,7 @@ class MyCarController extends Controller
         $car_ages = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_name', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
         ->groupBy('car_name',\DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中'))"))
         ->orderBy('car_id_min')->get();
-        // return view('mycarinsert', ['car_makers' => $car_makers], ['car_names' => $car_names], ['car_ages' => $car_ages]);
+        
         return view('mycarinsert')
         ->with([
             'car_makers' => $car_makers,
