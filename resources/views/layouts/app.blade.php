@@ -39,6 +39,32 @@
             top: -1px;
             left: -7px;
         }
+        /* googleカレンダー */
+        .cal_wrapper {
+        max-width: 500px;
+        min-width: 300px;
+        margin: 2.0833% auto;
+        }
+
+        .googlecal {
+        position: relative;
+        padding-bottom: 100%;
+        height: 0;
+        }
+
+        .googlecal iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        }
+
+        @media only screen and (min-width: 768px) {
+        .googlecal { padding-bottom: 75%; }
+        }
+        /* googleカレンダー終わり */
+
         /* .table-background-p {
             position: relative;
         }

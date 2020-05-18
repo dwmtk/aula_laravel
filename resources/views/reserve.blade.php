@@ -13,8 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-
+                    <div class="cal_wrapper mb-4">
+                    <div class="googlecal">
+                    <iframe src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=YXVsYS53bGN3QGdtYWlsLmNvbQ&amp;color=%23039BE5&amp;showTz=0&amp;title=aula%20%E5%96%B6%E6%A5%AD%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                    </div>
+                    </div>
                     <form method="POST" action="{{ url('/reserved') }}">
                         @csrf
 
@@ -35,6 +38,19 @@
                             </div>
                         </div>
 
+<!--
+                        <div class="form-group row">
+                            <label for="calendar2" class="col-md-4 col-form-label text-md-right"><i class="far fa-calendar-alt pr-1"></i>日付 <span class="badge badge-danger">必須</span></label>
+                            <div class="col-md-6">
+                                <input id="calendar2" type="date" min="2020-05-17" max="2020-06-02"  class="form-control @error('calendar') is-invalid @enderror"></input>
+                                @error('calendar')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+-->
                         <div class="form-group row">
                             <label for="shift" class="col-md-4 col-form-label text-md-right"><i class="far fa-calendar-alt pr-1"></i>シフト <span class="badge badge-danger">必須</span></label>
                             <div class="col-md-6">
@@ -73,7 +89,7 @@
                             <input name="mycar_onoff_check" type="hidden" value="false">
                             <input class="form-check-input text-md-right" name="mycar_onoff_check" id="mycar_onoff_check" type="checkbox" value="true">
                             <label class="form-check-label" for="mycar_onoff_check">
-                                新しくマイカーを登録する。
+                                マイカーを手動で入力する。
                             </label>
                         </div>
 
@@ -191,7 +207,7 @@
                             <input name="parking_onoff_check" type="hidden" value="false">
                             <input class="form-check-input text-md-right" name="parking_onoff_check" type="checkbox" value="true" id="parking_onoff_check">
                             <label class="form-check-label" for="parking_onoff_check">
-                                新しく駐車場を登録する。
+                                駐車場を手動で入力する。
                             </label>
                         </div>
 
@@ -529,5 +545,4 @@ $(function() {
         });
     });
 </script>
-
 @endsection
