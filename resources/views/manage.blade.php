@@ -34,9 +34,8 @@
                 </button>
             </div>
             </div>
-
         </form>
-
+        <a href="{{ url('/calendarform') }}">カレンダーメンテナンス</a>
         <table class="table">
             <thead>
                 <tr>

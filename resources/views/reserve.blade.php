@@ -15,6 +15,7 @@
                     @endif
                     <div class="cal_wrapper mb-4">
                     <div class="googlecal">
+
                     <iframe src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=YXVsYS53bGN3QGdtYWlsLmNvbQ&amp;color=%23039BE5&amp;showTz=0&amp;title=aula%20%E5%96%B6%E6%A5%AD%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
                     </div>
                     </div>

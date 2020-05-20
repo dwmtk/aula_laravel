@@ -62,3 +62,6 @@ Route::get('/manage','ManageController@info');
 Route::get('/manage/{order_id}','ManageController@washconfirm');
 Route::get('/washed/{order_id}','ManageController@washed');
 Route::post('/manageselect','ManageController@selected');
+Route::get('/calendarform','ManageController@calendarform');
+Route::get('/calendaroffday','ManageController@calendaroffday');
+Route::get('/calendarreflect','ManageController@calendarreflect');

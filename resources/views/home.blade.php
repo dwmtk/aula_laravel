@@ -40,6 +40,8 @@
                     </div>
                     @endif
 
+                    
+
                     <p><i class="fas fa-link p-2"></i>現在の予約状況</p>
                     @forelse ($orders as $order)
                     <div class="card mb-3">

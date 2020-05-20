@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\T_Orders;
 use Illuminate\Support\Facades\Auth;
-
+use Spatie\GoogleCalendar\Event;
 class HomeController extends Controller
 {
     /**
@@ -29,7 +29,7 @@ class HomeController extends Controller
         $orders = T_Orders::where('user_id', Auth::id())
         ->where('status', '1')
         ->orderBy('order_id')->get();
-        
+
         return view('home')
         ->with('orders', $orders);
     }
