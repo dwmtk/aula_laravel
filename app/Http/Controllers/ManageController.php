@@ -178,6 +178,7 @@ class ManageController extends Controller
         $dt = Carbon::today(); // 日時形式に変更
         $dt2 = Carbon::today(); // 日時形式に変更
         $dt2->addDay();
+        // $dt2->addHours(23)->addMinute(59)->addSecond(59);
 
         for($i = 1; $i <= 10; $i++){
 

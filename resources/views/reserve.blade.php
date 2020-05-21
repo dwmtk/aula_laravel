@@ -39,19 +39,6 @@
                             </div>
                         </div>
 
-<!--
-                        <div class="form-group row">
-                            <label for="calendar2" class="col-md-4 col-form-label text-md-right"><i class="far fa-calendar-alt pr-1"></i>日付 <span class="badge badge-danger">必須</span></label>
-                            <div class="col-md-6">
-                                <input id="calendar2" type="date" min="2020-05-17" max="2020-06-02"  class="form-control @error('calendar') is-invalid @enderror"></input>
-                                @error('calendar')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
--->
                         <div class="form-group row">
                             <label for="shift" class="col-md-4 col-form-label text-md-right"><i class="far fa-calendar-alt pr-1"></i>シフト <span class="badge badge-danger">必須</span></label>
                             <div class="col-md-6">
@@ -367,9 +354,7 @@
         </div>
     </div>
 </div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
 <script src="{{ asset('/js/hierselect.js') }}"></script>
 <script>
 $(function() {
