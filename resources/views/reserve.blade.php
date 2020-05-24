@@ -17,8 +17,11 @@
                     <div class="googlecal">
 
                     <iframe src="https://calendar.google.com/calendar/b/2/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=Asia%2FTokyo&amp;src=YXVsYS53bGN3QGdtYWlsLmNvbQ&amp;color=%23039BE5&amp;showTz=0&amp;title=aula%20%E5%96%B6%E6%A5%AD%E3%82%AB%E3%83%AC%E3%83%B3%E3%83%80%E3%83%BC&amp;showNav=1&amp;showDate=1&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                        
                     </div>
+                    <p>※時間帯毎の空き状況はカレンダーをクリックしてください。</p>
                     </div>
+                    
                     <form method="POST" action="{{ url('/reserved') }}">
                         @csrf
 
@@ -40,7 +43,7 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="shift" class="col-md-4 col-form-label text-md-right"><i class="far fa-calendar-alt pr-1"></i>シフト <span class="badge badge-danger">必須</span></label>
+                            <label for="shift" class="col-md-4 col-form-label text-md-right"><i class="far fa-calendar-alt pr-1"></i>時間帯 <span class="badge badge-danger">必須</span></label>
                             <div class="col-md-6">
                                 <select id="shift" name="shift" class="form-control @error('shift') is-invalid @enderror"  value="{{ old('shift') }}" autocomplete="shift" autofocus required>
                                     <option selected="selected" value="">--選択してください--</option>
@@ -133,7 +136,11 @@
                         </div>
 
                         <label id="hidden_area" style="display:none"></label>
-
+                        
+                        <p class="text-center mycar_onoff small">
+                        ※プルダウンに存在しない車種に関しては contact@aula.blue へお問い合わせください。
+                        </p>
+                        
                         <div class="form-group row mycar_onoff">
                             <label for="car_number" class="col-md-4 col-form-label text-md-right">ナンバー <span class="badge badge-danger">必須</span></label>
 

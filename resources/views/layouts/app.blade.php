@@ -65,6 +65,18 @@
         }
         /* googleカレンダー終わり */
 
+        .sp-navbar {
+            display:none;
+        }
+        @media only screen and (max-width: 768px) {
+            .pc-navbar {
+                display:none;
+            }
+            .sp-navbar {
+                display:inline;
+            }
+        }
+
         /* .table-background-p {
             position: relative;
         }
@@ -135,32 +147,95 @@
                                 <font size="4">マイページ</font>
                             </a>
                             @endif -->
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}  様 <span class="caret"></span>
-                                </a>
 
-                                <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item text-white" href="{{ url('/home') }}">
+                            <div class="pc-navbar">
+                                <li class="nav-item dropdown">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}  様 <span class="caret"></span>
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item text-white" href="{{ url('/home') }}"><i class="fas fa-user pr-2 fa-xs"></i>
+                                            マイページ
+                                        </a>
+                                        <a class="dropdown-item text-white" href="{{ url('reserve') }}"><i class="fas fa-car pr-2 fa-xs"></i> 
+                                        洗車予約
+                                        </a>
+
+                                        <a class="dropdown-item text-white" href="{{ url('reservelog') }}"><i class="fas fa-cog pr-2 fa-xs"></i>
+                                            洗車履歴
+                                        </a>
+
+                                        <a class="dropdown-item text-white" href="{{ url('personalinfo') }}"><i class="fas fa-user-cog pr-2 fa-xs"></i>
+                                            個人情報
+                                        </a>
+
+                                        <a class="dropdown-item text-white" href="{{ url('mycarinfo') }}"><i class="fas fa-key pr-2 fa-xs"></i>
+                                            マイカー情報
+                                        </a>
+
+                                        <a class="dropdown-item text-white" href="{{ url('parkinginfo') }}"><i class="fas fa-ban pr-2 fa-xs"></i>
+                                            駐車場情報
+                                        </a>
+                                        @if(Auth::user()->user_type == "1" || Auth::user()->user_type == "2")
+                                        <a class="dropdown-item text-white" href="{{ url('/manage') }}"><i class="fas fa-users pr-2 fa-xs"></i>
+                                            管理者ページ
+                                        </a>   
+                                        @endif
+                                        <a class="dropdown-item text-white" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        <i class="fas fa-sign-out-alt pr-2 fa-xs"></i>
+                                            ログアウト
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            </div>
+                            <div class="sp-navbar">
+                                <li class="nav-item dropdown">
+                                    <p class="text-white my-2">{{ Auth::user()->name }}  様</p>
+                                    <a class="dropdown-item text-white" href="{{ url('/home') }}"><i class="fas fa-user pr-2 fa-xs"></i>
                                         マイページ
                                     </a>
-
-                                    @if(Auth::user()->user_type == "1" || Auth::user()->user_type == "2")
-                                    <a class="dropdown-item text-white" href="{{ url('/manage') }}">
-                                        管理者ページ
-                                    </a>   
-                                    @endif
-                                    <a class="dropdown-item text-white" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        ログアウト
+                                    <a class="dropdown-item text-white" href="{{ url('reserve') }}"><i class="fas fa-car pr-2 fa-xs"></i> 
+                                        洗車予約
                                     </a>
 
+                                    <a class="dropdown-item text-white" href="{{ url('reservelog') }}"><i class="fas fa-cog pr-2 fa-xs"></i>
+                                        洗車履歴
+                                    </a>
+
+                                    <a class="dropdown-item text-white" href="{{ url('personalinfo') }}"><i class="fas fa-user-cog pr-2 fa-xs"></i>
+                                        個人情報
+                                    </a>
+
+                                    <a class="dropdown-item text-white" href="{{ url('mycarinfo') }}"><i class="fas fa-key pr-2 fa-xs"></i>
+                                        マイカー情報
+                                    </a>
+
+                                    <a class="dropdown-item text-white" href="{{ url('parkinginfo') }}"><i class="fas fa-ban pr-2 fa-xs"></i>
+                                        駐車場情報
+                                    </a>
+                                    @if(Auth::user()->user_type == "1" || Auth::user()->user_type == "2")
+                                    <a class="dropdown-item text-white" href="{{ url('/manage') }}"><i class="fas fa-users pr-2 fa-xs"></i>
+                                        管理者ページ
+                                    </a>
+                                    @endif
+                                    <a class="dropdown-item text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                    <i class="fas fa-sign-out-alt pr-2 fa-xs"></i>
+                                        ログアウト
+                                    </a>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf
                                     </form>
-                                </div>
-                            </li>
+                                </li>
+                            </div>
+                            
                         @endguest
                     </ul>
                 </div>
