@@ -305,6 +305,7 @@
                                 <p class="col-md-6 text-md-left text-sm-center final_price">￥0</p>
                                 <input type="hidden" name="final_price" value="0" id="final_price">
                             </div>
+                            <p>9割引きキャンペーン中</p>
                         </div>
 
                         <div class="text-center pb-5">
@@ -399,13 +400,16 @@ $(function() {
         var length = Number(sizes[0]);
         var height = Number(sizes[1]);
         var width = Number(sizes[2]);
-        var price = (height*width*2 + height*length*2 + length*width) *100;
+        var price = (height*width*2 + height*length*2 + length*width) *100 *1.5;
         var final_price = price - {{ Auth::user()->tsuke_pay }};
         if(final_price < 0){
             final_price = 0;
         };
         $(".price").text("￥" + price.toLocaleString());
-        $(".final_price").text("￥" + final_price.toLocaleString());
+        // $(".final_price").text("￥" + final_price.toLocaleString());
+        // テストここから※本番は↑をコメント外し、↓をコメント化する。
+        $(".final_price").text("￥" +  (final_price* 0.1).toLocaleString() );
+        // テストここまで
         $("#price").val(price);
         $("#final_price").val(final_price);
     });
@@ -461,13 +465,16 @@ $(function() {
         var length = Number(sizes[0]);
         var height = Number(sizes[1]);
         var width = Number(sizes[2]);
-        var price = (height*width*2 + height*length*2 + length*width) *100;
+        var price = (height*width*2 + height*length*2 + length*width) *100 *1.5;
         var final_price = price - {{ Auth::user()->tsuke_pay }};
         if(final_price < 0){
             final_price = 0;
         };
         $(".price").text("￥" + price.toLocaleString());
-        $(".final_price").text("￥" + final_price.toLocaleString());
+        // $(".final_price").text("￥" + final_price.toLocaleString());
+        // テストここから※本番は↑をコメント外し、↓をコメント化する。
+        $(".final_price").text("￥" + (final_price* 0.1).toLocaleString() );
+        // テストここまで
         $("#price").val(price);
         $("#final_price").val(final_price);
     });

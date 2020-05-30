@@ -34,15 +34,12 @@ class ReserveController extends Controller
         $car_names = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_maker','car_name')
         ->groupBy('car_maker','car_name')
         ->orderBy('car_id_min')->get();
-        $car_ages = M_Cars::select('car_id', 'car_maker','car_name', 'car_length', 'car_height', 'car_width', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
+        $car_ages = M_Cars::select('car_id', 'car_maker', 'car_name'
+        , \DB::raw('ROUND(car_length) AS car_length')
+        , \DB::raw('ROUND(car_height) AS car_height')
+        , \DB::raw('ROUND(car_width) AS car_width')
+        , \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
         ->orderBy('car_id')->get();
-        // $car_ages = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_name', 'car_length', 'car_height', 'car_width', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
-        // ->groupBy('car_name',\DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中'))"))
-        // ->orderBy('car_id_min')->get();
-        // $car_makers = M_Cars::select('car_maker')->groupBy('car_maker')->get();
-        // $car_names = M_Cars::select('car_maker','car_name')->groupBy('car_maker','car_name')->get();
-        // $car_ages = M_Cars::select('car_name', 'car_length', 'car_height', 'car_width', 'car_id', \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
-        // ->get();
         
         // マイカーDBからプルダウン用のデータを取得
         $mycars = T_MyCars::where('user_id', Auth::id())->get();
@@ -196,7 +193,7 @@ class ReserveController extends Controller
 
         // 金額チェック
         // フォームからきた金額と、もう一度コントロール側で計算した値を比較する。
-        $price_confirm =  ($height*$width*2 + $height*$length*2 + $length*$width) *100;
+        $price_confirm =  ($height*$width*2 + $height*$length*2 + $length*$width) *100 *1.5;
         $final_price = 0;
         $tsuke_pay = Auth::user()->tsuke_pay;
 
@@ -294,6 +291,10 @@ class ReserveController extends Controller
             ->with('reserved_success','洗車予約が完了しました。');
 
         } else {
+            // 一時的に9割引き↓↓
+            $order->final_price = $order->final_price * 0.1;
+            // ここまで↑↑
+
             // ステータスを支払い前に選択
             $order->status = "0";
             $order->save();
