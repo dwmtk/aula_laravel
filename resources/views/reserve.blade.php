@@ -305,7 +305,7 @@
                                 <p class="col-md-6 text-md-left text-sm-center final_price">￥0</p>
                                 <input type="hidden" name="final_price" value="0" id="final_price">
                             </div>
-                            <p>9割引きキャンペーン中</p>
+                            <p class="text-center text-danger">※9割引きキャンペーン中※</p>
                         </div>
 
                         <div class="text-center pb-5">
