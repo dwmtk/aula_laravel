@@ -30,19 +30,30 @@ class ReserveController extends Controller
         // 車種DBからプルダウン用のデータを取得
         $car_makers = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min') , 'car_maker')
         ->groupBy('car_maker')
+        ->where('car_height', '<=', config('app.max_height')) // 高さ制限
         ->orderBy('car_id_min')->get();
+
         $car_names = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_maker','car_name')
+        ->where('car_height', '<=', config('app.max_height')) // 高さ制限
         ->groupBy('car_maker','car_name')
         ->orderBy('car_id_min')->get();
+
         $car_ages = M_Cars::select('car_id', 'car_maker', 'car_name'
         , \DB::raw('ROUND(car_length) AS car_length')
         , \DB::raw('ROUND(car_height) AS car_height')
         , \DB::raw('ROUND(car_width) AS car_width')
         , \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
+        ->where('car_height', '<=', config('app.max_height')) // 高さ制限
         ->orderBy('car_id')->get();
         
         // マイカーDBからプルダウン用のデータを取得
-        $mycars = T_MyCars::where('user_id', Auth::id())->get();
+        // $mycars = T_MyCars::where('user_id', Auth::id())->get();
+        $mycars = T_MyCars::select('mycar_id', 'car_id', 'car_maker', 'car_name' , 'car_age_start', 'car_age_end'
+        , \DB::raw('ROUND(car_length) AS car_length')
+        , \DB::raw('ROUND(car_height) AS car_height')
+        , \DB::raw('ROUND(car_width) AS car_width')
+        , 'car_number', 'car_color')
+        ->where('user_id', Auth::id())->get();
 
         // 駐車場DBからプルダウン用のデータを取得
         $parkings = T_Parkings::where('user_id', Auth::id())->get();
@@ -145,7 +156,14 @@ class ReserveController extends Controller
             // マイカー情報に登録済みの場合
  
             // マイカー情報よりデータ取得
-            $mycar_db = T_MyCars::where('mycar_id', $request->mycar)
+            // $mycar_db = T_MyCars::where('mycar_id', $request->mycar)
+            // ->first();
+            $mycar_db = T_MyCars::select('mycar_id', 'car_id', 'car_maker', 'car_name' , 'car_age_start', 'car_age_end'
+            , \DB::raw('ROUND(car_length) AS car_length')
+            , \DB::raw('ROUND(car_height) AS car_height')
+            , \DB::raw('ROUND(car_width) AS car_width')
+            , 'car_number', 'car_color')
+            ->where('mycar_id', $request->mycar)
             ->first();
 
             // 車種情報を変数に格納
@@ -169,7 +187,13 @@ class ReserveController extends Controller
 
             
             // 車種情報よりデータ取得
-            $car_db = M_Cars::where('car_id', explode(',',$request->car_age)[3])
+            // $car_db = M_Cars::where('car_id', explode(',',$request->car_age)[3])
+            // ->first();
+            $car_db = M_Cars::select('car_id', 'car_maker', 'car_name' , 'car_age_start', 'car_age_end'
+            , \DB::raw('ROUND(car_length) AS car_length')
+            , \DB::raw('ROUND(car_height) AS car_height')
+            , \DB::raw('ROUND(car_width) AS car_width'))
+            ->where('car_id', explode(',',$request->car_age)[3])
             ->first();
 
             // それぞれの値を変数に格納
