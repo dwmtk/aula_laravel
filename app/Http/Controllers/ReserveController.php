@@ -385,10 +385,6 @@ class ReserveController extends Controller
 
     public function reservelog(){
         // 注文履歴を取得（洗車完了、キャンセル）
-        // $orders = T_Orders::where('user_id', Auth::id())
-        // ->where('status', '2')
-        // ->orwhere('status', '9')
-        // ->orderBy('order_id')->get();
         $user_id = Auth::id();
 
         $orders = T_Orders::

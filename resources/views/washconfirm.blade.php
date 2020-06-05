@@ -14,6 +14,8 @@
                         </div>
                     @endif
                     
+
+                    
                     <table class="table">
                     <tbody>
                         <tr><th scope="row">日付</th><td>{{ date('Y/m/d',  strtotime($order->order_date)) }}<br>
@@ -33,26 +35,41 @@
                     </table>
 
 
-                    <div class="text-center">
-                        <input type="checkbox" value="1" id="Check1"></input>
-                        <label for="Check1">チェック１</label>
-                    </div>
-                    <div class="text-center">
-                    <input type="checkbox" value="1" id="Check2"></input>
-                        <label for="Check2">チェック２</label>
-                    </div>                    
-                    <div class="text-center">
-                    <input type="checkbox" value="1" id="Check3"></input>
-                        <label for="Check3">チェック３</label>
-                    </div>
-                    <div class="text-center">
-                    <input type="checkbox" value="1" id="Check4"></input>
-                        <label for="Check4">チェック４</label>
-                    </div>
-                    <p class="text-center pt-3">※上記のチェックポイントを確認後、洗車完了すること※</p>
+
+                    
                     <div class="text-center">
                     <a class="btn btn-primary" href="{{ action('ManageController@washed', $order->order_id) }}" role="button">洗車完了</a>
                     </div>
+
+
+                    <form class="text-center my-3" method="POST" action="{{ url('/washed') }}" onSubmit="return dialog('洗車完了を行いますか？')">
+                    @csrf
+                        <div class="text-center">
+                            <input type="checkbox" value="1" id="Check1" required></input>
+                            <label for="Check1">チェック１</label>
+                        </div>
+                        <div class="text-center">
+                        <input type="checkbox" value="1" id="Check2" required></input>
+                            <label for="Check2">チェック２</label>
+                        </div>                    
+                        <div class="text-center">
+                        <input type="checkbox" value="1" id="Check3" required></input>
+                            <label for="Check3">チェック３</label>
+                        </div>
+                        <div class="text-center">
+                        <input type="checkbox" value="1" id="Check4" required></input>
+                            <label for="Check4">チェック４</label>
+                        </div>
+                        <p class="text-center pt-3">※上記のチェックポイントを確認後、洗車完了すること※</p>
+                        <input type="hidden" name="order_id" value="{{ $order->order_id }}">
+                        <input class="btn btn-primary" type="submit" value="洗車完了">
+                    </form>
+
+                    <form class="text-center my-3" method="POST" action="{{ url('/raincancel') }}" onSubmit="return dialog('雨天時キャンセルを行いますか？')">
+                    @csrf
+                        <input type="hidden" name="order_id" value="{{ $order->order_id }}">
+                        <input class="btn btn-secondary" type="submit" value="雨天時キャンセル">
+                    </form>
                 </div>
             </div>
         </div>

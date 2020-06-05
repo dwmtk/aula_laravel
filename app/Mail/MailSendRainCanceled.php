@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class MailSendWashed extends Mailable
+class MailSendRainCanceled extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -29,11 +29,10 @@ class MailSendWashed extends Mailable
      */
     public function build()
     {
-
         $subject = 
-        "出張洗車完了のご連絡【　". $this->user->name ."様｜洗車日:" . date('Y/m/d',  strtotime($this->order->order_date)) . "　】";
+        "雨天による出張洗車キャンセルのご連絡【　". $this->user->name ."様｜洗車日:" . date('Y/m/d',  strtotime($this->order->order_date)) . "　】";
 
-        return $this->text('emails.washed')
+        return $this->text('emails.raincanceled')
         ->from('welcome@aula.email','aula')
         ->subject($subject)
         ->with([

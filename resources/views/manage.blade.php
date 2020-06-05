@@ -11,10 +11,20 @@
                 {{ session('status') }}
             </div>
         @endif
-        
+        @if (session('message_success'))
+        <div class="container mt-2">
+            <div class="alert alert-success">
+            {{session('message_success')}}
+            </div>
+        </div>
+        @endif
+        <div class="mb-2">
+            <a href="{{ url('/calendarform') }}">カレンダーメンテナンス</a>
+        </div>
         <div class="col-12 text-center">
             <h2>洗車予定一覧</h2>
         </div>
+        
         <form method="POST" action="{{ url('/manageselect') }}">
             @csrf
             <div class="form-row py-2">
@@ -35,8 +45,10 @@
             </div>
             </div>
         </form>
-        <a href="{{ url('/calendarform') }}">カレンダーメンテナンス</a>
-        <table class="table">
+
+
+        <div class="table-responsive mx-1">
+        <table class="table text-nowrap">
             <thead>
                 <tr>
                     <th scope="col" colspan="2">日程</th>
@@ -85,7 +97,7 @@
                 @if( $order->status == 9 || $order->status == 2 )
                     disabled
                 @endif
-                " href="{{ action('ManageController@washconfirm', $order->order_id) }}" role="button">洗車<br>完了</a>
+                " href="{{ action('ManageController@washconfirm', $order->order_id) }}" role="button">詳細</a>
                 </td>
             </tr>
             </tbody>
@@ -97,5 +109,6 @@
             </tbody>
             @endforelse
         </table>
+        </div>
 </div>
 @endsection

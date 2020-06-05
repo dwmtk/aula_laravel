@@ -13,6 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @if (session('message_success'))
+                        <div class="container mt-2">
+                            <div class="alert alert-success">
+                            {{session('message_success')}}
+                            </div>
+                        </div>
+                    @endif
                     <p><i class="fas fa-link p-2"></i>登録済みの駐車場情報</p>
                     @forelse ($parkings as $parking)
                     <div class="card mb-3">
@@ -30,9 +37,17 @@
                             <tr><td scope="row">詳細：</td><td>{{ $parking->parking_detail }}</td></tr>
 
                             <tr><td colspan="2">
+
                             <div class="d-flex text-center mx-auto" style="max-width:250px;">
-                            <a class="btn btn-sm btn-primary btn-lg flex-fill p-2 mr-1" href="{{ action('ParkingController@updateform', $parking->parking_id) }}" role="button" >編集する</a>
-                            <a class="btn btn-sm btn-primary btn-lg flex-fill p-2" href="{{ action('ParkingController@delete', $parking->parking_id) }}" role="button" >解除する</a>
+                                <a class="btn btn-sm btn-primary btn-lg flex-fill p-2 mr-1" href="{{ action('ParkingController@updateform', $parking->parking_id) }}" role="button" >編集する</a>
+                                <!--
+                                <a class="btn btn-sm btn-primary btn-lg flex-fill p-2" href="{{ action('ParkingController@delete', $parking->parking_id) }}" role="button" >解除する</a>
+                                -->
+                                <form class="flex-fill" method="POST" action="{{ url('/parkingdelete') }}" onSubmit="return dialog('駐車場を解除しますか？')">
+                                @csrf
+                                    <input type="hidden" name="parking_id" value="{{ $parking->parking_id }}">
+                                    <input class="btn btn-sm btn-secondary btn-lg p-2" type="submit" value="解除する" style="width:100%;">
+                                </form>
                             </div>
                             </td></tr>
 

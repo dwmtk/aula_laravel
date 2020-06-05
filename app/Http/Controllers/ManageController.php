@@ -7,7 +7,7 @@ use App\T_Orders;
 use Illuminate\Support\Facades\Auth;
 use Mail;
 use App\Mail\MailSendWashed;
-use App\Mail\MailSendCanceled;
+use App\Mail\MailSendRainCanceled;
 use Carbon\Carbon;
 use Spatie\GoogleCalendar\Event;
 use App\M_Calendars;
@@ -25,7 +25,15 @@ class ManageController extends Controller
             return redirect('home');
         }
 
-        $orders = \DB::select('select * from t__orders A, users B where A.user_id = B.id and A.status in (1,2,9) order by A.order_date, A.schedule');
+        $orders = \DB::select('
+            select * 
+            from t__orders A, users B 
+            where A.user_id = B.id 
+            and A.status in (1,2,9)
+            and A.order_date >= ?
+            order by A.order_date, A.schedule
+            ', [date("Ymd")]);
+
         return view('manage')->with('orders', $orders);
     }
     public function washconfirm($order_id){
@@ -38,16 +46,32 @@ class ManageController extends Controller
             'user'=>$user
             ]);
     }
-    public function washed($order_id){        
+    public function washed(Request $request){        
         // 洗車完了
-        $order = T_Orders::where('order_id', $order_id)->first();
+        $order = T_Orders::where('order_id', $request->order_id)->first();
         $order->status = "2";
         $order->save();
         
         ManageController::send($order, 
         Auth::user()->where('id', $order->user_id)->first());
 
-        return redirect('manage');
+        return redirect('manage')
+        ->with('message_success', "洗車完了処理が完了しました。");
+    }
+    public function raincancel(Request $request){
+        //　雨天時キャンセル
+        $order = T_Orders::where('order_id', $request->order_id)->first();
+        $order->status = "9";
+        $order->save();
+        $user = Auth::user()->where('id', $order->user_id)->first();
+        $user->tsuke_pay = $user->tsuke_pay + $order->price;
+        $user->save();
+        
+        ManageController::send_rain_cancel($order, 
+        Auth::user()->where('id', $order->user_id)->first());
+
+        return redirect('manage')
+        ->with('message_success', "雨天時キャンセル処理が完了しました。");
     }
     public function selected(Request $request){        
         $this -> Validate($request, [
@@ -95,12 +119,18 @@ class ManageController extends Controller
             'name' => $user->name."様",
             ]
         ];
-
-        // $order = T_Orders::where('order_id', '39')->first();
-        // $user = Auth::user()->first();
         Mail::to($to)->send(new MailSendWashed($order,$user));
     }
-
+    public function send_rain_cancel($order, $user){
+        $to = [
+            [
+            'email' => $user->email,
+            'name' => $user->name."様",
+            ]
+        ];
+        Mail::to($to)->send(new MailSendRainCanceled($order,$user));
+    }
+    
     public function create_calendar_summary($date){
 
         $calendar = M_Calendars::where('calendar', $date)->first();

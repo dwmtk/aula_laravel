@@ -90,15 +90,11 @@ class ParkingController extends Controller
         // dd($request);
         return redirect('parkinginfo');
     }
-    public function delete($parking_id)
+    public function delete(Request $request)
     {
-        //ログインユーザ以外の駐車場を削除しようとしていないか確認
-        $parking = T_Parkings::where('parking_id', $parking_id)->first();
-        if($parking->user_id <> Auth::id()){
-            return view('error');
-        }
-        T_Parkings::where('parking_id' ,$parking_id)->delete();
+        T_Parkings::where('parking_id' ,$request->parking_id)->delete();
 
-        return redirect('parkinginfo');
+        return redirect('parkinginfo')
+        ->with('message_success', "駐車場の解除が完了しました。");
     }
 }

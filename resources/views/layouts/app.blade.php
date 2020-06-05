@@ -9,16 +9,27 @@
 
     <title>aula</title>
 
-     <!-- Scripts  <script src="{{ asset('js/app.js') }}" defer></script> -->
+     <!-- Scripts-->
      <script src="https://kit.fontawesome.com/5e480eacce.js" crossorigin="anonymous"></script>
      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    
+
+     <!-- 確認ダイアログ -->
+     <script>
+        function dialog(message){
+            // 「OK」時の処理開始 ＋ 確認ダイアログの表示
+            if(window.confirm(message)){
+                return true;
+            }
+            else{ // 「キャンセル」時の処理
+                return false; // 送信を中止
+            }
+        }
+    </script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-  
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
         nav {

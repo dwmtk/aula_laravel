@@ -136,15 +136,11 @@ class MyCarController extends Controller
     //     // dd($request->parking_id);
     //     return redirect('mycarinfo');
     // }
-    public function delete($mycar_id)
+    public function delete(Request $request)
     {
-        //ログインユーザ以外のMyカーを削除しようとしていないか確認
-        $mycar = T_Mycars::where('mycar_id', $mycar_id)->first();
-        if($mycar->user_id <> Auth::id()){
-            return view('error');
-        }
-        T_Mycars::where('mycar_id' ,$mycar_id)->delete();
+        T_Mycars::where('mycar_id' ,$request->mycar_id)->delete();
 
-        return redirect('mycarinfo');
+        return redirect('mycarinfo')
+        ->with('message_success', "マイカーの解除が完了しました。");
     }
 }
