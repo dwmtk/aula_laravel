@@ -34,14 +34,6 @@
                         </tbody>
                     </table>
 
-
-
-                    
-                    <div class="text-center">
-                    <a class="btn btn-primary" href="{{ action('ManageController@washed', $order->order_id) }}" role="button">洗車完了</a>
-                    </div>
-
-
                     <form class="text-center my-3" method="POST" action="{{ url('/washed') }}" onSubmit="return dialog('洗車完了を行いますか？')">
                     @csrf
                         <div class="text-center">
