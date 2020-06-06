@@ -7,12 +7,12 @@
 
 <div class="p-2">
 <a href="{{ url('reservelog') }}">
-<i class="fas fa-cog pr-2 fa-lg"></i>洗車履歴</a>
+<i class="fas fa-history pr-2 fa-lg"></i>洗車履歴</a>
 </div>
 
 <div class="p-2">
 <a href="{{ url('personalinfo') }}">
-<i class="fas fa-user pr-2 fa-lg"></i>個人情報</a>
+<i class="fas fa-user-cog pr-2 fa-lg"></i>個人情報</a>
 </div>
 
 <div class="p-2">
@@ -22,6 +22,6 @@
 
 <div class="p-2">
 <a href="{{ url('parkinginfo') }}">
-<i class="fas fa-ban pr-2 fa-lg"></i>駐車場情報</a>
+<i class="fas fa-parking pr-2 fa-lg"></i>駐車場情報</a>
 </div>
 </div>

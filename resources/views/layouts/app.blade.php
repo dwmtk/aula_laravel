@@ -38,9 +38,10 @@
         .navbar-toggler .navbar-toggler-icon {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
         }
-        .footer_bar {
+        /* .footer_bar {
         border-bottom: solid 10px #428bca;
-        }
+        } */
+
         .badge_notify{
             position:relative;
         }
@@ -76,10 +77,11 @@
         }
         /* googleカレンダー終わり */
 
+        /* ナビバー */
         .sp-navbar {
             display:none;
         }
-        @media only screen and (max-width: 768px) {
+        @media only screen and (max-width: 800px) {
             .pc-navbar {
                 display:none;
             }
@@ -87,29 +89,6 @@
                 display:inline;
             }
         }
-
-        /* .table-background-p {
-            position: relative;
-        }
-        .table-background {
-            background: #E8F3FF;
-            width:200px;
-            height:200px;
-            position: absolute;
-        } */
-        /* 
-        .foot {
-            background: #E8F3FF;
-        }
-        table.menu,table.menu td,table.menu th {
-            border: none;
-            border-bottom: 2px solid #428bca;
-        }
-        .menu {
-            text-size:
-        }
-
-         */
 
     </style>
 
@@ -173,7 +152,7 @@
                                         洗車予約
                                         </a>
 
-                                        <a class="dropdown-item text-white" href="{{ url('reservelog') }}"><i class="fas fa-cog pr-2 fa-xs"></i>
+                                        <a class="dropdown-item text-white" href="{{ url('reservelog') }}"><i class="fas fa-history pr-2 fa-xs"></i>
                                             洗車履歴
                                         </a>
 
@@ -185,7 +164,7 @@
                                             マイカー情報
                                         </a>
 
-                                        <a class="dropdown-item text-white" href="{{ url('parkinginfo') }}"><i class="fas fa-ban pr-2 fa-xs"></i>
+                                        <a class="dropdown-item text-white" href="{{ url('parkinginfo') }}"><i class="fas fa-parking pr-2 fa-xs"></i>
                                             駐車場情報
                                         </a>
                                         @if(Auth::user()->user_type == "1" || Auth::user()->user_type == "2")
@@ -216,7 +195,7 @@
                                         洗車予約
                                     </a>
 
-                                    <a class="dropdown-item text-white" href="{{ url('reservelog') }}"><i class="fas fa-cog pr-2 fa-xs"></i>
+                                    <a class="dropdown-item text-white" href="{{ url('reservelog') }}"><i class="fas fa-history pr-2 fa-xs"></i>
                                         洗車履歴
                                     </a>
 
@@ -228,7 +207,7 @@
                                         マイカー情報
                                     </a>
 
-                                    <a class="dropdown-item text-white" href="{{ url('parkinginfo') }}"><i class="fas fa-ban pr-2 fa-xs"></i>
+                                    <a class="dropdown-item text-white" href="{{ url('parkinginfo') }}"><i class="fas fa-parking pr-2 fa-xs"></i>
                                         駐車場情報
                                     </a>
                                     @if(Auth::user()->user_type == "1" || Auth::user()->user_type == "2")
@@ -268,6 +247,7 @@
         <i class="fab fa-youtube p-1 fa-2x"></i>
         <i class="fab fa-instagram-square p-1 fa-2x"></i>
         <i class="fab fa-facebook-square p-1 fa-2x"></i>
+        <i class="fab fa-line p-1 fa-2x"></i>
         <!--
         <i class="fab fa-twitter-square p-1 fa-2x" style="color:#1DA1F2;"></i>
         <i class="fab fa-youtube p-1 fa-2x" style="color:#DA1725;"></i>
@@ -278,16 +258,36 @@
     <p class="pt-2">Copyright 2020 aula</p>
     @guest
     @else
+
     <div class="footer_bar fixed-bottom bg-dark badge-notify">
         <span>
         <a class="btn btn-dark p-2" href="{{ url('reserve') }}" role="button">
         <i class="fas fa-car pr-2 fa-lg"></i>
         今すぐ洗車予約を行う</a>
         </span>
+
         @if(Auth::user()->tsuke_pay != 0)
         <span class="badge badge-pill badge-light badge-notify_">P ¥{{ Auth::user()->tsuke_pay }}</span>
         @endif
     </div>
+    <!--
+    <div class="footer_bar fixed-bottom badge-notify text-right">
+        
+        @if(Auth::user()->tsuke_pay == 0)
+        <span class="bg-danger">
+        <a class="btn p-2" href="{{ url('reserve') }}" role="button">
+        <i class="fas fa-car pr-2 fa-lg"></i>
+        今すぐ洗車予約を行う</a>
+        </span>
+        @else
+        <span>
+        <a class="btn p-2" href="{{ url('reserve') }}" role="button">
+            次回{{ Auth::user()->tsuke_pay }}円引き<br>今すぐ予約</a>
+        </span>
+        @endif
+    </div>
+    -->
+
     @endguest
     </footer>
     
