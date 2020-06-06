@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\T_Orders;
+use App\T_Mycars;
 use Illuminate\Support\Facades\Auth;
 use Mail;
 use App\Mail\MailSendWashed;
@@ -52,6 +53,15 @@ class ManageController extends Controller
         $order->status = "2";
         $order->save();
         
+        // マイカーの場合洗車日を挿入
+        if(!is_null($order->mycar_id)){
+            $mycar_db = T_Mycars::where('mycar_id', $order->mycar_id)
+            ->first();
+            $mycar_db->latest_wash = $order->order_date;
+            $mycar_db->save();
+        }
+
+
         ManageController::send($order, 
         Auth::user()->where('id', $order->user_id)->first());
 

@@ -36,8 +36,8 @@
                             <tr><td scope="row">ナンバー：</td><td>{{ $mycar->car_number }}</td></tr>
                             <tr><td scope="row">車色：</td><td>{{ $mycar->car_color }}</td></tr>
                             <tr><td scope="row">最終洗車日：</td><td>
-                            @if( !is_null( $mycar->order_date ))
-                                {{date('Y年m月d日',  strtotime( $mycar->order_date )) }}
+                            @if( !is_null( $mycar->latest_wash ))
+                                {{date('Y/m/d',  strtotime( $mycar->latest_wash )) }}
                             @else
                                 洗車履歴はありません
                             @endif

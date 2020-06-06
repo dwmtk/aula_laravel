@@ -16,24 +16,10 @@ class MyCarController extends Controller
 
     public function info()
     {
-        // $mycars = T_Mycars::where('user_id',Auth::id())
-        // ->orderBy('mycar_id')
-        // ->get();
+        $mycars = T_Mycars::where('user_id',Auth::id())
+        ->orderBy('mycar_id')
+        ->get();
 
-        $mycars = \DB::select('
-            select A.*,B.order_date
-            from t__mycars A left join
-                (select mycar_id, max(order_date) as order_date 
-                from t__orders 
-                group by mycar_id) B
-            on A.mycar_id = B.mycar_id
-            where A.user_id = ?
-            order by A.mycar_id
-            ', [Auth::id()]);
-
-
-        // $mycars = T_Mycars::All();
-        // dd($mycars);
         return view('mycarinfo',['mycars' => $mycars]);
     }
     public function insertform()
