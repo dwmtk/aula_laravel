@@ -29,7 +29,6 @@
                     <p><a href="https://calendar.google.com/calendar/b/2/r" target="_blank">Googleカレンダー</a>に、「休業日」という名前の終日予定を作成。作成後、「休業日設定」ボタンを押す。<br>※本日～6ヶ月先（180日後）まで取得する。</p>
                     <h3>シフト反映<a class="btn btn-sm btn-primary btn-lg flex-fill ml-3" href="{{ url('/calendarreflect') }}" role="button">シフト反映</a></h3>
                     <p>「シフト反映」ボタンを押すと、Googleカレンダーに対して、予定の入っていないシフトを反映する。<br>※本日～2ヶ月先（60日後）まで反映する。既にカレンダーに予定が入っている場合は、反映しない。</p>
-                    ↑テスト用に本日～10日後になってます。
 
    
                     </div>

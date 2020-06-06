@@ -215,12 +215,13 @@ class ManageController extends Controller
     }
 
     public function google_calendar_reflect() {
+        // シフト反映
         $dt = Carbon::today(); // 日時形式に変更
         $dt2 = Carbon::today(); // 日時形式に変更
         $dt2->addDay();
         // $dt2->addHours(23)->addMinute(59)->addSecond(59);
 
-        for($i = 1; $i <= 10; $i++){
+        for($i = 1; $i <= 60; $i++){ // 反映する日付を変更
 
             $events = Event::get($dt, $dt2); // イベントを取得する
 
