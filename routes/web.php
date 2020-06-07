@@ -66,3 +66,4 @@ Route::post('/manageselect','ManageController@selected');
 Route::get('/calendarform','ManageController@calendarform');
 Route::get('/calendaroffday','ManageController@calendaroffday');
 Route::get('/calendarreflect','ManageController@calendarreflect');
+Route::get('/usersinfo','ManageController@usersinfo');

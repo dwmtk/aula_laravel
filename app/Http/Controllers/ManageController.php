@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\T_Orders;
 use App\T_Mycars;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Mail;
 use App\Mail\MailSendWashed;
@@ -20,9 +21,16 @@ class ManageController extends Controller
         $this->middleware('auth');
     }
 
+    public function usercheck(){
+        if(Auth::user()->user_type == "0"){
+            return true;
+        }
+        return false;
+    }
+
     public function info(){
         
-        if(Auth::user()->user_type == "0"){
+        if($this->usercheck()){
             return redirect('home');
         }
 
@@ -38,6 +46,9 @@ class ManageController extends Controller
         return view('manage')->with('orders', $orders);
     }
     public function washconfirm($order_id){
+        if($this->usercheck()){
+            return redirect('home');
+        }
         // 洗車完了の確認
         $order = T_Orders::where('order_id', $order_id)->first();
         $user = Auth::user()->where('id', $order->user_id)->first();
@@ -47,7 +58,10 @@ class ManageController extends Controller
             'user'=>$user
             ]);
     }
-    public function washed(Request $request){        
+    public function washed(Request $request){   
+        if($this->usercheck()){
+            return redirect('home');
+        }    
         // 洗車完了
         $order = T_Orders::where('order_id', $request->order_id)->first();
         $order->status = "2";
@@ -69,6 +83,9 @@ class ManageController extends Controller
         ->with('message_success', "洗車完了処理が完了しました。");
     }
     public function raincancel(Request $request){
+        if($this->usercheck()){
+            return redirect('home');
+        }
         //　雨天時キャンセル
         $order = T_Orders::where('order_id', $request->order_id)->first();
         $order->status = "9";
@@ -83,12 +100,25 @@ class ManageController extends Controller
         return redirect('manage')
         ->with('message_success', "雨天時キャンセル処理が完了しました。");
     }
-    public function selected(Request $request){        
-        $this -> Validate($request, [
-            'email' => ['required', 'string', 'max:255'],
-        ]);
+    public function selected(Request $request){
         // 検索機能
-        $users = Auth::user()->where('email', 'LIKE', "%{$request->email}%")->get();
+        if($this->usercheck()){
+            return redirect('home');
+        }
+
+        // $this -> Validate($request, [
+        //     'email' => ['required', 'string', 'max:255'],
+        // ]);
+        // dd($request);
+        $select_result = "";
+        if($request->radiobox == 'email'){
+            $users = Auth::user()->where('email', 'LIKE', "%{$request->email}%")->get();
+            $select_result = $request->email;
+        } elseif($request->radiobox == 'name'){
+            $users = Auth::user()->where('name', 'LIKE', "%{$request->name}%")->get();
+            $select_result = $request->name;
+                    // dd($request, $users);
+        }
         $user_ids = array();
         foreach ($users as $user){
             $user_ids[] = $user->id;
@@ -96,12 +126,29 @@ class ManageController extends Controller
         $orders = \DB::table('t__orders')->join('users', 't__orders.user_id', '=', 'users.id')
         ->whereIn('status',[1,2,9])
         ->whereIn('user_id',$user_ids)
-        ->orderBy('order_date')
-        ->orderBy('schedule')->get();
-
-        return view('manage')->with('orders', $orders);
+        ->orderBy('order_date','desc')
+        ->orderBy('schedule','desc')->get();
+        // dd($select_result);
+        return view('manage')
+        ->with([
+            'orders' => $orders,
+            'select_result' => '"'.$select_result.'"の検索結果一覧'
+            ]);
     }
+    public function usersinfo(){
+        if($this->usercheck()){
+            return redirect('home');
+        }
+        $users = User::orderBy('id')->get();
+        
+        return view("usersinfo")
+        ->with('users', $users);
+    }
+
     public function calendarform(){
+        if($this->usercheck()){
+            return redirect('home');
+        }
         // // カレンダーDBからプルダウン用のデータを取得
         // $fromdate = date("Ymd");
         // $todate = date("Ymd",strtotime($fromdate . "+6 month"));

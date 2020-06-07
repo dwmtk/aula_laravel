@@ -18,36 +18,59 @@
             </div>
         </div>
         @endif
+
         <div class="mb-2">
-            <a href="{{ url('/calendarform') }}">カレンダーメンテナンス</a>
+            <a href="{{ url('/calendarform') }}">＜カレンダーメンテナンス＞</a>
+        </div>
+        <div class="mb-2 ml-3">
+            <a href="{{ url('/usersinfo') }}">＜ユーザ一覧＞</a>
         </div>
         <div class="col-12 text-center">
             <h2>洗車予定一覧</h2>
         </div>
         
-        <form method="POST" action="{{ url('/manageselect') }}">
+        <form method="POST" action="{{ url('/manageselect') }}" style="width:300px;" class="my-2">
             @csrf
-            <div class="form-row py-2">
-            <label for="email" class="col-form-label text-md-right">メールアドレス</label>
-            <div class="col-md-6">
-                <input id="email" type="text" class="col form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="contact@aula.work" required autocomplete="email">
 
-                @error('email')
+            <div class="form-group">
+            <input class="form-check-input" type="radio" name="radiobox" id="Radios1" value="email" checked>
+            <input id="email" type="text" class="col form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="メールアドレス"  autocomplete="email">
+
+            @error('email')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+            @enderror
+            </div>
+
+            <div class="form-group">
+            <input class="form-check-input" type="radio" name="radiobox" id="Radios2" value="name">
+            <input id="name" type="text" class="col form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" placeholder="氏名"  autocomplete="name">
+
+                @error('name')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
                     </span>
                 @enderror
             </div>
-            <div class="col">
-                <button type="submit" class="btn btn-primary">
-                    検索
-                </button>
+            <div>
+            <button type="submit" class="btn btn-primary">
+                検索
+            </button>
+
+            <a class="btn btn-secondary" href="{{ url('/manage') }}" role="button">リセット</a>
             </div>
-            </div>
+
         </form>
 
-
         <div class="table-responsive mx-1">
+
+        @if(isset($select_result))
+        <div class="alert-info text-center p-2 mb-2">
+            <h5 class="mb-0">{{ $select_result }}</h5>
+        </div>
+        @endif
+
         <table class="table text-nowrap">
             <thead>
                 <tr>
