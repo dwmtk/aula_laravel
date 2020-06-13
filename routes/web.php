@@ -23,6 +23,9 @@ Auth::routes();
 Route::get('/privacypolicy', function() {
     return view('privacypolicy');
 });
+Route::get('/terms', function() {
+    return view('terms');
+});
 
 Route::get('/home', 'HomeController@index')->name('home');
 

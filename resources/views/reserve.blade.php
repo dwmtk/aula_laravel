@@ -342,7 +342,7 @@
 
                         <div class="form-check text-center">
                             <input class="form-check-input" type="checkbox" id="defaultCheck3" required>
-                            <label class="form-check-label" for="defaultCheck3">利用規約に同意します。</label>
+                            <label class="form-check-label" for="defaultCheck3"><a href="{{ url('/terms') }}" target="_blank">利用規約</a>に同意する。</label>
                         </div>
 
                         <div class="form-group row mb-3 mt-4">
