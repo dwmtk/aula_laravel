@@ -20,6 +20,12 @@
                         </div>
                     </div>
                     @endif
+                    <div class="text-center">
+                        <a class="btn btn-primary p-2" href="{{ url('reserve') }}" role="button">
+                            <i class="fas fa-car pr-2 fa-lg"></i>
+                            洗車予約画面に戻る
+                        </a>
+                    </div>
                 </div>
                 <div class="card-footer" style="background: #E8F3FF;">
                     @include('layouts.menu')

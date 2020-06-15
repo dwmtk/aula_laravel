@@ -20,6 +20,13 @@
                             </div>
                         </div>
                     @endif
+                    @if (session('message_error'))
+                        <div class="container mt-2">
+                            <div class="alert alert-danger">
+                            {{session('message_error')}}
+                            </div>
+                        </div>
+                    @endif
                     <p><i class="fas fa-link p-2"></i>登録済みの駐車場情報</p>
                     @forelse ($parkings as $parking)
                     <div class="card mb-3">

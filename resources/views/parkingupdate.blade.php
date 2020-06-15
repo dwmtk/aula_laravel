@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header"><a href="{{ url('/parkinginfo') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>駐車場追加</div>
+                <div class="card-header"><a href="{{ url('/parkinginfo') }}"><i class="fas fa-arrow-left pr-3 text-primary"></a></i>駐車場変更</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -31,10 +31,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="parking_prefecture" class="col-md-4 col-form-label text-md-right">都道府県 <span class="badge badge-danger">必須</span></label>
+                            <label for="parking_prefecture" class="col-md-4 col-form-label text-md-right">都道府県</label>
 
                             <div class="col-md-6">
-                                <input id="parking_prefecture" type="text" class="form-control @error('parking_prefecture') is-invalid @enderror" name="parking_prefecture" value="{{ $parking->parking_prefecture }}" required autocomplete="name" autofocus>
+                                <input id="parking_prefecture" type="text" class="form-control @error('parking_prefecture') is-invalid @enderror" name="parking_prefecture" value="愛知県" required autocomplete="name" autofocus readonly>
 
                                 @error('parking_prefecture')
                                     <span class="invalid-feedback" role="alert">

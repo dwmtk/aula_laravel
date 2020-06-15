@@ -35,11 +35,17 @@ class ParkingController extends Controller
             'parking_detail' => ['nullable','string', 'max:255'],
         ]);
 
+        if( strpos($request->parking_city ,'名古屋') === false){
+            return redirect('parkinginfo')
+            ->with('message_error', "現在、名古屋市内のみ承っております。順次範囲拡大予定！");
+        }
+
         //登録
         $parking = new T_Parkings();
 
         $parking->parking_postcode = $request->parking_postcode;
-        $parking->parking_prefecture = $request->parking_prefecture;
+        // $parking->parking_prefecture = $request->parking_prefecture;
+        $parking->parking_prefecture = '愛知県';
         $parking->parking_city = $request->parking_city;
         $parking->parking_address = $request->parking_address;
         $parking->parking_building = $request->parking_building;
@@ -76,19 +82,26 @@ class ParkingController extends Controller
             'parking_detail' => ['nullable','string', 'max:255'],
         ]);
 
+        if( strpos($request->parking_city ,'名古屋') === false){
+            return redirect('parkinginfo')
+            ->with('message_error', "現在、名古屋市内のみ承っております。順次範囲拡大予定！");
+        }
+
         //更新
         \DB::table('t__parkings')
         ->where('parking_id', $request->parking_id)
         ->update([
             'parking_postcode' => $request->parking_postcode
-            ,'parking_prefecture' => $request->parking_prefecture
+            // ,'parking_prefecture' => $request->parking_prefecture
+            ,'parking_prefecture' => '愛知県'
             ,'parking_city' => $request->parking_city
             ,'parking_address' => $request->parking_address
             ,'parking_building' => $request->parking_building
             ,'parking_detail' => $request->parking_detail
         ]);
         // dd($request);
-        return redirect('parkinginfo');
+        return redirect('parkinginfo')
+        ->with('message_success', "駐車場の変更が完了しました。");;
     }
     public function delete(Request $request)
     {

@@ -224,7 +224,7 @@
                             <label for="parking_prefecture" class="col-md-4 col-form-label text-md-right">都道府県 <span class="badge badge-danger">必須</span></label>
 
                             <div class="col-md-6">
-                                <input id="parking_prefecture" type="text" class="form-control @error('parking_prefecture') is-invalid @enderror" name="parking_prefecture" value="{{ old('parking_prefecture') }}" placeholder="愛知県" autocomplete="name" autofocus>
+                            <input id="parking_prefecture" type="text" class="form-control @error('parking_prefecture') is-invalid @enderror" name="parking_prefecture" value="愛知県" required autocomplete="name" autofocus readonly>
 
                                 @error('parking_prefecture')
                                     <span class="invalid-feedback" role="alert">
@@ -249,7 +249,7 @@
                         </div>
                         
                         <div class="form-group row parking_onoff">
-                            <label for="parking_address" class="col-md-4 col-form-label text-md-right">番地 <span class="badge badge-secondary">任意</span></label>
+                            <label for="parking_address" class="col-md-4 col-form-label text-md-right">番地 <span class="badge badge-danger">必須</span></label>
 
                             <div class="col-md-6">
                                 <input id="parking_address" type="Phone" class="form-control @error('parking_address') is-invalid @enderror" name="parking_address" value="{{ old('parking_address') }}" placeholder="１−１" autocomplete="parking_address">
