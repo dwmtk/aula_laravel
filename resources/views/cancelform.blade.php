@@ -37,13 +37,17 @@
                     <form method="POST" action="{{ action('ReserveController@cancelform', $order->order_id) }}">
                         @csrf
     
-                        <div class="mx-auto overflow-auto bg-light my-3" style="max-width: 400px; max-height: 80px;">
-                        <p>
-                        【キャンセルポリシー】<br>
-                        ああああああああああああああああああああああああああ<br>
-                        ああああああああああああああああああああああああああ<br>
-                        ああああああああああああああああああああああああああ<br>
-                        ああああああああああああああああああああああああああ<br>
+                        <div class="mx-auto overflow-auto bg-light my-3" style="max-width: 400px; max-height: 300px; font-size:80%;">
+                        <p class="mx-1">
+                        【キャンセルポリシー】<br><br>
+                        本キャンセルポリシーは、当社と、本サイトの利用者との間に成立するものとします。<br>
+                        ご予約、キャンセルにつきまして、以下をご確認頂きますようお願いいたします。<br><br>
+                        ・キャンセル料について<br>
+                        　現状、キャンセル料は発生致しませんが、キャンセルが度重なる場合、ペナルティを儲ける可能性がございます。<br><br>
+                        ・キャンセル時の対応<br>
+                        　ご予約時にお支払いしていただいた全額を、同等のポイントとして返還いたします。<br>
+                        　このポイントは次回以降、洗車予約をする際、優先して使用されます。<br>
+                        　このポイントは原則、利用者がアカウントを削除しない限り、消滅することはありません。<br>
                         </p>
 
                         </div>
