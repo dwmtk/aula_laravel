@@ -17,7 +17,7 @@
 
                     @if (session('cancel_success'))
                         <div class="container mt-2">
-                        <div class="alert alert-primary">
+                        <div class="alert alert-success">
                             {{session('cancel_success')}}
                         </div>
                         </div>

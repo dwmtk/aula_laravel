@@ -171,6 +171,10 @@
                                         <a class="dropdown-item text-white" href="{{ url('terms') }}" target="_blank"><i class="fas fa-file pr-2 fa-xs"></i>
                                         利用規約
                                         </a>
+                                        <a class="dropdown-item text-white" href="{{ url('point') }}" target="_blank"><i class="fas fa-file pr-2 fa-xs"></i>
+                                        利用前確認事項
+                                        </a>
+                                        
                                         <a class="dropdown-item text-white" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">
@@ -216,6 +220,9 @@
                                     </a>
                                     <a class="dropdown-item text-white" href="{{ url('terms') }}" target="_blank"><i class="fas fa-file pr-2 fa-xs"></i>
                                         利用規約
+                                    </a>
+                                    <a class="dropdown-item text-white" href="{{ url('point') }}" target="_blank"><i class="fas fa-file pr-2 fa-xs"></i>
+                                        利用前確認事項
                                     </a>
                                     <a class="dropdown-item text-white" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">

@@ -23,14 +23,18 @@ Route::get('/error', function () {
 
 Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');
+
+// 規約関連
 Route::get('/privacypolicy', function() {
     return view('privacypolicy');
 });
 Route::get('/terms', function() {
     return view('terms');
 });
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/point', function() {
+    return view('point');
+});
 
 // 予約関連
 Route::get('/reserve','ReserveController@reserveform');
