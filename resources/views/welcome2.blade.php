@@ -553,6 +553,10 @@
                 <div class="pb-5" style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
                 </div>
+                <!-- SnapWidget -->
+                <script src="https://snapwidget.com/js/snapwidget.js"></script>
+                <iframe src="https://snapwidget.com/embed/839929" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:100%; "></iframe>
+                
                 <div class="d-flex justify-content-center flex-wrap">
                     <div class="instagram-box m-1">image 1</div>
                     <div class="instagram-box m-1">image 2</div>
