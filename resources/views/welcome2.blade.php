@@ -86,6 +86,180 @@
             html{
                 word-break: break-all;
             }
+
+            /* ナビバーここから */
+            #nav-drawer {
+                position: relative;
+            }
+
+            /*チェックボックス等は非表示に*/
+            .nav-unshown {
+                display:none;
+            }
+
+            /*アイコンのスペース*/
+            /* 
+            #nav-open {
+                display: inline-block;
+                width: 30px;
+                height: 22px;
+                vertical-align: middle;
+            }
+            
+            #nav-open span, #nav-open span:before, #nav-open span:after {
+                position: absolute;
+                height: 3px;
+                width: 50px;
+                border-radius: 3px;
+                background: #006f8a;
+                display: block;
+                content: '';
+                cursor: pointer;
+            }
+            #nav-open span:before {
+                bottom: -8px;
+            }
+            #nav-open span:after {
+                bottom: -16px;
+            } 
+            */
+            #nav-open ,
+            #nav-open span {
+                display: inline-block;
+                transition: all .4s;
+                box-sizing: border-box;
+            }
+            #nav-open {
+                position: absolute;
+                top:20px;
+                right:20px;
+                width: 50px;
+                height: 38px;
+            }
+            #nav-open span {
+                position: absolute;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #006f8a;
+                border-radius: 4px;
+            }
+            #nav-open span:nth-of-type(1) {
+                top: 0;
+            }
+            #nav-open span:nth-of-type(2) {
+                top: 18px;
+            }
+            #nav-open span:nth-of-type(3) {
+                bottom: 0;
+            }
+            #nav-open.active span:nth-of-type(1) {
+                -webkit-transform: translateY(20px) rotate(-45deg);
+                transform: translateY(20px) rotate(-45deg);
+            }
+            #nav-open.active span:nth-of-type(2) {
+                opacity: 0;
+            }
+            #nav-open.active span:nth-of-type(3) {
+                -webkit-transform: translateY(-20px) rotate(45deg);
+                transform: translateY(-20px) rotate(45deg);
+            }
+            /* MENUの文字 */
+            #nav-open div {
+                position:absolute;
+                top:42px;
+                color: #006f8a;
+                left:50%;
+                transform: translateX(-50%);
+                -webkit-transform: translateX(-50%);
+                white-space: nowrap;
+            }
+            /*閉じる用の薄黒カバー*/
+            #nav-close {
+                display: none;/*はじめは隠しておく*/
+                position: fixed;
+                z-index: 99;
+                top: 0;/*全体に広がるように*/
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: black;
+                opacity: 0;
+                transition: .3s ease-in-out;
+            }
+
+            /*中身*/
+            #nav-content {
+                overflow: auto;
+                position: fixed;
+                top: 0;
+                right: 0;
+                z-index: 9999;/*最前面に*/
+                width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
+                max-width: 330px;/*最大幅（調整してください）*/
+                height: 100%;
+                background: #8f8f8f;/*背景色*/
+                transition: .3s ease-in-out;/*滑らかに表示*/
+                -webkit-transform: translateX(105%);
+                transform: translateX(105%);/*左に隠しておく*/
+            }
+
+            /*チェックが入ったらもろもろ表示*/
+            #nav-input:checked ~ #nav-close {
+                display: block;/*カバーを表示*/
+                opacity: .5;
+            }
+
+            #nav-input:checked ~ #nav-content {
+                -webkit-transform: translateX(0%);
+                transform: translateX(0%);/*中身を表示（右へスライド）*/
+                box-shadow: 6px 0 25px rgba(0,0,0,.15);
+            }
+
+            .nav-reserve-btn{
+                margin:50px 0 10px 0;
+                width:250px;
+                text-decoration:none;
+                text-align:center;
+                padding:8px 0 10px;
+                color:#8f8f8f;
+                background-color:#fff;
+                border: none;
+                outline: none;
+                border-radius:20px;
+            }
+
+            /* バツボタン */
+            .nav-close-bar{
+                display: block;
+                width: 50px;/*枠の大きさ*/
+                height: 50px;/*枠の大きさ*/
+                position: absolute;
+                top:10px;
+                right:10px;
+            }
+
+            .nav-close-bar::before, .nav-close-bar::after{
+                content: "";
+                display: block;
+                width: 100%;/*バツ線の長さ*/
+                height: 2px;/*バツ線の太さ*/
+                background: #fff;
+                transform: rotate(45deg);
+                transform-origin:0% 50%;
+                position: absolute;
+                top: calc(14% - 5px);
+                left: 14%;
+            }
+
+            .nav-close-bar::after{
+                transform: rotate(-45deg);
+                transform-origin:100% 50%;
+                left: auto;
+                right: 14%;
+            }
+            /* ナビバーここまで */
+
             .left-text-parent{
                 position:relative;
             }
@@ -279,6 +453,43 @@
             <div class="left-text" style="top:4800px;">©aula-waterlesscarwash</div>
         </div>
         <header>
+            <div id="nav-drawer">
+                <input id="nav-input" type="checkbox" class="nav-unshown">
+                <label id="nav-open" for="nav-input"><span></span><span></span><span></span><div>MENU</div></label>
+                <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+                <div id="nav-content" class="text-white text-center py-2 pb-4">
+                    <!-- <div class="nav-close-bar"></div> -->
+                    <label class="nav-close-bar" for="nav-input"></label>
+                    <div class="py-4"><h3>menu</h3></div>
+                    <div>
+                    <ul style="list-style: none; padding:0;">
+                        <li>
+                            <h5><a href="#concept" style="color:#fff;">CONCEPT</a></h5>
+                            <p style="font-size:80%;">コンセプト</p>
+                        </li>
+                        <li>
+                            <h5><a href="#works" style="color:#fff;">WORKS</a></h5>
+                            <p style="font-size:80%;">施工実績</p>
+                        </li>
+                        <li>
+                            <h5><a href="#price" style="color:#fff;">PRICE</a></h5>
+                            <p style="font-size:80%;">料金について</p>
+                        </li>
+                        <li>
+                            <h5><a href="#flow" style="color:#fff;">FLOW</a></h5>
+                            <p style="font-size:80%;">洗車までの流れ</p>
+                        </li>
+                        <li>
+                            <h5><a href="#staff" style="color:#fff;">STAFF</a></h5>
+                            <p style="font-size:80%;">スタッフ紹介</p>
+                        </li>
+                    </ul>
+                    </div>
+                    <div>
+                        <button class="nav-reserve-btn" type="button"onclick="location.href='#'">RESERVATION</button>
+                    </div>
+                </div>
+            </div>
             <div>
                 <a href="{{ url('/') }}">
                     <img class="logo" src="{{ asset('img/aula-logo-top.png') }}" >
@@ -295,7 +506,7 @@
         </header>
 
         <main>
-            <section class="text-center py-5">
+            <section id="concept" class="text-center py-5">
                 <h2>CONCEPT</h2>
                 <div style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
@@ -321,7 +532,7 @@
                     <div class="content-box m-1">image 10</div>
                 </div>
             </section>
-            <section class="text-center py-5">
+            <section id="works" class="text-center py-5">
                 <h2>WORKS</h2>
                 <div class="pb-5" style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
@@ -337,7 +548,7 @@
                     <div class="work-box m-1"><div class="work-image">image 6</div></div>
                 </div>
             </section>
-            <section class="text-center py-5">
+            <section id="instagram" class="text-center py-5">
                 <h2>Instagram</h2>
                 <div class="pb-5" style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
@@ -355,7 +566,7 @@
                     <div class="instagram-box m-1">image 10</div>
                 </div>
             </section>
-            <section class="price-section text-center py-5 text-white">
+            <section id="price" class="price-section text-center py-5 text-white">
                 <div>
                     <h2>Price</h2>
                     <div style="position:relative;">
@@ -374,7 +585,7 @@
                     <button class="price-btn" type="button"onclick="location.href='#'">洗車料金詳細はこちら</button>
                 </div>
             </section>
-            <section class="text-center py-5 flow-section">
+            <section id="flow" class="text-center py-5 flow-section">
                 <h2>Flow</h2>
                 <div class="pb-5" style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
@@ -402,7 +613,7 @@
                     </div>
                 </div>
             </section>
-            <section class="text-center py-5 staff-section">
+            <section id="staff" class="text-center py-5 staff-section">
                 <div class="staff-background"></div>
                 <div class="mb-5">
                     <h2>staff</h2>
