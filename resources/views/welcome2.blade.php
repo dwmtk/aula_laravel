@@ -6,6 +6,7 @@
 
         <title>aula</title>
 
+        <script src="https://kit.fontawesome.com/5e480eacce.js" crossorigin="anonymous"></script>
         
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -111,7 +112,7 @@
                 height: 3px;
                 width: 50px;
                 border-radius: 3px;
-                background: #006f8a;
+                background:#00718C;
                 display: block;
                 content: '';
                 cursor: pointer;
@@ -134,21 +135,21 @@
                 top:20px;
                 right:20px;
                 width: 50px;
-                height: 38px;
+                height: 33px;
             }
             #nav-open span {
                 position: absolute;
                 left: 0;
                 width: 100%;
                 height: 2px;
-                background-color: #006f8a;
+                background-color: #00718C;
                 border-radius: 4px;
             }
             #nav-open span:nth-of-type(1) {
                 top: 0;
             }
             #nav-open span:nth-of-type(2) {
-                top: 18px;
+                top: 15px;
             }
             #nav-open span:nth-of-type(3) {
                 bottom: 0;
@@ -167,8 +168,8 @@
             /* MENUの文字 */
             #nav-open div {
                 position:absolute;
-                top:42px;
-                color: #006f8a;
+                top:38px;
+                color:#00718C;
                 left:50%;
                 transform: translateX(-50%);
                 -webkit-transform: translateX(-50%);
@@ -235,8 +236,8 @@
                 width: 50px;/*枠の大きさ*/
                 height: 50px;/*枠の大きさ*/
                 position: absolute;
-                top:10px;
-                right:10px;
+                top:20px;
+                right:20px;
             }
 
             .nav-close-bar::before, .nav-close-bar::after{
@@ -260,6 +261,27 @@
             }
             /* ナビバーここまで */
 
+            .reserve-login-btn{
+                font-size:80%;
+                position:absolute;
+                top:16px;
+                right:100px;
+                width:250px;
+                text-decoration:none;
+                text-align:center;
+                padding:20px 0;
+                color:#fff;
+                background-color:#00718C;
+                border: none;
+                outline: none;
+                border-radius:35px;
+            }
+            .reserve-login-btn-kigou{
+                position:absolute;
+                top:18px;
+                right:5px;
+                font-size:120%;
+            }
             .left-text-parent{
                 position:relative;
             }
@@ -274,6 +296,7 @@
                 background-color:#a1d4d1;
                 height:800px;
                 position:relative;
+                
             }
             .header-text1{
                 font-size:300%;
@@ -304,16 +327,16 @@
                 background-color:#c0c0c0;
             }
             .work-box{
-                width:300px;
-                height:400px;
+                width:325px;
+                height:430px;
                 background-color:#f5f5f5;
             }
             .work-image{
                 position:relative;
-                top:10px;
-                left:10px;
-                width:280px;
-                height:190px;
+                top:12px;
+                left:12px;
+                width:300px;
+                height:200px;
                 background-color:#c0c0c0;
             }
             .instagram-box{
@@ -336,7 +359,7 @@
                 text-align:center;
                 padding:8px 0 10px;
                 color:#fff;
-                background-color:#006f8a;
+                background-color:#00718C;
                 border: none;
                 outline: none;
                 border-radius:20px;
@@ -350,18 +373,18 @@
                 left:-100px;
                 font-size:300%;
                 z-index: 1;
-                color:#006f8a;
+                color:#00718C;
             }
             .flow-box{
                 position:relative;
-                width:300px;
+                width:280px;
                 height:400px;
             }
             .flow-image{
                 position:absolute;
                 top:10px;
                 left:10px;
-                width:280px;
+                width:260px;
                 height:170px;
                 border-style:solid;
                 border-color:#a1d4d1;
@@ -423,7 +446,7 @@
                 text-align:center;
                 padding:8px 0 10px;
                 color:#fff;
-                background-color:#006f8a;
+                background-color:#00718C;
                 border: none;
                 outline: none;
                 border-radius:40px;
@@ -435,8 +458,24 @@
                 font-size:80%;
             }
             footer{
-                background-color:gray;
+                background-color:#00718C;
                 height:200px;
+
+            }
+            .menu-title{
+                font-family:Avenir;
+                font-size:40px;
+            }
+            .contact-btn{
+                min-width:200px;
+                text-decoration:none;
+                text-align:center;
+                padding:8px 0;
+                color:#fff;
+                background-color:#00718C;
+                border: #fff solid 0.75px;
+                outline: none;
+                border-radius:40px;
             }
         </style>
     </head>
@@ -494,27 +533,32 @@
                 <a href="{{ url('/') }}">
                     <img class="logo" src="{{ asset('img/aula-logo-top.png') }}" >
                 </a>
-            <div>           
+            <div>
+            <div>
+                <button class="reserve-login-btn" type="button"onclick="location.href='#'">
+                    <span>新規登録 / ログイン</span><span class="reserve-login-btn-kigou">〉</span>
+                </button>
+            </div>
             <div class="header-text cover text-white py-5">
-                <p class="header-text1">Revolutionary car wash</p>
-                <p class="header-text2">WATERLESS<br>CAR WASH</p>
+                <p class="header-text1" style="font-size:24px; font-family:Notosan JP Light;">Revolutionary car wash service</p>
+                <p class="header-text2" style="font-size:120px;">WATERLESS<br>CAR WASH</p>
                 <div style="position:relative;">
                     <div style="position:absolute; background-color:white; top:-20px; width:120px; height:8px;"></div>
                 </div>
-                <p class="header-text3">洗車サービス“アウラ”で全く新しい<br>洗車のカタチをお届けします</p>
+                <p class="header-text3" style="font-size:24px; font-family:Notosan JP Light;">名古屋の洗車サービス“アウラ”は<br>全く新しい洗車のカタチをお届けします。</p>
             </div>
         </header>
 
         <main>
             <section id="concept" class="text-center py-5">
-                <h2>CONCEPT</h2>
+                <h2 class="menu-title">CONCEPT</h2>
                 <div style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
                 </div>
-                <p class="py-3"><b>時間と手間を一挙に解消する出張洗車サービス</b></p>
+                <p class="py-3"><b>お客様の時間と手間を一挙に解消する<br>名古屋市限定の出張洗車サービス</b></p>
                 <p>
                 “アウラ”は「洗車にかかる時間・手間を解消し、お客様にいつもピカピカの車に乗り続けてほしい」<br>
-                という重いから生まれた出張洗車サービスです。「今日も車が綺麗で気持ちいいな」と感じて頂ける事がやりがい。<br>
+                という思いから生まれた、出張洗車サービスです。「今日も車が綺麗で気持ちいいな」と感じて頂ける事がやりがいです。<br>
                 今後は、車がピカピカであり続ける気持ちよさを、日本全国のお客様に感じて頂けるよう、サービス範囲を拡大予定。
                 </p>
             </section>
@@ -533,7 +577,7 @@
                 </div>
             </section>
             <section id="works" class="text-center py-5">
-                <h2>WORKS</h2>
+                <h2 class="menu-title">WORKS</h2>
                 <div class="pb-5" style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
                 </div>
@@ -549,14 +593,16 @@
                 </div>
             </section>
             <section id="instagram" class="text-center py-5">
-                <h2>Instagram</h2>
+                <h2 class="menu-title">Instagram</h2>
                 <div class="pb-5" style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
                 </div>
                 <!-- SnapWidget -->
+                <div style="margin:0 250px;">
                 <script src="https://snapwidget.com/js/snapwidget.js"></script>
                 <iframe src="https://snapwidget.com/embed/839929" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:100%; "></iframe>
-                
+                </div>
+                <!--
                 <div class="d-flex justify-content-center flex-wrap">
                     <div class="instagram-box m-1">image 1</div>
                     <div class="instagram-box m-1">image 2</div>
@@ -569,15 +615,17 @@
                     <div class="instagram-box m-1">image 9</div>
                     <div class="instagram-box m-1">image 10</div>
                 </div>
+                -->
             </section>
             <section id="price" class="price-section text-center py-5 text-white">
                 <div>
-                    <h2>Price</h2>
+                    <h2 class="menu-title">Price</h2>
                     <div style="position:relative;">
                     <div style="position:absolute; background-color:white; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
                 </div>
-                    <p class="py-2">一つ一つの車種に合わせた独自の料金設定</p>
-                    <p class="pb-5">各車種によって値段設定をしています</p>
+                    <p class="pt-5 pb-3">一つ一つの車種に合わせた独自の料金設定</p>
+                    <p class="pb-5">アウラでは、お客様のお車の車種によって車体の面積を計算し、細かく値段設定をしています。<br>
+                    お車のタイプではなく、各車種によって値段が異なるため、詳細はお問い合わせください。 </p>
                 </div>
                 <div class="d-flex justify-content-center flex-wrap">
                     <div class="price-box m-1">image 1</div>
@@ -590,7 +638,7 @@
                 </div>
             </section>
             <section id="flow" class="text-center py-5 flow-section">
-                <h2>Flow</h2>
+                <h2 class="menu-title">Flow</h2>
                 <div class="pb-5" style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
                 </div>
@@ -598,29 +646,29 @@
                     <div class="flow-box m-1">
                         <div class="flow-number">1</div>
                         <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">会員登録</span><br><span class="flow-image-sub">REGISTRATION</span></span></div>
-                        <div class="flow-text">立ち合い不要。スキマ時間に 洗車可能。洗車時間は車種によりま すが、30分～1時間。</div>
+                        <div class="flow-text">オンラインで会員登録後、サイトの<br>流れに沿って洗車予約ページまで進<br>みます。</div>
                     </div>
                     <div class="flow-box m-1">
                         <div class="flow-number">2</div>
                         <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">洗車予約</span><br><span class="flow-image-sub">reservation</span></span></div>
-                        <div class="flow-text">洗車日と車種、駐車場を入力し、<br>クレジットカードで支払い後、即予<br>約完了。(事前にマイカー、駐車場を<br>登録しておくことで素早い予約が可能)<br>雨天時やお客様都合のキャンセルの<br>場合、全額ポイントとして付与する。<br>ポイントは次回洗車予約に使用可能、<br>有効期限無し。</div>
+                        <div class="flow-text">洗車日と車種、駐車場を入力し、ク<br>レジットカードで支払い後、即予約<br>完了。事前にマイカー、駐車場を登<br>録しておくことで素早い予約が可能<br>です。</div>
                     </div>
                     <div class="flow-box m-1">
                         <div class="flow-number">3</div>
                         <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">洗車</span><br><span class="flow-image-sub">Car wash</span></span></div>
-                        <div class="flow-text">立ち合い不要。スキマ時間に<br>洗車可能。洗車時間は車種によりま<br>すが、30分～1時間。</div>
+                        <div class="flow-text">洗車時間は車種によりますが、1 時<br>間以内が目安です。雨天時やお客様<br>都合のキャンセルの場合、全額を次<br>回洗車予約に使用可能ポイントとし<br>て還元します。※有効期限無し。</div>
                     </div>
                     <div class="flow-box m-1">
                         <div class="flow-number">4</div>
                         <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">完了</span><br><span class="flow-image-sub">Finish!</span></span></div>
-                        <div class="flow-text">洗車完了時、完了メールを<br>ユーザーに送信。</div>
+                        <div class="flow-text">洗車完了時、完了メールをお客様の<br>登録したアドレス宛に送信します。</div>
                     </div>
                 </div>
             </section>
             <section id="staff" class="text-center py-5 staff-section">
                 <div class="staff-background"></div>
                 <div class="mb-5">
-                    <h2>staff</h2>
+                    <h2 class="menu-title">staff</h2>
                     <div style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:4px;"></div>
                 </div>
@@ -639,6 +687,23 @@
             </section>
         </main>
         <footer>
+            <div class="d-flex justify-content-around align-items-center" style="height:100%;">
+                <div>
+                    <i class="fab fa-instagram p-1 fa-lg pr-5" style="color:#fff;"></i>
+                    <i class="fab fa-twitter p-1 fa-lg pr-5" style="color:#fff;"></i>
+                    <i class="fab fa-facebook-f p-1 fa-lg" style="color:#fff;"></i>
+                </div>
+                <div>
+                    <a href="{{ url('/') }}" class="my-auto">
+                        <img style="color:#fff" src="{{ asset('img/aula-logo-white.png') }}" >
+                    </a>
+                </div>
+                <div>
+                    <button class="contact-btn" type="button"onclick="location.href='#'">
+                        <span>CONTACT</span>
+                    </button>
+                </div>
+            </div>
         </footer>
 
         <!--
