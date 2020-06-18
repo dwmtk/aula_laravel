@@ -254,7 +254,7 @@
     <div class="d-flex flex-row justify-content-center">
         <i class="fab fa-twitter-square p-1 fa-2x"></i>
         <i class="fab fa-youtube p-1 fa-2x"></i>
-        <i class="fab fa-instagram-square p-1 fa-2x"></i>
+        <a href="https://www.instagram.com/aula_waterlesscarwash/" target="_blank" style="color:gray;"><i class="fab fa-instagram-square p-1 fa-2x"></i></a>
         <i class="fab fa-facebook-square p-1 fa-2x"></i>
         <i class="fab fa-line p-1 fa-2x"></i>
         <!--

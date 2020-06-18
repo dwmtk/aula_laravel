@@ -218,7 +218,6 @@
             }
 
             .nav-reserve-btn{
-                margin:50px 0 10px 0;
                 width:250px;
                 text-decoration:none;
                 text-align:center;
@@ -524,6 +523,11 @@
                         </li>
                     </ul>
                     </div>
+                    <div class="pt-3 pb-4">
+                        <a href="https://www.instagram.com/aula_waterlesscarwash/" target="_blank"><i class="fab fa-instagram p-1 fa-lg pr-5" style="color:#fff;"></i></a>
+                        <a href=""><i class="fab fa-twitter p-1 fa-lg pr-5" style="color:#fff;"></i></a>
+                        <a href=""><i class="fab fa-facebook-f p-1 fa-lg" style="color:#fff;"></i></a>
+                    </div>
                     <div>
                         <button class="nav-reserve-btn" type="button"onclick="location.href='#'">RESERVATION</button>
                     </div>
@@ -689,9 +693,9 @@
         <footer>
             <div class="d-flex justify-content-around align-items-center" style="height:100%;">
                 <div>
-                    <i class="fab fa-instagram p-1 fa-lg pr-5" style="color:#fff;"></i>
-                    <i class="fab fa-twitter p-1 fa-lg pr-5" style="color:#fff;"></i>
-                    <i class="fab fa-facebook-f p-1 fa-lg" style="color:#fff;"></i>
+                    <a href="https://www.instagram.com/aula_waterlesscarwash/" target="_blank"><i class="fab fa-instagram p-1 fa-lg pr-5" style="color:#fff;"></i></a>
+                    <a href=""><i class="fab fa-twitter p-1 fa-lg pr-5" style="color:#fff;"></i></a>
+                    <a href=""><i class="fab fa-facebook-f p-1 fa-lg" style="color:#fff;"></i></a>
                 </div>
                 <div>
                     <a href="{{ url('/') }}" class="my-auto">
