@@ -36,7 +36,7 @@ class ReserveController extends Controller
         $car_names = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min'), 'car_maker','car_name')
         ->where('car_height', '<=', config('app.max_height')) // 高さ制限
         ->groupBy('car_maker','car_name')
-        ->orderBy('car_id_min')->get();
+        ->orderBy('car_name')->get();
 
         $car_ages = M_Cars::select('car_id', 'car_maker', 'car_name'
         , \DB::raw('ROUND(car_length) AS car_length')
