@@ -347,9 +347,9 @@
                 background-color:#a1d4d1;
             }
             .price-box{
+                position:relative;
                 width:250px;
                 height:250px;
-                background-color:#f5f5f5;
             }
             .price-btn{
                 margin:50px 0 10px 0;
@@ -362,6 +362,30 @@
                 border: none;
                 outline: none;
                 border-radius:20px;
+            }
+            .price-car-size{
+                position:absolute;
+                top:0;
+                left:50%;
+                transform: translateX(-50%);
+                -webkit-transformX:translate(-50%);
+                font-size:24px;
+            }
+            .price-car{
+                position:absolute;
+                top:200px;
+                left:50%;
+                transform: translateX(-50%);
+                -webkit-transformX: translate(-50%);
+                color:#00718C;
+                white-space: nowrap;
+                border-bottom:#fff dashed;
+            }
+            .price-car-price1{
+                font-size:16px;
+            }
+            .price-car-price2{
+                font-size:24px; 
             }
             .flow-section{
                 position:relative;
@@ -439,7 +463,7 @@
                 color:white;
             }
             .reservation-btn{
-                margin:50px 0 10px 0;
+                margin:50px 0 50px 0;
                 min-width:350px;
                 text-decoration:none;
                 text-align:center;
@@ -529,7 +553,7 @@
                         <a href=""><i class="fab fa-facebook-f p-1 fa-lg" style="color:#fff;"></i></a>
                     </div>
                     <div>
-                        <button class="nav-reserve-btn" type="button"onclick="location.href='#'">RESERVATION</button>
+                        <button class="nav-reserve-btn" type="button"onclick="location.href='{{ url('/reserve') }}'">RESERVATION</button>
                     </div>
                 </div>
             </div>
@@ -539,7 +563,7 @@
                 </a>
             <div>
             <div>
-                <button class="reserve-login-btn" type="button"onclick="location.href='#'">
+                <button class="reserve-login-btn" type="button"onclick="location.href='{{ url('/login') }}'">
                     <span>新規登録 / ログイン</span><span class="reserve-login-btn-kigou">〉</span>
                 </button>
             </div>
@@ -632,13 +656,33 @@
                     お車のタイプではなく、各車種によって値段が異なるため、詳細はお問い合わせください。 </p>
                 </div>
                 <div class="d-flex justify-content-center flex-wrap">
-                    <div class="price-box m-1">image 1</div>
-                    <div class="price-box m-1">image 2</div>
-                    <div class="price-box m-1">image 3</div>
-                    <div class="price-box m-1">image 4</div>
+                    <div class="price-box m-1">
+                        <span class="price-car-size">compact</span>
+                        <span class="price-car">
+                            <span class="price-car-price1">1回/</span><span class="price-car-price2"><i>¥1,500</i></span><span class="price-car-price1">から</span>
+                        </span>
+                    </div>
+                    <div class="price-box m-1">
+                        <span class="price-car-size">hatchback</span>
+                        <span class="price-car">
+                            <span class="price-car-price1">1回/</span><span class="price-car-price2"><i>¥3,500</i></span><span class="price-car-price1">から</span>
+                        </span>
+                    </div>
+                    <div class="price-box m-1">
+                        <span class="price-car-size">sedan</span>
+                        <span class="price-car">
+                            <span class="price-car-price1">1回/</span><span class="price-car-price2"><i>¥4,000</i></span><span class="price-car-price1">から</span>
+                        </span>
+                    </div>
+                    <div class="price-box m-1">
+                        <span class="price-car-size">SUV</span>
+                        <span class="price-car">
+                            <span class="price-car-price1">1回/</span><span class="price-car-price2"><i>¥6,000</i></span><span class="price-car-price1">から</span>
+                        </span>
+                    </div>
                 </div>
                 <div>
-                    <button class="price-btn" type="button"onclick="location.href='#'">洗車料金詳細はこちら</button>
+                    <button class="price-btn" type="button" onclick="window.open('{{ url('/simulation') }}','_blank')">洗車料金詳細はこちら</button>
                 </div>
             </section>
             <section id="flow" class="text-center py-5 flow-section">
@@ -684,7 +728,7 @@
             </section>
             <section class="text-center py-5">
                 <div>
-                    <button class="reservation-btn" type="button"onclick="location.href='#'">
+                    <button class="reservation-btn" type="button"onclick="location.href='{{ url('/reserve') }}'">
                         <span class="reservation-btn-text1">RESERVATION</span><br><soan class="reservation-btn-text2">ご予約はこちら</span>
                     </button>
                 </div>

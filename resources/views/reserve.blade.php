@@ -136,7 +136,8 @@
                         </div>
 
                         <label id="hidden_area" style="display:none"></label>
-                        
+                        <label id="hidden_area2" style="display:none"></label>
+
                         <p class="text-center mycar_onoff small">
                         ※プルダウンに存在しない車種に関しては contact@aula.blue へお問い合わせください。
                         </p>
@@ -154,8 +155,6 @@
                                 @enderror
                             </div>
                         </div>
-                        
-                        <label id="hidden_area2" style="display:none"></label>
 
                         <div class="form-group row mycar_onoff">
                             <label for="car_color" class="col-md-4 col-form-label text-md-right">色 <span class="badge badge-danger">必須</span></label>

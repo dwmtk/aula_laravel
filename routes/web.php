@@ -36,6 +36,9 @@ Route::get('/point', function() {
     return view('point');
 });
 
+//料金シュミレーション
+Route::get('/simulation','SimulationController@info');
+
 // 予約関連
 Route::get('/reserve','ReserveController@reserveform');
 Route::post('/reserved','ReserveController@reserved');
