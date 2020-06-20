@@ -36,7 +36,7 @@
                             <label for="parking_prefecture" class="col-md-4 col-form-label text-md-right">都道府県 <span class="badge badge-danger">必須</span></label>
 
                             <div class="col-md-6">
-                                <input id="parking_prefecture" type="text" class="form-control @error('parking_prefecture') is-invalid @enderror p-region" name="parking_prefecture" value="{{ old('parking_prefecture') }}" placeholder="愛知県" required autocomplete="name" autofocus>
+                                <input id="parking_prefecture" type="text" class="form-control @error('parking_prefecture') is-invalid @enderror p-region" name="parking_prefecture" value="{{ old('parking_prefecture') }}" placeholder="愛知県" required autocomplete="name">
 
                                 @error('parking_prefecture')
                                     <span class="invalid-feedback" role="alert">
