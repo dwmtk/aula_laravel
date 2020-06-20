@@ -44,8 +44,7 @@ class ParkingController extends Controller
         $parking = new T_Parkings();
 
         $parking->parking_postcode = $request->parking_postcode;
-        // $parking->parking_prefecture = $request->parking_prefecture;
-        $parking->parking_prefecture = '愛知県';
+        $parking->parking_prefecture = $request->parking_prefecture;
         $parking->parking_city = $request->parking_city;
         $parking->parking_address = $request->parking_address;
         $parking->parking_building = $request->parking_building;
@@ -92,8 +91,7 @@ class ParkingController extends Controller
         ->where('parking_id', $request->parking_id)
         ->update([
             'parking_postcode' => $request->parking_postcode
-            // ,'parking_prefecture' => $request->parking_prefecture
-            ,'parking_prefecture' => '愛知県'
+            ,'parking_prefecture' => $request->parking_prefecture
             ,'parking_city' => $request->parking_city
             ,'parking_address' => $request->parking_address
             ,'parking_building' => $request->parking_building

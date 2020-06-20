@@ -14,13 +14,15 @@
                         </div>
                     @endif
 
-                    <form method="POST" action="{{ url('/parkinginsert') }}">
+                    <form method="POST" action="{{ url('/parkinginsert') }}" class="h-adr">
                         @csrf
+                        <span class="p-country-name" style="display:none;">Japan</span>
+
                         <div class="form-group row">
                             <label for="parking_postcode" class="col-md-4 col-form-label text-md-right">郵便番号 <span class="badge badge-danger">必須</span></label>
 
                             <div class="col-md-6">
-                                <input id="parking_postcode" type="text" class="form-control @error('parking_postcode') is-invalid @enderror" name="parking_postcode" value="{{ old('parking_postcode') }}" placeholder="4600031" required autocomplete="parking_postcode" autofocus>
+                                <input id="parking_postcode" type="text" class="form-control @error('parking_postcode') is-invalid @enderror p-postal-code" name="parking_postcode" value="{{ old('parking_postcode') }}" placeholder="4600031" required autocomplete="parking_postcode" autofocus>
 
                                 @error('parking_postcode')
                                     <span class="invalid-feedback" role="alert">
@@ -31,10 +33,10 @@
                         </div>
 
                         <div class="form-group row">
-                            <label for="parking_prefecture" class="col-md-4 col-form-label text-md-right">都道府県</label>
+                            <label for="parking_prefecture" class="col-md-4 col-form-label text-md-right">都道府県 <span class="badge badge-danger">必須</span></label>
 
                             <div class="col-md-6">
-                                <input id="parking_prefecture" type="text" class="form-control @error('parking_prefecture') is-invalid @enderror" name="parking_prefecture" value="愛知県" required autocomplete="name" autofocus readonly>
+                                <input id="parking_prefecture" type="text" class="form-control @error('parking_prefecture') is-invalid @enderror p-region" name="parking_prefecture" value="{{ old('parking_prefecture') }}" placeholder="愛知県" required autocomplete="name" autofocus>
 
                                 @error('parking_prefecture')
                                     <span class="invalid-feedback" role="alert">
@@ -48,7 +50,7 @@
                             <label for="parking_city" class="col-md-4 col-form-label text-md-right">市区町村 <span class="badge badge-danger">必須</span></label>
 
                             <div class="col-md-6">
-                                <input id="parking_city" type="parking_city" class="form-control @error('parking_city') is-invalid @enderror" name="parking_city" value="{{ old('parking_city') }}" placeholder="名古屋市中区本丸" required autocomplete="parking_city">
+                                <input id="parking_city" type="parking_city" class="form-control @error('parking_city') is-invalid @enderror p-locality p-street-address p-extended-address" name="parking_city" value="{{ old('parking_city') }}" placeholder="名古屋市中区本丸" required autocomplete="parking_city">
 
                                 @error('parking_city')
                                     <span class="invalid-feedback" role="alert">

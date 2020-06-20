@@ -286,8 +286,7 @@ class ReserveController extends Controller
             // それぞれの値を変数に格納
             // $order->$parking_id は　NULL
             $order->parking_postcode = $request->parking_postcode;
-            $order->parking_prefecture = '愛知県';
-            // $order->parking_city = $request->parking_city;
+            $order->parking_prefecture = $request->parking_prefecture;
             $order->parking_city = $request->parking_city;
             $order->parking_address = $request->parking_address;
             $order->parking_building = $request->parking_building;
