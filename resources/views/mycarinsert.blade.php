@@ -26,8 +26,7 @@
                                 <option value="" selected="selected" class="default">--選択してください--</option>
                                 @foreach ($car_makers as $car_maker)
                                 @if($car_maker[1] == 0)
-                                    <option value="{{ $car_maker[0] }}" class="{{ $car_maker[0] }}" disabled style="option:disabled {
-    background:#red;">{{ $car_maker[0] }}</option>
+                                    <option value="{{ $car_maker[0] }}" class="{{ $car_maker[0] }}" disabled style="font-weight: bold;">{{ $car_maker[0] }}</option>
                                 @else($car_maker[1] == 1)
                                     <option value="{{ $car_maker[0] }}" class="{{ $car_maker[0] }}">{{ $car_maker[0] }}</option>
                                 @endif

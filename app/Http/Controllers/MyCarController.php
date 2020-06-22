@@ -40,7 +40,7 @@ class MyCarController extends Controller
             order by A.car_id_min' , [ config('app.max_height') ]);
 
         $current_country = $car_makers_db[0]->country;
-        $car_makers[] = ['-------------'.$current_country.'------------','0'];
+        $car_makers[] = ['----'.$current_country.'---------------------','0'];
         $i=1;
         foreach ($car_makers_db as $car_maker_db){
             if($car_maker_db->country != $current_country){
