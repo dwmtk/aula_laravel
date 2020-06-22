@@ -92,7 +92,11 @@
                                 <select id="car_maker" name="car_maker" class="form-control @error('car_maker') is-invalid @enderror" value="{{ old('car_maker') }}" autocomplete="car_maker" autofocus>
                                     <option value="" selected="selected" class="default">--選択してください--</option>
                                     @foreach ($car_makers as $car_maker)
-                                    <option value="{{ $car_maker->car_maker }}" class="{{ $car_maker->car_maker }}">{{ $car_maker->car_maker }}</option>
+                                    @if($car_maker[1] == 0)
+                                        <option value="{{ $car_maker[0] }}" class="{{ $car_maker[0] }}" disabled>{{ $car_maker[0] }}</option>
+                                    @else($car_maker[1] == 1)
+                                        <option value="{{ $car_maker[0] }}" class="{{ $car_maker[0] }}">{{ $car_maker[0] }}</option>
+                                    @endif
                                     @endforeach
                                 </select>
                                 @error('car_maker')
