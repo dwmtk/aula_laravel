@@ -38,15 +38,15 @@ class MyCarController extends Controller
             ) A LEFT JOIN m__makers B
             ON A.car_maker  = B.car_maker
             order by A.car_id_min' , [ config('app.max_height') ]);
-            
+
         $current_country = $car_makers_db[0]->country;
-        $car_makers[] = ['---------------'.$current_country.'--------------','0'];
+        $car_makers[] = ['-------------'.$current_country.'------------','0'];
         $i=1;
         foreach ($car_makers_db as $car_maker_db){
             if($car_maker_db->country != $current_country){
                 $i = $i + 1;
                 $current_country = $car_maker_db->country;
-                $car_makers[] = ['---------------'.$current_country.'---------------', '0'];
+                $car_makers[] = ['-------------'.$current_country.'-------------', '0'];
             }
             $i = $i + 1;
             $car_makers[] = [ $car_maker_db->car_maker, '1'];
