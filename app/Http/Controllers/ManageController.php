@@ -34,15 +34,22 @@ class ManageController extends Controller
             return redirect('home');
         }
 
+        // $orders = \DB::select('
+        //     select * 
+        //     from t__orders A, users B 
+        //     where A.user_id = B.id 
+        //     and A.status in (1,2,9)
+        //     and A.order_date >= ?
+        //     order by A.order_date, A.schedule
+        //     ', [date("Ymd")]);
         $orders = \DB::select('
-            select * 
-            from t__orders A, users B 
-            where A.user_id = B.id 
-            and A.status in (1,2,9)
-            and A.order_date >= ?
-            order by A.order_date, A.schedule
-            ', [date("Ymd")]);
-
+        select * 
+        from t__orders A, users B 
+        where A.user_id = B.id 
+        and ((A.status in (1,2,9) and A.order_date >= ?) or (A.status = 1 and A.order_date < ?))
+        order by A.order_date, A.schedule
+        ', [date("Ymd"), date("Ymd")]);
+        
         return view('manage')->with('orders', $orders);
     }
     public function washconfirm($order_id){

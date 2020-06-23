@@ -85,7 +85,8 @@
             @forelse ($orders as $order)
             <tbody>
             <tr class="
-                    @if( $order->status == 1)
+                    @if( $order->status == 1 and $order->order_date < date('Ymd') )
+                    table-danger
                     @elseif( $order->status == 2)
                     table-primary
                     @elseif( $order->status == 9)
