@@ -93,7 +93,11 @@
                             <label for="parking_detail" class="col-md-4 col-form-label text-md-right">詳細 <span class="badge badge-secondary">任意</span></label>
 
                             <div class="col-md-6">
-                            <textarea id="parking_detail" class="form-control @error('parking_detail') is-invalid @enderror" name="parking_detail" autocomplete="parking_detail" rows="3">{{ $parking->parking_detail }}</textarea>
+                            <textarea id="parking_detail" class="form-control @error('parking_detail') is-invalid @enderror" name="parking_detail" placeholder="入って左手の2番、屋根あり" autocomplete="parking_detail" rows="3">{{ $parking->parking_detail }}</textarea>
+
+                            <p class="small pt-1">
+                            ※駐車場に屋根がある場合は、詳細欄にその旨ご記入いただければ雨天時も洗車可能です。
+                            </p>
 
                                 @error('parking_detail')
                                     <span class="invalid-feedback" role="alert">

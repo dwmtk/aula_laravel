@@ -94,7 +94,7 @@
                             <div class="col-md-6">
                             <textarea id="parking_detail" class="form-control @error('parking_detail') is-invalid @enderror" name="parking_detail" value="{{ old('parking_detail') }}" placeholder="入って左手の2番、屋根あり" autocomplete="parking_detail" rows="3"></textarea>
                             <p class="small pt-1">
-                            ※駐車場に屋根がある場合は、備考欄にその旨ご記入いただければ雨天時も洗車可能です。
+                            ※駐車場に屋根がある場合は、詳細欄にその旨ご記入いただければ雨天時も洗車可能です。
                             </p>
 
                                 @error('parking_detail')

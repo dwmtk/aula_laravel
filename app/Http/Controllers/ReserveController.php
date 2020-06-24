@@ -421,7 +421,7 @@ class ReserveController extends Controller
         })->where(function($orders) {
             $orders->orWhere('status', '2')
                   ->orWhere('status', '9');
-        })->orderBy('order_id')->get();
+        })->orderBy('order_id', 'desc')->get();
         
         return view('reservelog')
         ->with('orders', $orders);

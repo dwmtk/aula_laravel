@@ -747,9 +747,19 @@
                     </a>
                 </div>
                 <div>
-                    <button class="contact-btn" type="button"onclick="location.href='#'">
+                    <button class="contact-btn js-modal-open" type="button"onclick="location.href=''">
                         <span>CONTACT</span>
                     </button>
+                    <!-- <div class="content">
+                        <a class="js-modal-open" href="">クリックでモーダルを表示</a>
+                    </div> -->
+                    <div class="modal js-modal">
+                        <div class="modal__bg js-modal-close"></div>
+                        <div class="modal__content">
+                            <p>ここにモーダルウィンドウで表示したいコンテンツを入れます。モーダルウィンドウを閉じる場合は下の「閉じる」をクリックするか、背景の黒い部分をクリックしても閉じることができます。</p>
+                            <a class="js-modal-close" href="">閉じる</a>
+                        </div><!--modal__inner-->
+                    </div><!--modal-->
                 </div>
             </div>
         </footer>
