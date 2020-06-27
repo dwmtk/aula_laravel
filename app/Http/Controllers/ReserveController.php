@@ -92,11 +92,11 @@ class ReserveController extends Controller
             $fromdate = date("Ymd",strtotime("2 day"));
         }
 
-        $todate = date("Ymd",strtotime($fromdate . "+1 month"));
-        $calendars = M_Calendars::whereBetween('calendar', [$fromdate, $todate])->
-        where('working_day', '0')->get();
+        // ２週間後までをプルダウンに表示する
+        $todate = date("Ymd",strtotime("+2 week"));
 
-        // $this->google_calendar('20200523');
+        $calendars = M_Calendars::whereBetween('calendar', [$fromdate, $todate])
+        ->where('working_day', '0')->get();
 
         return view('reserve')
         ->with([
