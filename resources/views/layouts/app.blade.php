@@ -34,6 +34,16 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <style>
+        ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color:red;
+        }
+        :-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color:red;
+        }
+        ::placeholder{ /* Others */
+            color:red;
+        }
+
         /* nav {
         border-top: solid 10px #428bca;
         } */
