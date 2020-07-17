@@ -274,11 +274,11 @@
                     細かく値段設定をしています。お車のタイプではなく、<br>
                     各車種によって値段が異なるため、詳細はお問い合わせください。
                 </p>
-                <div class="price-box d-flex justify-content-center flex-wrap">
-                    <img src="{{ asset('img/price_illust/compact.png') }}">
-                    <img src="{{ asset('img/price_illust/hatchback.png') }}">
-                    <img src="{{ asset('img/price_illust/sedan.png') }}">
-                    <img src="{{ asset('img/price_illust/suv.png') }}">
+                <div class="price-box-parent d-flex justify-content-center flex-wrap">
+                    <div class="price-box"><img src="{{ asset('img/price_illust/compact.png') }}"></div>
+                    <div class="price-box"><img src="{{ asset('img/price_illust/hatchback.png') }}"></div>
+                    <div class="price-box"><img src="{{ asset('img/price_illust/sedan.png') }}"></div>
+                    <div class="price-box"><img src="{{ asset('img/price_illust/suv.png') }}"></div>
                 </div>
                 <!-- <div>
                     <button class="price-btn" type="button" onclick="window.open('{{ url('/simulation') }}','_blank')">洗車料金詳細はこちら</button>

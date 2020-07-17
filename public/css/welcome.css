@@ -490,10 +490,12 @@ header{
     margin-bottom:5px;
     height:30px;
 }
-.price-box img{
-    width: 200px;
+.price-box{
+    width:200px;
     margin:0 40px;
-    object-fit: cover;
+}
+.price-box img{
+    width: 100%;
 }
 .price-btn{
     margin:50px 0 10px 0;
@@ -527,7 +529,7 @@ header{
         font-family: 'Noto Sans JP', sans-serif; font-size:10px; font-weight:400;
         display:block;
     }
-    .price-box img{
+    .price-box{
         width: 130px;
         margin:0 20px;
     }
