@@ -366,7 +366,7 @@
             </section>
 
             <!-- STAFF -->
-            <section id="staff" class="text-center staff-section">
+            <section id="staff" class="text-center staff-section" style="z-index:-1;">
                 <!-- <div class="staff-background"></div> -->
                 <!-- コンテンツタイトル -->
                 <img class="staff-title" src="{{ asset('img/staff.png') }}">
@@ -390,7 +390,7 @@
                 </div>
 
                 <div class="staff-box-parent-sm">
-                    <div class="d-flex align-items-center flex-wrap flex-column" style="        margin-top:-50px;">
+                    <div class="d-flex align-items-center flex-wrap flex-column" style="margin-top:-50px;">
                         <img class="staff-box1-sm" src="{{ asset('img/sample_13.jpg') }}">
                         <div class="staff-box2-sm">
                             <p class="staff-text-name-sm">
@@ -407,8 +407,6 @@
             <section class="text-center">
                 <a href="{{ url('/reserve') }}">
                     <img class="reserve-btn" src="{{ asset('img/reservation_button.png') }}">
-                </a>
-                <a href="{{ url('/reserve') }}">
                     <img class="reserve-btn-sm" src="{{ asset('img/reservation_button_sm.png') }}">
                 </a>
             </section>

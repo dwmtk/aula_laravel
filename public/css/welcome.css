@@ -536,7 +536,7 @@ header{
     }
     .price-btn-sm{
         margin:50px auto 10px;
-        width:350px;
+        width:300px;
         display:block;
     }
 }
@@ -668,7 +668,7 @@ header{
 }
 /* STAFF */
 #staff{
-    margin-top:50px;
+    margin:50px 0 -100px 0;
     position:relative;
 }
 .staff-title{
@@ -801,6 +801,7 @@ header{
         display:block;
         margin:100px auto 50px;
         width:300px;
+        pointer-events: none;
     }
 }
 /* footer */
