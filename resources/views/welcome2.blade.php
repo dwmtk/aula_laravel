@@ -114,30 +114,30 @@
                 </p>
                 <div class="concept-box-parent">
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <img class="concept-box" src="{{ asset('img/sample_01.jpg') }}">
-                        <img class="concept-box" src="{{ asset('img/sample_02.jpg') }}">
-                        <img class="concept-box" src="{{ asset('img/sample_03.jpg') }}">
-                        <img class="concept-box" src="{{ asset('img/sample_04.jpg') }}">
-                        <img class="concept-box" src="{{ asset('img/sample_05.jpg') }}">
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_01.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_02.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_03.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_04.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_01.jpg') }}"></div>
                     </div>
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <img class="concept-box" src="{{ asset('img/sample_06.jpg') }}">
-                        <img class="concept-box" src="{{ asset('img/sample_07.jpg') }}">
-                        <img class="concept-box" src="{{ asset('img/sample_01.jpg') }}">
-                        <img class="concept-box" src="{{ asset('img/sample_02.jpg') }}">
-                        <img class="concept-box" src="{{ asset('img/sample_03.jpg') }}">
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_02.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_03.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_04.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_01.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_02.jpg') }}"></div>
                     </div>
                 </div>
                 <div class="concept-box-parent-sm">
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="concept-box m-1">image 1</div>
-                        <div class="concept-box m-1">image 2</div>
-                        <div class="concept-box m-1">image 3</div> 
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_01.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_02.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_03.jpg') }}"></div>
                     </div>
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="concept-box m-1">image 4</div>
-                        <div class="concept-box m-1">image 5</div>
-                        <div class="concept-box m-1">image 6</div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_04.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_01.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/sample_02.jpg') }}"></div>
                     </div>
                 </div>
             </section>
@@ -154,19 +154,21 @@
                 <div class="work-box-parent">
                     <div class="d-flex justify-content-center flex-nowrap">
                         <div class="work-box m-1">
-                            <div class="work-image">image 1</div>
+                            <div class="work-image"><img src="{{ asset('img/sample_08.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                             </div>
                         </div>
-                        <div class="work-box m-1"><div class="work-image">image 2</div>
+                        <div class="work-box m-1">
+                            <div class="work-image"><img src="{{ asset('img/sample_09.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                             </div>                    
                         </div>
-                        <div class="work-box m-1"><div class="work-image">image 3</div>
+                        <div class="work-box m-1">
+                            <div class="work-image"><img src="{{ asset('img/sample_10.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
@@ -174,19 +176,21 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="work-box m-1"><div class="work-image">image 4</div>
+                        <div class="work-box m-1">
+                            <div class="work-image"><img src="{{ asset('img/sample_11.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                             </div>
                         </div>
-                        <div class="work-box m-1"><div class="work-image">image 5</div>
+                        <div class="work-box m-1">
+                            <div class="work-image"><img src="{{ asset('img/sample_12.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                             </div>
                         </div>
-                        <div class="work-box m-1"><div class="work-image">image 6</div>
+                        <div class="work-box m-1"><div class="work-image"><img src="{{ asset('img/sample_08.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
@@ -197,13 +201,13 @@
                 <div class="work-box-parent-sm">
                     <div class="d-flex justify-content-center flex-nowrap">
                         <div class="work-box m-1">
-                            <div class="work-image">image 1</div>
+                            <div class="work-image"><img src="{{ asset('img/sample_08.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                             </div>
                         </div>
-                        <div class="work-box m-1"><div class="work-image">image 2</div>
+                        <div class="work-box m-1"><div class="work-image"><img src="{{ asset('img/sample_09.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
@@ -211,13 +215,13 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="work-box m-1"><div class="work-image">image 3</div>
+                        <div class="work-box m-1"><div class="work-image"><img src="{{ asset('img/sample_10.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                             </div>
                         </div>
-                        <div class="work-box m-1"><div class="work-image">image 4</div>
+                        <div class="work-box m-1"><div class="work-image"><img src="{{ asset('img/sample_11.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
@@ -271,10 +275,10 @@
                     各車種によって値段が異なるため、詳細はお問い合わせください。
                 </p>
                 <div class="price-box d-flex justify-content-center flex-wrap">
-                        <img src="{{ asset('img/price_illust/compact.png') }}">
-                        <img src="{{ asset('img/price_illust/hatchback.png') }}">
-                        <img src="{{ asset('img/price_illust/sedan.png') }}">
-                        <img src="{{ asset('img/price_illust/suv.png') }}">
+                    <img src="{{ asset('img/price_illust/compact.png') }}">
+                    <img src="{{ asset('img/price_illust/hatchback.png') }}">
+                    <img src="{{ asset('img/price_illust/sedan.png') }}">
+                    <img src="{{ asset('img/price_illust/suv.png') }}">
                 </div>
                 <!-- <div>
                     <button class="price-btn" type="button" onclick="window.open('{{ url('/simulation') }}','_blank')">洗車料金詳細はこちら</button>
