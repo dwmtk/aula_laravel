@@ -200,31 +200,66 @@
                 </div>
                 <div class="work-box-parent-sm">
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="work-box m-1">
-                            <div class="work-image"><img src="{{ asset('img/sample_08.jpg') }}"></div>
-                            <div>
-                                <p class="work-text1">東区 A.A 様</p>
-                                <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        <div class="work-box-sm m-1">
+                            <div class="work-box-inner">
+                                <div class="work-image-sm">
+                                    <img src="{{ asset('img/sample_08.jpg') }}">
+                                </div>
+                                <div class="work-text">
+                                    <p class="work-text1-sm">
+                                        東区 A.A 様
+                                    </p>
+                                    <p class="work-text2-sm">
+                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="work-box m-1"><div class="work-image"><img src="{{ asset('img/sample_09.jpg') }}"></div>
-                            <div>
-                                <p class="work-text1">東区 A.A 様</p>
-                                <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                            </div>                    
+                        <div class="work-box-sm m-1">
+                            <div class="work-box-inner">
+                                <div class="work-image-sm">
+                                    <img src="{{ asset('img/sample_09.jpg') }}">
+                                </div>
+                                <div class="work-text">
+                                    <p class="work-text1-sm">
+                                        東区 A.A 様
+                                    </p>
+                                    <p class="work-text2-sm">
+                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                    </p>
+                                </div>
+                            </div>           
                         </div>
                     </div>
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="work-box m-1"><div class="work-image"><img src="{{ asset('img/sample_10.jpg') }}"></div>
-                            <div>
-                                <p class="work-text1">東区 A.A 様</p>
-                                <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        <div class="work-box-sm m-1">
+                            <div class="work-box-inner">
+                                <div class="work-image-sm">
+                                    <img src="{{ asset('img/sample_10.jpg') }}">
+                                </div>
+                                <div class="work-text">
+                                    <p class="work-text1-sm">
+                                        東区 A.A 様
+                                    </p>
+                                    <p class="work-text2-sm">
+                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="work-box m-1"><div class="work-image"><img src="{{ asset('img/sample_11.jpg') }}"></div>
-                            <div>
-                                <p class="work-text1">東区 A.A 様</p>
-                                <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                        <div class="work-box-sm m-1">
+                            <div class="work-box-inner">
+                                <div class="work-image-sm">
+                                    <img src="{{ asset('img/sample_11.jpg') }}">
+                                </div>
+                                <div class="work-text">
+                                    <p class="work-text1-sm">
+                                        東区 A.A 様
+                                    </p>
+                                    <p class="work-text2-sm">
+                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -377,8 +412,9 @@
                 <!-- コンテンツ -->
                 <div class="staff-box-parent">
                     <div class="d-flex justify-content-center flex-wrap">
-                        <div class="staff-box1 m-1">image 1</div>
-                        <div class="staff-box2 m-1 ml-4">
+                        <div class="staff-background"></div>
+                        <img class="staff-box1" src="{{ asset('img/sample_13.jpg') }}">
+                        <div class="staff-box2">
                             <p class="staff-text-name">
                                 代表 田島 拓弥
                             </p>
