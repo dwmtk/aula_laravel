@@ -21,6 +21,10 @@ Route::get('/error', function () {
     return view('error');
 });
 
+Route::get('/oncereserve/reserve', 'OnceReserveController@info');
+Route::post('/oncereserve/confirm', 'OnceReserveController@confirm');
+Route::post('/oncereserve/payment', 'OnceReserveController@payment');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
