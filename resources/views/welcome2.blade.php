@@ -7,7 +7,7 @@
         <title>aula</title>
 
         <script src="https://kit.fontawesome.com/5e480eacce.js" crossorigin="anonymous"></script>
-        
+
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
@@ -38,6 +38,7 @@
                     <label class="nav-close-bar" for="nav-input"></label>
                     <div class="py-4"><h3>menu</h3></div>
                     <div>
+
                     <ul style="list-style: none; padding:0;">
                         <li>
                             <h5><a href="#concept" style="color:#fff;">CONCEPT</a></h5>
@@ -357,7 +358,7 @@
                 </div>
                 
                 <div class="flow-box-parent-sm">
-                    <div class="flow-box-sm d-flex justify-content-center flex-nowrap" style="        margin-top:-50px;">
+                    <div class="flow-box-sm d-flex justify-content-center flex-nowrap" style="margin-top:-50px;">
                         <div class="flow-sm">
                             <img src="{{ asset('img/flow/01-sm.png') }}">
                         </div>
@@ -501,6 +502,12 @@
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-
+        <script>
+            $(function() {
+                $('#nav-content li a').on('click', function(event) {
+                    $('#nav-input').prop('checked', false);
+                });
+            });
+        </script>
     </body>
 </html>

@@ -26,38 +26,10 @@ html{
 #nav-drawer {
     position: relative;
 }
-
 /*チェックボックス等は非表示に*/
 .nav-unshown {
     display:none;
 }
-
-/*アイコンのスペース*/
-/* 
-#nav-open {
-    display: inline-block;
-    width: 30px;
-    height: 22px;
-    vertical-align: middle;
-}
-
-#nav-open span, #nav-open span:before, #nav-open span:after {
-    position: absolute;
-    height: 3px;
-    width: 50px;
-    border-radius: 3px;
-    background:#00718C;
-    display: block;
-    content: '';
-    cursor: pointer;
-}
-#nav-open span:before {
-    bottom: -8px;
-}
-#nav-open span:after {
-    bottom: -16px;
-} 
-*/
 #nav-open ,
 #nav-open span {
     display: inline-block;
