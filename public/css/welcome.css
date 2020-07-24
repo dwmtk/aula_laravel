@@ -662,11 +662,30 @@ header{
     height:30px;
 }
 .price-box{
-    width:200px;
-    margin:0 40px;
+    width:150px;
+    margin:20px 70px;
 }
 .price-box img{
     width: 100%;
+}
+.price-box-text{
+    margin-top:20px;
+    border-bottom:dashed;
+    border-color:#FFF;
+    border-width:1px;
+}
+.price-box-text1{
+    font-family: urw-din, sans-serif;
+    font-weight: 600;
+    font-size:12px;
+    color:#00718C;
+}
+.price-box-text2{
+    font-family: urw-din, sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size:24px;
+    color:#00718C;
 }
 .price-btn{
     margin:50px 0 10px 0;
@@ -702,7 +721,7 @@ header{
     }
     .price-box{
         width: 130px;
-        margin:0 20px;
+        margin:30px 20px;
     }
     .price-btn{
         display:none;

@@ -49,7 +49,7 @@
                 <a href="{{ url('/login') }}"><img class="login-btn-sm" src="{{ asset('img/login_sm.png') }}"></a>
 
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="none" id="svg-bg" class="effect-fade-header">        
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="none" id="svg-bg" class="effect-fade-header" style="">        
                 <path class="svg-draw" d="M0,0 v80 q10,10 20,0 t20,0 t20,0 t20,0 t20,0 v-80 Z" fill="#fff"></path>
                 <path class="svg-draw-sm" d="M0,0 v90 q10,10 30,0 t40,0 t40,0 v-90 Z" fill="#fff"></path>
                 <!-- <path d="M0,0 v80 q10,10 20,0 t20,0 t20,0 t20,0 t20,0 v-80 Z" fill="#fff"></path> -->
@@ -324,10 +324,30 @@
                     各車種によって値段が異なるため、詳細はお問い合わせください。
                 </p>
                 <div class="price-box-parent d-flex justify-content-center flex-wrap">
-                    <div class="price-box"><img src="{{ asset('img/price_illust/compact.png') }}"></div>
-                    <div class="price-box"><img src="{{ asset('img/price_illust/hatchback.png') }}"></div>
-                    <div class="price-box"><img src="{{ asset('img/price_illust/sedan.png') }}"></div>
-                    <div class="price-box"><img src="{{ asset('img/price_illust/suv.png') }}"></div>
+                    <div class="price-box">
+                        <img src="{{ asset('img/price_illust/compact.png') }}">
+                        <div class="price-box-text">
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥4,000</span><span class="price-box-text1">から</span>
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <img src="{{ asset('img/price_illust/hatchback.png') }}">
+                        <div class="price-box-text">
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥5,000</span><span class="price-box-text1">から</span> 
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <img src="{{ asset('img/price_illust/sedan.png') }}">
+                        <div class="price-box-text">
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥6,000</span><span class="price-box-text1">から</span>
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <img src="{{ asset('img/price_illust/suv.png') }}">
+                        <div class="price-box-text">
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥7,000</span><span class="price-box-text1">から</span>
+                        </div>
+                    </div>
                 </div>
                 <!-- <div>
                     <button class="price-btn" type="button" onclick="window.open('{{ url('/simulation') }}','_blank')">洗車料金詳細はこちら</button>
