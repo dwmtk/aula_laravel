@@ -107,6 +107,13 @@
             var height = Number(sizes[1]);
             var width = Number(sizes[2]);
             var price = (height*width*2 + height*length*2 + length*width) *100 *1.5;
+            price = Math.round(price/1000) * 1000;
+            if(price > 6000){
+                price = 6000;
+            }
+            if(price < 3000){
+                price = 3000;
+            }
             $(".price").text("￥" + price.toLocaleString());
             $("#price").val(price);
         });
