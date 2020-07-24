@@ -11,6 +11,7 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.typekit.net/xfr2yel.css">
 
         <!-- Styles -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -29,6 +30,30 @@
             <div class="left-text" style="top:4800px;">©aula-waterlesscarwash</div>
         </div>
         <header>
+            <div>
+                <img class="header-img" src="{{ asset('img/firstview.png') }}">
+                <img class="header-img-sm" src="{{ asset('img/firstview_sm.png') }}">
+            </div>
+            <div class="header-text">
+                <img class="header-text-img" src="{{ asset('img/firstview_title.png') }}">
+                <img class="header-text-img-logo-sm" src="{{ asset('img/logo.png') }}" >
+                <img class="header-text-img-sm" src="{{ asset('img/firstview_title_sm.png') }}">
+            </div>
+            <div>
+                <a href="{{ url('/') }}">
+                    <img class="logo" src="{{ asset('img/logo.png') }}" >
+                </a>
+            <div>
+            <div>
+                <a href="{{ url('/login') }}"><img class="login-btn" src="{{ asset('img/login.png') }}"></a>
+                <a href="{{ url('/login') }}"><img class="login-btn-sm" src="{{ asset('img/login_sm.png') }}"></a>
+
+            </div>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="none" id="svg-bg" class="effect-fade-header">        
+                <path class="svg-draw" d="M0,0 v80 q10,10 20,0 t20,0 t20,0 t20,0 t20,0 v-80 Z" fill="#fff"></path>
+                <path class="svg-draw-sm" d="M0,0 v90 q10,10 30,0 t40,0 t40,0 v-90 Z" fill="#fff"></path>
+                <!-- <path d="M0,0 v80 q10,10 20,0 t20,0 t20,0 t20,0 t20,0 v-80 Z" fill="#fff"></path> -->
+            </svg>
             <div id="nav-drawer">
                 <input id="nav-input" type="checkbox" class="nav-unshown">
                 <label id="nav-open" for="nav-input"><span></span><span></span><span></span><div>MENU</div></label>
@@ -36,29 +61,29 @@
                 <div id="nav-content" class="text-white text-center py-2 pb-4">
                     <!-- <div class="nav-close-bar"></div> -->
                     <label class="nav-close-bar" for="nav-input"></label>
-                    <div class="py-4"><h3>menu</h3></div>
+                    <div class="nav-title"><p>MENU</p></div>
                     <div>
 
                     <ul style="list-style: none; padding:0;">
                         <li>
-                            <h5><a href="#concept" style="color:#fff;">CONCEPT</a></h5>
-                            <p style="font-size:80%;">コンセプト</p>
+                            <a href="#concept" class="nav-li">CONCEPT</a>
+                            <p class="nav-li-sub">コンセプト</p>
                         </li>
                         <li>
-                            <h5><a href="#works" style="color:#fff;">WORKS</a></h5>
-                            <p style="font-size:80%;">施工実績</p>
+                            <a href="#works" class="nav-li">WORKS</a>
+                            <p class="nav-li-sub">施工実績</p>
                         </li>
                         <li>
-                            <h5><a href="#price" style="color:#fff;">PRICE</a></h5>
-                            <p style="font-size:80%;">料金について</p>
+                            <a href="#price" class="nav-li">PRICE</a>
+                            <p class="nav-li-sub">料金について</p>
                         </li>
                         <li>
-                            <h5><a href="#flow" style="color:#fff;">FLOW</a></h5>
-                            <p style="font-size:80%;">洗車までの流れ</p>
+                            <a href="#flow" class="nav-li">FLOW</a>
+                            <p class="nav-li-sub">洗車までの流れ</p>
                         </li>
                         <li>
-                            <h5><a href="#staff" style="color:#fff;">STAFF</a></h5>
-                            <p style="font-size:80%;">スタッフ紹介</p>
+                            <a href="#staff" class="nav-li">STAFF</a>
+                            <p class="nav-li-sub">スタッフ紹介</p>
                         </li>
                     </ul>
                     </div>
@@ -68,28 +93,16 @@
                         <a href=""><i class="fab fa-facebook-f p-1 fa-lg" style="color:#fff;"></i></a>
                     </div>
                     <div>
-                        <button class="nav-reserve-btn" type="button"onclick="location.href='{{ url('/reserve') }}'">RESERVATION</button>
+                        <a href="{{ url('/reserve') }}"><img class="nav-reserve-btn" src="{{ asset('img/nav_reserve.png') }}"></a>
+                        <a href="{{ url('/reserve') }}"><img class="nav-reserve-btn-sm" src="{{ asset('img/nav_reserve_sm.png') }}"></a>
                     </div>
                 </div>
-            </div>
-            <div>
-                <a href="{{ url('/') }}">
-                    <img class="logo" src="{{ asset('img/logo.png') }}" >
-                </a>
-            <div>
-            <div>
-                <a href="{{ url('/login') }}"><img class="login-btn" src="{{ asset('img/login.png') }}"></a>
-            </div>
-            <div class="header-text">
-                <img class="header-text-img" src="{{ asset('img/firstview_title.png') }}">
-                <img class="header-text-img-logo-sm" src="{{ asset('img/logo.png') }}" >
-                <img class="header-text-img-sm" src="{{ asset('img/firstview_title_sm.png') }}">
             </div>
         </header>
 
         <main>
             <!-- CONCEPT -->
-            <section id="concept" class="text-center">
+            <section id="concept" class="text-center effect-fade">
                 <!-- コンテンツタイトル -->
                 <img class="concept-title" src="{{ asset('img/concept.png') }}">
                 <!-- ライン -->
@@ -144,7 +157,7 @@
             </section>
 
             <!-- WORKS -->
-            <section id="works" class="text-center">
+            <section id="works" class="text-center effect-fade">
                 <!-- コンテンツタイトル -->
                 <img class="work-title" src="{{ asset('img/works.png') }}">
                 <!-- ライン -->
@@ -268,7 +281,7 @@
             </section>
 
             <!-- Instagram -->
-            <section id="instagram" class="text-center">
+            <section id="instagram" class="text-center effect-fade">
                 <!-- コンテンツタイトル -->
                 <img class="instagram-title" src="{{ asset('img/instagram.png') }}">
                 <!-- ライン -->
@@ -290,7 +303,7 @@
             </section>
 
             <!-- PRICE -->
-            <section id="price" class="price-section text-center text-white">
+            <section id="price" class="price-section text-center text-white effect-fade">
                 <!-- コンテンツタイトル -->
                 <img class="price-title" src="{{ asset('img/price.png') }}">
                 <!-- ライン -->
@@ -324,7 +337,7 @@
             </section>
 
             <!-- FLOW -->
-            <section id="flow" class="text-center">
+            <section id="flow" class="text-center effect-fade">
                 <!-- コンテンツタイトル -->
                 <img class="flow-title" src="{{ asset('img/flow.png') }}">
                 <!-- ライン -->
@@ -402,7 +415,7 @@
             </section>
 
             <!-- STAFF -->
-            <section id="staff" class="text-center staff-section" style="z-index:-1;">
+            <section id="staff" class="text-center staff-section effect-fade" style="z-index:-1;">
                 <!-- <div class="staff-background"></div> -->
                 <!-- コンテンツタイトル -->
                 <img class="staff-title" src="{{ asset('img/staff.png') }}">
@@ -441,7 +454,7 @@
                 </div>
             </section>
 
-            <section class="text-center">
+            <section id="reserve" class="text-center effect-fade">
                 <a href="{{ url('/reserve') }}">
                     <img class="reserve-btn" src="{{ asset('img/reservation_button.png') }}">
                     <img class="reserve-btn-sm" src="{{ asset('img/reservation_button_sm.png') }}">
@@ -461,10 +474,7 @@
                     </a>
                 </div>
                 <div class="footer-contact">
-                    <img class="contact-btn" src="{{ asset('img/contact_button.png') }}">
-                    <!-- <div class="content">
-                        <a class="js-modal-open" href="">クリックでモーダルを表示</a>
-                    </div> -->
+                    <a href="mailto:contact@aula.blue"><img class="contact-btn" src="{{ asset('img/contact_button.png') }}"></a>
                     <div class="modal js-modal">
                         <div class="modal__bg js-modal-close"></div>
                         <div class="modal__content">
@@ -476,38 +486,63 @@
             </div>
         </footer>
 
-        <!--
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">マイページ</a>
-                    @else
-                        <a href="{{ route('login') }}">ログイン</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">新規登録</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    <img class="logo img-responsive" src="{{ asset('img/aula_logo.png') }}" alt="">
-                </div>
-            </div>      
-        </div>
-        -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
         <script>
             $(function() {
                 $('#nav-content li a').on('click', function(event) {
                     $('#nav-input').prop('checked', false);
                 });
             });
+            window.onload = function(){
+                $('#svg-bg').addClass('effect-scroll-header');
+            }
+            $(window).scroll(function(){
+                var top_concept = $("#concept").offset().top; // ターゲットの位置取得
+                var position_concept = top_concept - $(window).height();  // 発火させたい位置
+                if($(window).scrollTop() > position_concept + 350){
+                    // 要素が見えたときの動き 
+                    $('#concept').addClass('effect-scroll');
+                }
+                var top_work = $("#works").offset().top; // ターゲットの位置取得
+                var position_work = top_work - $(window).height();  // 発火させたい位置
+                if($(window).scrollTop() > position_work + 350){
+                    // 要素が見えたときの動き 
+                    $('#works').addClass('effect-scroll');
+                }
+                var top_instagram = $("#instagram").offset().top; // ターゲットの位置取得
+                var position_instagram = top_instagram - $(window).height();  // 発火させたい位置
+                if($(window).scrollTop() > position_instagram + 350){
+                    // 要素が見えたときの動き 
+                    $('#instagram').addClass('effect-scroll');
+                }
+                var top_price = $("#price").offset().top; // ターゲットの位置取得
+                var position_price = top_price - $(window).height();  // 発火させたい位置
+                if($(window).scrollTop() > position_price + 350){
+                    // 要素が見えたときの動き 
+                    $('#price').addClass('effect-scroll');
+                }
+                var top_flow = $("#flow").offset().top; // ターゲットの位置取得
+                var position_flow = top_flow - $(window).height();  // 発火させたい位置
+                if($(window).scrollTop() > position_flow + 350){
+                    // 要素が見えたときの動き 
+                    $('#flow').addClass('effect-scroll');
+                }
+                var top_staff = $("#staff").offset().top; // ターゲットの位置取得
+                var position_staff = top_staff - $(window).height();  // 発火させたい位置
+                if($(window).scrollTop() > position_staff + 350){
+                    // 要素が見えたときの動き 
+                    $('#staff').addClass('effect-scroll');
+                }
+                var top_reserve = $("#reserve").offset().top; // ターゲットの位置取得
+                var position_reserve = top_reserve - $(window).height();  // 発火させたい位置
+                if($(window).scrollTop() > position_reserve -200){
+                    // 要素が見えたときの動き 
+                    $('#reserve').addClass('effect-scroll');
+                }
+            })
         </script>
     </body>
 </html>

@@ -25,6 +25,10 @@ html{
 /* ナビバーここから */
 #nav-drawer {
     position: relative;
+    z-index:99;
+    font-family: bebas-neue, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 /*チェックボックス等は非表示に*/
 .nav-unshown {
@@ -80,6 +84,10 @@ html{
     transform: translateX(-50%);
     -webkit-transform: translateX(-50%);
     white-space: nowrap;
+    font-family: urw-din, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
 }
 /*閉じる用の薄黒カバー*/
 #nav-close {
@@ -94,7 +102,6 @@ html{
     opacity: 0;
     transition: .3s ease-in-out;
 }
-
 /*中身*/
 #nav-content {
     overflow: auto;
@@ -110,31 +117,23 @@ html{
     -webkit-transform: translateX(105%);
     transform: translateX(105%);/*左に隠しておく*/
 }
-
 /*チェックが入ったらもろもろ表示*/
 #nav-input:checked ~ #nav-close {
     display: block;/*カバーを表示*/
     opacity: .5;
 }
-
 #nav-input:checked ~ #nav-content {
     -webkit-transform: translateX(0%);
     transform: translateX(0%);/*中身を表示（右へスライド）*/
     box-shadow: 6px 0 25px rgba(0,0,0,.15);
 }
-
 .nav-reserve-btn{
-    width:250px;
-    text-decoration:none;
-    text-align:center;
+    width:270px;
     padding:8px 0 10px;
-    color:#8f8f8f;
-    background-color:#fff;
-    border: none;
-    outline: none;
-    border-radius:20px;
 }
-
+.nav-reserve-btn-sm{
+    display:none;
+}
 /* バツボタン */
 .nav-close-bar{
     display: block;
@@ -144,12 +143,11 @@ html{
     top:20px;
     right:20px;
 }
-
 .nav-close-bar::before, .nav-close-bar::after{
     content: "";
     display: block;
     width: 100%;/*バツ線の長さ*/
-    height: 2px;/*バツ線の太さ*/
+    height: 1.5px;/*バツ線の太さ*/
     background: #fff;
     transform: rotate(45deg);
     transform-origin:0% 50%;
@@ -157,17 +155,84 @@ html{
     top: calc(14% - 5px);
     left: 14%;
 }
-
 .nav-close-bar::after{
     transform: rotate(-45deg);
     transform-origin:100% 50%;
     left: auto;
     right: 14%;
 }
+.nav-title{
+    font-size: 37px;
+    margin: 30px 0 30px;
+}
+.nav-li{
+    font-size: 25px;
+    color:#fff;
+}
+.nav-li:hover{
+    color:#fff;
+}
+.nav-li-sub{
+    font-size: 14px;
+}
+@media (max-width:991px){
+    #nav-content {
+        width:100%;
+        max-width:100%;
+    }
+    #nav-open {
+        top: 15px;
+        right: 15px;
+        width: 30px;
+        height: 24px;
+    }
+    #nav-open span {
+        height: 2px;
+    }
+    #nav-open span:nth-of-type(1) {
+        top: 0;
+    }
+    #nav-open span:nth-of-type(2) {
+        top: 11px;
+    }
+    #nav-open span:nth-of-type(3) {
+        bottom: 0;
+    }
+    #nav-open.active span:nth-of-type(1) {
+        -webkit-transform: translateY(20px) rotate(-45deg);
+        transform: translateY(20px) rotate(-45deg);
+    }
+    #nav-open.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    #nav-open.active span:nth-of-type(3) {
+        -webkit-transform: translateY(-20px) rotate(45deg);
+        transform: translateY(-20px) rotate(45deg);
+    }
+    /* MENUの文字 */
+    #nav-open div {
+        top:28px;
+        left:50%;
+        font-size: 10px;
+    }
+    /* バツボタン */
+    .nav-close-bar{
+        width: 35px;/*枠の大きさ*/
+        height: 35px;/*枠の大きさ*/
+        top:15px;
+        right:15px;
+    }
+    .nav-reserve-btn{
+        display:none;
+    }
+    .nav-reserve-btn-sm{
+        margin:0 auto;
+        display:block;
+        width:270px;
+        padding:8px 0 10px;
+    }
+}
 /* ナビバーここまで */
-
-
-
 
 /* ヘッダー */
 .login-btn{
@@ -175,6 +240,9 @@ html{
     top:10px;
     right:100px;
     width:300px;
+}
+.login-btn-sm{
+    display:none;
 }
 
 /* サイドの文字 */
@@ -198,22 +266,85 @@ html{
 header{
     position:relative;
     height: 900px;
-    background: url('../img/firstview.png') right;
     background-color:#a1d4d1;
     background-size:700px auto;
     background-repeat:no-repeat;
 }     
+.header-img{
+    float: right;
+    max-width:100%;
+    max-height:900px;
+    animation-name           : fadeIn;  /* ルール名 */
+    animation-duration       : 0.8s;            /* 実行時間 */
+    animation-timing-function: ease;          /* 動き速度 */
+    animation-delay          : 2s;            /* 開始遅延時間 */
+    animation-iteration-count: 1;     /* 再生回数 */
+    animation-direction      : normal;    /* 終了後の動き */
+    opacity:0;
+    animation-fill-mode: forwards; /*これで値を保持*/
+}
+@keyframes fadeIn { /*animetion-nameで設定した値を書く*/
+    from {
+        opacity: 1;
+        transform: translate3d(-900px, 0, 0);
+    } /*アニメーション開始時は不透明度0%*/
+  
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    } /*アニメーション終了時は不透明度100%*/
+  
+}
+.svg-draw-sm, .header-img-sm{
+    display:none;
+}
 @media (max-width:991px) {
     /* スマホ、タブレット */
     .login-btn{
         display:none;
     }
+    .login-btn-sm{
+        display:block;
+        position:absolute;
+        top:20px;
+        right:60px;
+        width:110px;
+    }
     header{
         height: 800px;
-        background: url('../img/firstview_sm.png') right;
         background-color:#a1d4d1;
         background-size:400px auto;
         background-repeat:no-repeat;
+    }
+    .header-img-sm{
+        float: right;
+        max-width:100%;
+        max-height:800px;
+        animation-name           : fadeIn-sm;  /* ルール名 */
+        animation-duration       : 0.8s;            /* 実行時間 */
+        animation-timing-function: ease;          /* 動き速度 */
+        animation-delay          : 2s;            /* 開始遅延時間 */
+        animation-iteration-count: 1;     /* 再生回数 */
+        animation-direction      : normal;    /* 終了後の動き */
+        opacity:0;
+        animation-fill-mode: forwards; /*これで値を保持*/
+    }
+    @keyframes fadeIn-sm { /*animetion-nameで設定した値を書く*/
+        from {
+            opacity: 1;
+            transform: translate3d(0, 600px, 0);
+        }
+      
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        } 
+    }
+    .svg-draw, .header-img{
+        display:none;
+    }
+    .svg-draw-sm, .header-img-sm{
+        display:block;
     }
 }
 
@@ -240,12 +371,45 @@ header{
 }
 .header-text-img{
     width:700px;
+    animation-name           : fadeIn-text-img;  /* ルール名 */
+    animation-duration       : 2s;            /* 実行時間 */
+    animation-timing-function: ease;          /* 動き速度 */
+    animation-delay          : 3.2s;            /* 開始遅延時間 */
+    animation-iteration-count: 1;     /* 再生回数 */
+    animation-direction      : normal;    /* 終了後の動き */
+    opacity:0;
+    animation-fill-mode: forwards; /*これで値を保持*/
+}
+@keyframes fadeIn-text-img { /*animetion-nameで設定した値を書く*/
+    from {
+        opacity: 0;
+    } /*アニメーション開始時は不透明度0%*/
+  
+    to {
+        opacity: 1;
+    } /*アニメーション終了時は不透明度100%*/  
 }
 .header-text-img-logo-sm{
     display:none;
 }
 .header-text-img-sm{
     display:none;
+}
+#svg-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color:#a1d4d1;
+}
+.effect-fede-header{
+    transform : translate(0, 0);
+}
+.effect-fade-header.effect-scroll-header {
+    transform : translate(0, -900px);
+    transition : all 1000ms;
 }
 @media (max-width:991px) {
     /* スマホ、タブレット */
@@ -261,13 +425,39 @@ header{
         display:block;
         width:130px;
         margin:0 0 20px 5px;
+        animation-name           : fadeIn-text-img;  /* ルール名 */
+        animation-duration       : 2s;            /* 実行時間 */
+        animation-timing-function: ease;          /* 動き速度 */
+        animation-delay          : 3s;            /* 開始遅延時間 */
+        animation-iteration-count: 1;     /* 再生回数 */
+        animation-direction      : normal;    /* 終了後の動き */
+        opacity:0;
+        animation-fill-mode: forwards; /*これで値を保持*/
     }
     .header-text-img-sm{
         display:block;
         width:300px;
+        animation-name           : fadeIn-text-img;  /* ルール名 */
+        animation-duration       : 2s;            /* 実行時間 */
+        animation-timing-function: ease;          /* 動き速度 */
+        animation-delay          : 3s;            /* 開始遅延時間 */
+        animation-iteration-count: 1;     /* 再生回数 */
+        animation-direction      : normal;    /* 終了後の動き */
+        opacity:0;
+        animation-fill-mode: forwards; /*これで値を保持*/
     }
-}
 
+}
+/* フェードイン */
+.effect-fade {
+    opacity : 0;
+    transform : translate(0, 80px);
+    transition : all 1000ms;
+}
+.effect-fade.effect-scroll {
+    opacity : 1;
+    transform : translate(0, 0);
+}
 /* concept */
 #concept{
     margin: 50px 0;
