@@ -9,7 +9,10 @@
 
                 <div class="card-body">
 
-                    エラーが発生しました。            
+                    <p>エラーが発生しました。</p>
+                    <div class="text-center">
+                        <a class="btn btn-primary btn-sm" href="{{ url('/oncereserve/reserve') }}" role="button">戻る</a>
+                    </div>     
                 </div>
             </div>
         </div>

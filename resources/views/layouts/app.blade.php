@@ -101,7 +101,9 @@
                 display:inline;
             }
         }
-
+        .logo{
+            width:100px;
+        }
     </style>
 
 </head>
@@ -111,7 +113,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-dark shadow-sm sticky-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img class="logo" src="{{ asset('img/logo_c.png') }}" alt="">
+                    <img class="logo" src="{{ asset('img/logo_ white.png') }}" alt="">
                 </a>
 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

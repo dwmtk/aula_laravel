@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">確認画面</div>
+                <div class="card-header"><a href="{{ url('/oncereserve/reserve') }}"><i class="fas fa-arrow-left pr-3 text-primary"></i></a>確認画面</div>
 
                 <div class="card-body">
                     <div class="text-left mx-auto" style="width:190px;">
@@ -22,7 +22,7 @@
                             data-name="aula"
                             data-label="カードで支払う"
                             data-description="洗車決済"
-                            data-image="{{ asset('img\aula_logo.png') }}"
+                            data-image="{{ asset('img\logo_stripe.png') }}"
                             data-locale="auto"
                             data-currency="JPY"
                             data-locale="ja">

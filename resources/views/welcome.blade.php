@@ -315,37 +315,36 @@
                     一つ一つの車種に合わせた独自の料金設定
                 </p>
                 <p class="price-text2">
-                    アウラでは、お客様のお車の車種によって車体の面積を計算し、細かく値段設定をしています。<br>
-                    お車のタイプではなく、各車種によって値段が異なるため、詳細はお問い合わせください。
+                    アウラでは、お客様のお車の車種によって値段設定をしています。<br>
+                    (下記の表示価格は参考値となります。)
                 </p>
                 <p class="price-text2-sm">
-                    アウラでは、お客様のお車の車種によって車体の面積を計算し、<br>
-                    細かく値段設定をしています。お車のタイプではなく、<br>
-                    各車種によって値段が異なるため、詳細はお問い合わせください。
+                    アウラでは、お客様のお車の車種によって値段設定をしています。<br>
+                    (下記の表示価格は参考値となります。)
                 </p>
                 <div class="price-box-parent d-flex justify-content-center flex-wrap">
                     <div class="price-box">
                         <img src="{{ asset('img/price_illust/compact.png') }}">
                         <div class="price-box-text">
-                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥4,000</span><span class="price-box-text1">から</span>
-                        </div>
-                    </div>
-                    <div class="price-box">
-                        <img src="{{ asset('img/price_illust/hatchback.png') }}">
-                        <div class="price-box-text">
-                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥5,000</span><span class="price-box-text1">から</span> 
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥3,000</span><span class="price-box-text1"></span>
                         </div>
                     </div>
                     <div class="price-box">
                         <img src="{{ asset('img/price_illust/sedan.png') }}">
                         <div class="price-box-text">
-                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥6,000</span><span class="price-box-text1">から</span>
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥4,000</span><span class="price-box-text1"></span> 
+                        </div>
+                    </div>
+                    <div class="price-box">
+                        <img src="{{ asset('img/price_illust/hatchback.png') }}">
+                        <div class="price-box-text">
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥5,000</span><span class="price-box-text1"></span>
                         </div>
                     </div>
                     <div class="price-box">
                         <img src="{{ asset('img/price_illust/suv.png') }}">
                         <div class="price-box-text">
-                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥7,000</span><span class="price-box-text1">から</span>
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥6,000</span><span class="price-box-text1"></span>
                         </div>
                     </div>
                 </div>

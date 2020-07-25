@@ -32,7 +32,7 @@
                         data-name="aula"
                         data-label="カードで支払う"
                         data-description="洗車決済"
-                        data-image="img\aula_logo.png"
+                        data-image="img\logo_stripe.png"
                         data-locale="auto"
                         data-email="{{ Auth::user()->email }}"
                         data-currency="JPY"
