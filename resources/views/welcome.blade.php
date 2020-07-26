@@ -47,7 +47,6 @@
             <div>
                 <a href="{{ url('/login') }}"><img class="login-btn" src="{{ asset('img/login.png') }}"></a>
                 <a href="{{ url('/login') }}"><img class="login-btn-sm" src="{{ asset('img/login_sm.png') }}"></a>
-
             </div>
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="none" id="svg-bg" class="effect-fade-header" style="">        
                 <path class="svg-draw" d="M0,0 v80 q10,10 20,0 t20,0 t20,0 t20,0 t20,0 v-80 Z" fill="#fff"></path>
@@ -98,6 +97,20 @@
                     </div>
                 </div>
             </div>
+            <!-- <div class="menu-bar" style="position:fixed; height:50px; width:100%; background-color:#a1d4d1; z-index:9998;">
+                <div>
+                    <a href="{{ url('/') }}">
+                        <img class="" src="{{ asset('img/logo.png') }}" style="position:absolute; width:130px; top:12px; left:10px;">
+                    </a>
+                <div>
+                <a href="{{ url('/login') }}"><img class="" src="{{ asset('img/login.png') }}" style="width:150px;"></a>
+                <a href="{{ url('/login') }}"><img class="" src="{{ asset('img/login_sm.png') }}" style="position:absolute; width:130px; top:12px; right:60px;"></a>
+                <div class="menu-nav" style="position:absolute; top:0px; right:0px;">
+                    <input id="nav-input" type="checkbox" class="nav-unshown">
+                    <label id="nav-open" for="nav-input"><span></span><span></span><span></span></label>
+                    <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+                </div>
+            </div> -->
         </header>
 
         <main>
@@ -128,30 +141,30 @@
                 </p>
                 <div class="concept-box-parent">
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_01.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_02.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_03.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_04.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_01.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_1.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_2.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_3.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_4.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_5.JPG') }}"></div>
                     </div>
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_02.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_03.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_04.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_01.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_02.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_6.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_7.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_8.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_9.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_10.JPG') }}"></div>
                     </div>
                 </div>
                 <div class="concept-box-parent-sm">
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_01.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_02.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_03.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_8.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_2.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_11.JPG') }}"></div>
                     </div>
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_04.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_01.jpg') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/sample_02.jpg') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_3.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_7.JPG') }}"></div>
+                        <div class="concept-box m-1"><img src="{{ asset('img/concept_12.JPG') }}"></div>
                     </div>
                 </div>
             </section>
@@ -168,14 +181,14 @@
                 <div class="work-box-parent">
                     <div class="d-flex justify-content-center flex-nowrap">
                         <div class="work-box m-1">
-                            <div class="work-image"><img src="{{ asset('img/sample_08.jpg') }}"></div>
+                            <div class="work-image"><img src="{{ asset('img/work_1.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
                             </div>
                         </div>
                         <div class="work-box m-1">
-                            <div class="work-image"><img src="{{ asset('img/sample_09.jpg') }}"></div>
+                            <div class="work-image"><img src="{{ asset('img/work_2.jpg') }}"></div>
                             <div>
                                 <p class="work-text1">東区 A.A 様</p>
                                 <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
@@ -217,7 +230,7 @@
                         <div class="work-box-sm m-1">
                             <div class="work-box-inner">
                                 <div class="work-image-sm">
-                                    <img src="{{ asset('img/sample_08.jpg') }}">
+                                    <img src="{{ asset('img/work_1.jpg') }}">
                                 </div>
                                 <div class="work-text">
                                     <p class="work-text1-sm">
@@ -232,7 +245,7 @@
                         <div class="work-box-sm m-1">
                             <div class="work-box-inner">
                                 <div class="work-image-sm">
-                                    <img src="{{ asset('img/sample_09.jpg') }}">
+                                    <img src="{{ asset('img/work_2.jpg') }}">
                                 </div>
                                 <div class="work-text">
                                     <p class="work-text1-sm">
@@ -446,7 +459,7 @@
                 <div class="staff-box-parent">
                     <div class="d-flex justify-content-center flex-wrap">
                         <div class="staff-background"></div>
-                        <img class="staff-box1" src="{{ asset('img/sample_13.jpg') }}">
+                        <img class="staff-box1" src="{{ asset('img/staff.jpg') }}">
                         <div class="staff-box2">
                             <p class="staff-text-name">
                                 代表 田島 拓弥
@@ -460,7 +473,7 @@
 
                 <div class="staff-box-parent-sm">
                     <div class="d-flex align-items-center flex-wrap flex-column" style="margin-top:-50px;">
-                        <img class="staff-box1-sm" src="{{ asset('img/sample_13.jpg') }}">
+                        <img class="staff-box1-sm" src="{{ asset('img/staff.jpg') }}">
                         <div class="staff-box2-sm">
                             <p class="staff-text-name-sm">
                                 代表 田島 拓弥

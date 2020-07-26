@@ -306,7 +306,7 @@ header{
     .login-btn-sm{
         display:block;
         position:absolute;
-        top:20px;
+        top:15px;
         right:60px;
         width:110px;
     }
@@ -477,15 +477,12 @@ header{
     margin-bottom:30px;
     display:none;
 }
-.concept-box-parent{
-    /*  */
-}
 .concept-box-parent-sm{
     display:none;
 }
 .concept-box{
     margin:5px;
-    width:200px;
+    width:280px;
     background-color:#c0c0c0;
 }
 .concept-box img{
@@ -886,7 +883,7 @@ header{
 .staff-box1{
     /* スタッフ写真 */
     width:350px;
-    height:200px;
+    height:242px;
     margin:20px;
 }
 .staff-box2{
