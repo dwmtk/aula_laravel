@@ -64,16 +64,25 @@ html{
 #nav-open span:nth-of-type(3) {
     bottom: 0;
 }
-#nav-open.active span:nth-of-type(1) {
-    -webkit-transform: translateY(20px) rotate(-45deg);
-    transform: translateY(20px) rotate(-45deg);
+#nav-input:checked + label {
+    z-index:9999;
 }
-#nav-open.active span:nth-of-type(2) {
+#nav-input:checked + label span:nth-of-type(1) {
+    -webkit-transform: translateY(15.5px) rotate(-45deg);
+    transform: translateY(15.5px) rotate(-45deg);
+    background-color:#fff;
+}
+#nav-input:checked + label span:nth-of-type(2) {
     opacity: 0;
+    background-color:#fff;
 }
-#nav-open.active span:nth-of-type(3) {
-    -webkit-transform: translateY(-20px) rotate(45deg);
-    transform: translateY(-20px) rotate(45deg);
+#nav-input:checked + label span:nth-of-type(3) {
+    -webkit-transform: translateY(-15.5px) rotate(45deg);
+    transform: translateY(-15.5px) rotate(45deg);
+    background-color:#fff;
+}
+#nav-input:checked + label div {
+    display:none;
 }
 /* MENUの文字 */
 #nav-open div {
@@ -108,11 +117,12 @@ html{
     position: fixed;
     top: 0;
     right: 0;
-    z-index: 9999;/*最前面に*/
+    z-index: 9998;/*最前面に*/
     width: 90%;/*右側に隙間を作る（閉じるカバーを表示）*/
     max-width: 330px;/*最大幅（調整してください）*/
     height: 100%;
     background: #8f8f8f;/*背景色*/
+    opacity:0.9;
     transition: .3s ease-in-out;/*滑らかに表示*/
     -webkit-transform: translateX(105%);
     transform: translateX(105%);/*左に隠しておく*/
@@ -133,33 +143,6 @@ html{
 }
 .nav-reserve-btn-sm{
     display:none;
-}
-/* バツボタン */
-.nav-close-bar{
-    display: block;
-    width: 50px;/*枠の大きさ*/
-    height: 50px;/*枠の大きさ*/
-    position: absolute;
-    top:20px;
-    right:20px;
-}
-.nav-close-bar::before, .nav-close-bar::after{
-    content: "";
-    display: block;
-    width: 100%;/*バツ線の長さ*/
-    height: 1.5px;/*バツ線の太さ*/
-    background: #fff;
-    transform: rotate(45deg);
-    transform-origin:0% 50%;
-    position: absolute;
-    top: calc(14% - 5px);
-    left: 14%;
-}
-.nav-close-bar::after{
-    transform: rotate(-45deg);
-    transform-origin:100% 50%;
-    left: auto;
-    right: 14%;
 }
 .nav-title{
     font-size: 37px;
@@ -198,29 +181,22 @@ html{
     #nav-open span:nth-of-type(3) {
         bottom: 0;
     }
-    #nav-open.active span:nth-of-type(1) {
-        -webkit-transform: translateY(20px) rotate(-45deg);
-        transform: translateY(20px) rotate(-45deg);
+    #nav-input:checked + label span:nth-of-type(1) {
+        -webkit-transform: translateY(15px) rotate(-45deg);
+        transform: translateY(11px) rotate(-45deg);
     }
-    #nav-open.active span:nth-of-type(2) {
+    #nav-input:checked + label span:nth-of-type(2) {
         opacity: 0;
     }
-    #nav-open.active span:nth-of-type(3) {
-        -webkit-transform: translateY(-20px) rotate(45deg);
-        transform: translateY(-20px) rotate(45deg);
+    #nav-input:checked + label span:nth-of-type(3) {
+        -webkit-transform: translateY(-15px) rotate(45deg);
+        transform: translateY(-11px) rotate(45deg);
     }
     /* MENUの文字 */
     #nav-open div {
         top:28px;
         left:50%;
         font-size: 10px;
-    }
-    /* バツボタン */
-    .nav-close-bar{
-        width: 35px;/*枠の大きさ*/
-        height: 35px;/*枠の大きさ*/
-        top:15px;
-        right:15px;
     }
     .nav-reserve-btn{
         display:none;
@@ -483,7 +459,6 @@ header{
 .concept-box{
     margin:5px;
     width:280px;
-    background-color:#c0c0c0;
 }
 .concept-box img{
     width:100%;
@@ -512,6 +487,9 @@ header{
     .concept-box-parent-sm{
         display:block;
     }
+    .concept-box{
+        margin:2.5px;
+    }
 }
 /* WORK */
 #works{
@@ -520,9 +498,6 @@ header{
 .work-title{
     margin-bottom:10px;
     height:30px;
-}
-.work-box-parent{
-
 }
 .work-box-parent-sm{
     display:none;
@@ -740,9 +715,6 @@ header{
     margin-bottom:5px;
     height:35px;
 }
-.flow-box-parent{
-
-}
 .flow-box-parent-sm{
     display:none;
 }
@@ -786,6 +758,26 @@ header{
     font-family: 'Noto Sans JP', sans-serif; 
     font-size:16px; 
     font-weight:400;
+}
+.flow-allow{
+    position:relative;
+    top:100px;
+    left:-40px;
+    width:60px;
+    height:1.5px;
+    background-color:#00718C;
+    z-index:1;
+}
+.flow-allow:before{
+    content: "";
+    position:absolute;
+    transform:rotate(45deg);
+    display:block;
+    right:-5px;
+    top:-10.5px;
+    width:30px;
+    height:1px;
+    background-color:#00718C;
 }
 @media (max-width:991px) {
     .flow-title{

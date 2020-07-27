@@ -141,30 +141,30 @@
                 </p>
                 <div class="concept-box-parent">
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_1.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_2.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_3.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_4.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_5.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_1.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_2.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_3.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_4.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_5.JPG') }}"></div>
                     </div>
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_6.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_7.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_8.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_9.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_10.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_6.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_7.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_8.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_9.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_10.JPG') }}"></div>
                     </div>
                 </div>
                 <div class="concept-box-parent-sm">
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_8.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_2.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_11.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_8.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_2.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_11.JPG') }}"></div>
                     </div>
                     <div class="d-flex justify-content-center flex-nowrap">
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_3.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_7.JPG') }}"></div>
-                        <div class="concept-box m-1"><img src="{{ asset('img/concept_12.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_3.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_7.JPG') }}"></div>
+                        <div class="concept-box"><img src="{{ asset('img/concept_12.JPG') }}"></div>
                     </div>
                 </div>
             </section>
@@ -385,16 +385,19 @@
                             <div class="flow-text">オンラインで会員登録後、サイトの<br>流れに沿って洗車予約ページまで進<br>みます。</div>
                         </div>
                         <div class="flow-box m-1">
+                            <div class="flow-allow"></div>
                             <img class="flow" src="{{ asset('img/flow/02.png') }}" style="width:260px; position:absolute; top:-15px; left:10px;">
                             <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">洗車予約</span><br><span class="flow-image-sub">reservation</span></span></div>
                             <div class="flow-text">洗車日と車種、駐車場を入力し、ク<br>レジットカードで支払い後、即予約<br>完了。事前にマイカー、駐車場を登<br>録しておくことで素早い予約が可能<br>です。</div>
                         </div>
                         <div class="flow-box m-1">
+                            <div class="flow-allow"></div>
                             <img class="flow" src="{{ asset('img/flow/03.png') }}" style="width:260px; position:absolute; top:-15px; left:10px;">
                             <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">洗車</span><br><span class="flow-image-sub">Car wash</span></span></div>
                             <div class="flow-text">洗車時間は車種によりますが、1 時<br>間以内が目安です。雨天時やお客様<br>都合のキャンセルの場合、全額を次<br>回洗車予約に使用可能ポイントとし<br>て還元します。※有効期限無し。</div>
                         </div>
                         <div class="flow-box m-1">
+                            <div class="flow-allow"></div>
                             <img class="flow" src="{{ asset('img/flow/04.png') }}" style="width:260px; position:absolute; top:-15px; left:10px;">
                             <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">完了</span><br><span class="flow-image-sub">Finish!</span></span></div>
                             <div class="flow-text">洗車完了時、完了メールをお客様の<br>登録したアドレス宛に送信します。</div>
