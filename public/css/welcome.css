@@ -39,6 +39,7 @@ html{
     display: inline-block;
     transition: all .4s;
     box-sizing: border-box;
+    z-index:9999;
 }
 #nav-open {
     position: absolute;
@@ -65,7 +66,7 @@ html{
     bottom: 0;
 }
 #nav-input:checked + label {
-    z-index:9999;
+    /* z-index:9999; */
 }
 #nav-input:checked + label span:nth-of-type(1) {
     -webkit-transform: translateY(15.5px) rotate(-45deg);
@@ -102,7 +103,7 @@ html{
 #nav-close {
     display: none;/*はじめは隠しておく*/
     position: fixed;
-    z-index: 99;
+    z-index: 9998;
     top: 0;/*全体に広がるように*/
     left: 0;
     width: 100%;
@@ -377,7 +378,7 @@ header{
     height: 100%;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 99999;
     background-color:#a1d4d1;
 }
 .effect-fede-header{
