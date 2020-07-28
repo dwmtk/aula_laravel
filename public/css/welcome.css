@@ -285,7 +285,7 @@ header{
         position:absolute;
         top:15px;
         right:60px;
-        width:110px;
+        width:150px;
     }
     header{
         height: 800px;
@@ -443,12 +443,16 @@ header{
     margin: 50px 0 10px 0;
 }
 .concept-text1{
-    margin-top:30px;
+    margin:30px 0;
     font-family: 'Noto Sans JP', sans-serif; font-size:24px; font-weight:300;
 }
 .concept-text2{
-    margin-bottom:30px;
-    font-family: 'Noto Sans JP', sans-serif; font-size:16px; font-weight:400;
+    margin-bottom:60px;
+    font-family: 'Noto Sans JP', sans-serif; 
+    font-size:16px; 
+    font-weight:400;
+    letter-spacing: 0.6px;
+    line-height: 30px;
 }
 .concept-text2-sm{
     margin-bottom:30px;
@@ -473,13 +477,16 @@ header{
         margin: 20px 0 10px 0;
     }
     .concept-text1{
+        margin: 30px 0 25px;
         font-size:14px;
     }
     .concept-text2{
         display:none;
     }
     .concept-text2-sm{
-        font-family: 'Noto Sans JP', sans-serif; font-size:10px; font-weight:400;
+        font-family: 'Noto Sans JP', sans-serif; 
+        font-size:10px; 
+        font-weight:200;
         display:block;
     }
     .concept-box-parent{
@@ -534,7 +541,7 @@ header{
 }
 .work-text2{
     position:absolute; 
-    top:245px; 
+    top:255px; 
     left:15px; 
     width:290px; 
     text-align:left; 
@@ -579,7 +586,7 @@ header{
     }
     .work-text{
         position:relative;
-        padding:8px;
+        padding:0 8px;
         width:100%;
     }
     .work-text1-sm{
@@ -594,6 +601,7 @@ header{
         font-family: 'Noto Sans JP', sans-serif; 
         font-size:10px; 
         font-weight:400;
+        padding-top:3px;
     }
 }
 
@@ -669,11 +677,15 @@ header{
 }
 .price-text1{
     padding-top:30px;
-    font-family: 'Noto Sans JP', sans-serif; font-size:24px; font-weight:400;
+    font-family: 'Noto Sans JP', sans-serif; 
+    font-size:24px; 
+    font-weight:400;
 }
 .price-text2{
     margin:30px 0 30px 0;
-    font-family: 'Noto Sans JP', sans-serif; font-size:16px; font-weight:400;
+    font-family: 'Noto Sans JP', sans-serif; 
+    font-size:16px; 
+    font-weight:400;
 }
 .price-text2-sm{
     display:none;
@@ -683,14 +695,22 @@ header{
         height:20px;
     }
     .price-text1{
-        font-family: 'Noto Sans JP', sans-serif; font-size:14px; font-weight:400;
+        font-family: 'Noto Sans JP', sans-serif; 
+        font-size:14px; 
+        font-weight:400;
+        letter-spacing: 1.2px;
+        line-height: 18px;
     }
     .price-text2{
         display:none;
     }
     .price-text2-sm{
-        font-family: 'Noto Sans JP', sans-serif; font-size:10px; font-weight:400;
+        font-family: 'Noto Sans JP', sans-serif; 
+        font-size:11px; 
+        font-weight:400;
         display:block;
+        letter-spacing: 0.7px;
+        line-height: 18px;
     }
     .price-box{
         width: 130px;

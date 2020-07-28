@@ -183,22 +183,22 @@
                         <div class="work-box m-1">
                             <div class="work-image"><img src="{{ asset('img/work_1.jpg') }}"></div>
                             <div>
-                                <p class="work-text1">東区 A.A 様</p>
-                                <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                                <p class="work-text1">東区 H.K様</p>
+                                <p class="work-text2">これまで洗車機を使っていましたが、もっと時短できないかな・・・と調べていた時、このサービスを発見。正直スマホ予約だけで大丈夫?と不安でしたが、車が勝手にピカピカになっており、仕事に使える時間が増え大満足です!!</p>
                             </div>
                         </div>
                         <div class="work-box m-1">
                             <div class="work-image"><img src="{{ asset('img/work_2.jpg') }}"></div>
                             <div>
-                                <p class="work-text1">東区 A.A 様</p>
-                                <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                                <p class="work-text1">緑区 A.S様</p>
+                                <p class="work-text2">洗車機に入れても、すぐに汚れてしまう事に悩んでいた所、この出張洗車を知りました。勝手にやってくれるならまあいいかと思い予約。洗車後はボディがツヤツヤで、汚れもつきにくくなり、車に乗ること自体が楽しく感じるようになりました。</p>
                             </div>                    
                         </div>
                         <div class="work-box m-1">
                             <div class="work-image"><img src="{{ asset('img/sample_10.jpg') }}"></div>
                             <div>
-                                <p class="work-text1">東区 A.A 様</p>
-                                <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                                <p class="work-text1">春日井市 D.M様</p>
+                                <p class="work-text2">仕事と旅行が多く、車がどんどん汚くなっていましたが、洗車がめんどくさくて放置・・・。そんな時このサービスを知り、すぐに予約。友人から車綺麗になったよねと言われるようになり、車で人に会いに行く度、やってよかったと実感します。</p>
                             </div>                
                         </div>
                     </div>
@@ -237,7 +237,7 @@
                                         東区 A.A 様
                                     </p>
                                     <p class="work-text2-sm">
-                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                    毎回洗車場に持ってくことが面倒で、今回初めて出張洗車を依頼してみました。正直スマホ予約のみで、本当に来てくれるのか??という不安もありましたが、心配は無用でした。簡単に車がピカピカになり、大満足です!!
                                     </p>
                                 </div>
                             </div>
@@ -252,7 +252,7 @@
                                         東区 A.A 様
                                     </p>
                                     <p class="work-text2-sm">
-                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                                    これまで洗車機を使っていましたが、もっと時短できないかな・・・と調べていた時、このサービスを発見。正直スマホ予約だけで大丈夫?と不安でしたが、車が勝手にピカピカになっており、仕事に使える時間が増え大満足です!!
                                     </p>
                                 </div>
                             </div>           
@@ -537,37 +537,37 @@
             $(window).scroll(function(){
                 var top_concept = $("#concept").offset().top; // ターゲットの位置取得
                 var position_concept = top_concept - $(window).height();  // 発火させたい位置
-                if($(window).scrollTop() > position_concept + 350){
+                if($(window).scrollTop() > position_concept + 300){
                     // 要素が見えたときの動き 
                     $('#concept').addClass('effect-scroll');
                 }
                 var top_work = $("#works").offset().top; // ターゲットの位置取得
                 var position_work = top_work - $(window).height();  // 発火させたい位置
-                if($(window).scrollTop() > position_work + 350){
+                if($(window).scrollTop() > position_work + 300){
                     // 要素が見えたときの動き 
                     $('#works').addClass('effect-scroll');
                 }
                 var top_instagram = $("#instagram").offset().top; // ターゲットの位置取得
                 var position_instagram = top_instagram - $(window).height();  // 発火させたい位置
-                if($(window).scrollTop() > position_instagram + 350){
+                if($(window).scrollTop() > position_instagram + 300){
                     // 要素が見えたときの動き 
                     $('#instagram').addClass('effect-scroll');
                 }
                 var top_price = $("#price").offset().top; // ターゲットの位置取得
                 var position_price = top_price - $(window).height();  // 発火させたい位置
-                if($(window).scrollTop() > position_price + 350){
+                if($(window).scrollTop() > position_price + 300){
                     // 要素が見えたときの動き 
                     $('#price').addClass('effect-scroll');
                 }
                 var top_flow = $("#flow").offset().top; // ターゲットの位置取得
                 var position_flow = top_flow - $(window).height();  // 発火させたい位置
-                if($(window).scrollTop() > position_flow + 350){
+                if($(window).scrollTop() > position_flow + 300){
                     // 要素が見えたときの動き 
                     $('#flow').addClass('effect-scroll');
                 }
                 var top_staff = $("#staff").offset().top; // ターゲットの位置取得
                 var position_staff = top_staff - $(window).height();  // 発火させたい位置
-                if($(window).scrollTop() > position_staff + 350){
+                if($(window).scrollTop() > position_staff + 300){
                     // 要素が見えたときの動き 
                     $('#staff').addClass('effect-scroll');
                 }
