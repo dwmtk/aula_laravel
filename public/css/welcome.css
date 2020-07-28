@@ -446,7 +446,10 @@ header{
 }
 .concept-text1{
     margin:30px 0;
-    font-family: 'Noto Sans JP', sans-serif; font-size:24px; font-weight:300;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size:24px;
+    font-weight:300;
+    letter-spacing: 0.6px;
 }
 .concept-text2{
     margin-bottom:60px;
@@ -480,16 +483,18 @@ header{
     }
     .concept-text1{
         margin: 30px 0 25px;
-        font-size:14px;
+        font-size:16px;
     }
     .concept-text2{
         display:none;
     }
     .concept-text2-sm{
         font-family: 'Noto Sans JP', sans-serif; 
-        font-size:10px; 
+        font-size:12px; 
         font-weight:200;
         display:block;
+        letter-spacing: 0.5px;
+        line-height: 20px;
     }
     .concept-box-parent{
         display:none;
@@ -540,16 +545,19 @@ header{
     font-family: 'Noto Sans JP', sans-serif; 
     font-size:18px; 
     font-weight:700;
+    color: #666666;
 }
 .work-text2{
     position:absolute; 
-    top:255px; 
+    top:250px; 
     left:15px; 
     width:290px; 
     text-align:left; 
     font-family: 'Noto Sans JP', sans-serif; 
     font-size:16px; 
-    font-weight:400;
+    font-weight:200;
+    letter-spacing: 0.5px;
+    color: #666666;
 }
 @media (max-width:991px) {
     .work-title{
@@ -597,13 +605,16 @@ header{
         font-size:12px; 
         font-weight:700;
         margin:0;
+        color: #666666;
     }
     .work-text2-sm{
         text-align:left; 
         font-family: 'Noto Sans JP', sans-serif; 
-        font-size:10px; 
+        font-size:11px; 
         font-weight:400;
         padding-top:3px;
+        letter-spacing: 0.5px;
+        color:#666666;
     }
 }
 
@@ -698,7 +709,7 @@ header{
     }
     .price-text1{
         font-family: 'Noto Sans JP', sans-serif; 
-        font-size:14px; 
+        font-size:16px; 
         font-weight:400;
         letter-spacing: 1.2px;
         line-height: 18px;
@@ -708,7 +719,7 @@ header{
     }
     .price-text2-sm{
         font-family: 'Noto Sans JP', sans-serif; 
-        font-size:11px; 
+        font-size:12px; 
         font-weight:400;
         display:block;
         letter-spacing: 0.7px;
@@ -745,14 +756,15 @@ header{
     position:relative;
     width:280px;
     height:400px;
+    margin:10px;
 }
 .flow-image{
     /* ex 会員登録のボックス */
     position:absolute;
     top:10px;
     left:10px;
-    width:260px;
-    height:170px;
+    width:280px;
+    height:183px;
     vertical-align: middle;
     display: table;
 }
@@ -760,6 +772,13 @@ header{
     /* ex 会員登録のボックスのテキスト要素 */
     display: table-cell;
     vertical-align: middle;
+}
+.flow{
+    /* 画像 */
+    width:280px;
+    position:absolute;
+    top:-15px;
+    left:10px;
 }
 .flow-image-top{
     /* ex 会員登録 */
@@ -772,15 +791,16 @@ header{
     color:#a1d4d1;
 }
 .flow-text{
- 
     position:absolute;
     width:280px;
-    top:190px;
+    top:198px;
     left:10px;
     text-align:left;
     font-family: 'Noto Sans JP', sans-serif; 
     font-size:16px; 
     font-weight:400;
+    letter-spacing: 1px;
+    color: #666666;
 }
 .flow-allow{
     position:relative;
@@ -868,6 +888,8 @@ header{
         left: 50%;
         transform: translateY(-50%) translateX(-48%);
         -webkit-transform: translateY(-50%) translateX(-48%);
+        letter-spacing: 0.9px;
+        color: #666666;
     }
 }
 /* STAFF */
@@ -904,7 +926,7 @@ header{
 .staff-box2{
     /* スタッフ説明ボックス */
     text-align:left;
-    max-width:500px;
+    max-width:600px;
     width:40%;
     height:250px;
     top:20px;
@@ -927,6 +949,7 @@ header{
     font-family: 'Noto Sans JP', sans-serif; 
     font-size:16px; 
     font-weight:400;
+    letter-spacing: 1px;
 }
 @media (max-width:991px) {
     #staff{
@@ -1005,7 +1028,7 @@ header{
     }
     .reserve-btn-sm{
         display:block;
-        margin:100px auto 50px;
+        margin:130px auto 50px;
         width:300px;
         pointer-events: none;
     }

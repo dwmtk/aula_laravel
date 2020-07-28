@@ -124,7 +124,7 @@
                 </div>
                 <!-- コンテンツ -->
                 <p class="concept-text1">
-                    お客様の時間と手間を一挙に解消する<br>名古屋市限定の出張洗車サービス
+                    お客様の時間と手間を一挙に解消する<br>愛知県限定の出張洗車サービス
                 </p>
                 <p class="concept-text2">
                 “アウラ”は「洗車にかかる時間・手間を解消し、お客様にいつもピカピカの車に乗り続けてほしい」<br>
@@ -135,9 +135,9 @@
                 “アウラ”は「洗車にかかる時間・手間を解消し、<br>
                 お客様にいつもピカピカの車に乗り続けてほしい」<br>
                 という思いから生まれた、出張洗車サービスです。<br>
-                「今日も車が綺麗で気持ちいいな」と感じて頂ける事がやりがいです。<br>
+                「今日も車が綺麗で気持ちいいな」と感じて<br>頂ける事がやりがいです。<br>
                 今後は、車がピカピカであり続ける気持ちよさを、<br>
-                日本全国のお客様に感じて頂けるよう、サービス範囲を拡大予定。
+                日本全国のお客様に感じて頂けるよう<br>サービス範囲を拡大予定。
                 </p>
                 <div class="concept-box-parent">
                     <div class="d-flex justify-content-center flex-nowrap">
@@ -332,7 +332,7 @@
                     (下記の表示価格は参考値となります。)
                 </p>
                 <p class="price-text2-sm">
-                    アウラでは、お客様のお車の車種によって値段設定をしています。<br>
+                    アウラでは、お客様のお車の車種によって<br>値段設定をしています。<br>
                     (下記の表示価格は参考値となります。)
                 </p>
                 <div class="price-box-parent d-flex justify-content-center flex-wrap">
@@ -379,26 +379,26 @@
                 <!-- コンテンツ -->
                 <div class="flow-box-parent">
                     <div class="d-flex justify-content-center flex-wrap">
-                        <div class="flow-box m-1">
-                            <img class="flow" src="{{ asset('img/flow/01.png') }}" style="width:260px; position:absolute; top:-15px; left:10px;">
+                        <div class="flow-box">
+                            <img class="flow" src="{{ asset('img/flow/01.png') }}">
                             <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">会員登録</span><br><span class="flow-image-sub">REGISTRATION</span></span></div>
                             <div class="flow-text">オンラインで会員登録後、サイトの<br>流れに沿って洗車予約ページまで進<br>みます。</div>
                         </div>
-                        <div class="flow-box m-1">
+                        <div class="flow-box">
                             <div class="flow-allow"></div>
-                            <img class="flow" src="{{ asset('img/flow/02.png') }}" style="width:260px; position:absolute; top:-15px; left:10px;">
+                            <img class="flow" src="{{ asset('img/flow/02.png') }}">
                             <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">洗車予約</span><br><span class="flow-image-sub">reservation</span></span></div>
                             <div class="flow-text">洗車日と車種、駐車場を入力し、ク<br>レジットカードで支払い後、即予約<br>完了。事前にマイカー、駐車場を登<br>録しておくことで素早い予約が可能<br>です。</div>
                         </div>
-                        <div class="flow-box m-1">
+                        <div class="flow-box">
                             <div class="flow-allow"></div>
-                            <img class="flow" src="{{ asset('img/flow/03.png') }}" style="width:260px; position:absolute; top:-15px; left:10px;">
+                            <img class="flow" src="{{ asset('img/flow/03.png') }}">
                             <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">洗車</span><br><span class="flow-image-sub">Car wash</span></span></div>
                             <div class="flow-text">洗車時間は車種によりますが、1 時<br>間以内が目安です。雨天時やお客様<br>都合のキャンセルの場合、全額を次<br>回洗車予約に使用可能ポイントとし<br>て還元します。※有効期限無し。</div>
                         </div>
-                        <div class="flow-box m-1">
+                        <div class="flow-box">
                             <div class="flow-allow"></div>
-                            <img class="flow" src="{{ asset('img/flow/04.png') }}" style="width:260px; position:absolute; top:-15px; left:10px;">
+                            <img class="flow" src="{{ asset('img/flow/04.png') }}">
                             <div class="flow-image"><span class="flow-image-text"><span class="flow-image-top">完了</span><br><span class="flow-image-sub">Finish!</span></span></div>
                             <div class="flow-text">洗車完了時、完了メールをお客様の<br>登録したアドレス宛に送信します。</div>
                         </div>
