@@ -147,10 +147,12 @@ html{
 }
 .nav-title{
     font-size: 37px;
+    letter-spacing: 3px;
     margin: 30px 0 30px;
 }
 .nav-li{
     font-size: 25px;
+    letter-spacing: 3px;
     color:#fff;
 }
 .nav-li:hover{
