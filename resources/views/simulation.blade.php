@@ -106,14 +106,26 @@
             var length = Number(sizes[0]);
             var height = Number(sizes[1]);
             var width = Number(sizes[2]);
-            var price = (height*width*2 + height*length*2 + length*width) *100 *1.5;
-            price = Math.round(price/1000) * 1000;
-            if(price > 6000){
-                price = 6000;
+            var area = height*width*2 + height*length*2 + length*width;
+            if(area <= 26.0){
+                //Sサイズのとき 24.82
+                price = 8000;
+            } else if(area >= 33.5){
+                //Lサイズのとき 33.26
+                price = 12000;
+            } else {
+                //それ以外（Mサイズ）
+                price = 10000;
             }
-            if(price < 3000){
-                price = 3000;
-            }
+
+            // var price = (height*width*2 + height*length*2 + length*width) *100 *1.5;
+            // price = Math.round(price/1000) * 1000;
+            // if(price > 6000){
+            //     price = 6000;
+            // }
+            // if(price < 3000){
+            //     price = 3000;
+            // }
             $(".price").text("￥" + price.toLocaleString());
             $("#price").val(price);
         });

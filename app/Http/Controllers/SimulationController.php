@@ -53,9 +53,9 @@ class SimulationController extends Controller
         ->orderBy('car_name')->get();
 
         $car_ages = M_Cars::select('car_id', 'car_maker', 'car_name'
-        , \DB::raw('ROUND(car_length) AS car_length')
-        , \DB::raw('ROUND(car_height) AS car_height')
-        , \DB::raw('ROUND(car_width) AS car_width')
+        , \DB::raw('car_length AS car_length')
+        , \DB::raw('car_height AS car_height')
+        , \DB::raw('car_width AS car_width')
         , \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
         ->where('car_height', '<=', config('app.max_height')) // 高さ制限
         ->orderBy('car_id')->get();

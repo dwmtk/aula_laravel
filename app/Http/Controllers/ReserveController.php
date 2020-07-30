@@ -64,9 +64,9 @@ class ReserveController extends Controller
         ->orderBy('car_name')->get();
 
         $car_ages = M_Cars::select('car_id', 'car_maker', 'car_name'
-        , \DB::raw('ROUND(car_length) AS car_length')
-        , \DB::raw('ROUND(car_height) AS car_height')
-        , \DB::raw('ROUND(car_width) AS car_width')
+        , \DB::raw('car_length AS car_length')
+        , \DB::raw('car_height AS car_height')
+        , \DB::raw('car_width AS car_width')
         , \DB::raw("CONCAT(car_age_start,'～', COALESCE(car_age_end,'生産中')) AS car_age"))
         ->where('car_height', '<=', config('app.max_height')) // 高さ制限
         ->orderBy('car_id')->get();
@@ -74,9 +74,9 @@ class ReserveController extends Controller
         // マイカーDBからプルダウン用のデータを取得
         // $mycars = T_MyCars::where('user_id', Auth::id())->get();
         $mycars = T_MyCars::select('mycar_id', 'car_id', 'car_maker', 'car_name' , 'car_age_start', 'car_age_end'
-        , \DB::raw('ROUND(car_length) AS car_length')
-        , \DB::raw('ROUND(car_height) AS car_height')
-        , \DB::raw('ROUND(car_width) AS car_width')
+        , \DB::raw('car_length AS car_length')
+        , \DB::raw('car_height AS car_height')
+        , \DB::raw('car_width AS car_width')
         , 'car_number', 'car_color')
         ->where('user_id', Auth::id())->get();
 
@@ -184,9 +184,9 @@ class ReserveController extends Controller
             // $mycar_db = T_MyCars::where('mycar_id', $request->mycar)
             // ->first();
             $mycar_db = T_MyCars::select('mycar_id', 'car_id', 'car_maker', 'car_name' , 'car_age_start', 'car_age_end'
-            , \DB::raw('ROUND(car_length) AS car_length')
-            , \DB::raw('ROUND(car_height) AS car_height')
-            , \DB::raw('ROUND(car_width) AS car_width')
+            , \DB::raw('car_length AS car_length')
+            , \DB::raw('car_height AS car_height')
+            , \DB::raw('car_width AS car_width')
             , 'car_number', 'car_color')
             ->where('mycar_id', $request->mycar)
             ->first();
@@ -215,9 +215,9 @@ class ReserveController extends Controller
             // $car_db = M_Cars::where('car_id', explode(',',$request->car_age)[3])
             // ->first();
             $car_db = M_Cars::select('car_id', 'car_maker', 'car_name' , 'car_age_start', 'car_age_end'
-            , \DB::raw('ROUND(car_length) AS car_length')
-            , \DB::raw('ROUND(car_height) AS car_height')
-            , \DB::raw('ROUND(car_width) AS car_width'))
+            , \DB::raw('car_length AS car_length')
+            , \DB::raw('car_height AS car_height')
+            , \DB::raw('car_width AS car_width'))
             ->where('car_id', explode(',',$request->car_age)[3])
             ->first();
 
@@ -242,7 +242,18 @@ class ReserveController extends Controller
 
         // 金額チェック
         // フォームからきた金額と、もう一度コントロール側で計算した値を比較する。
-        $price_confirm =  ($height*$width*2 + $height*$length*2 + $length*$width) *100 *1.5;
+        // $price_confirm =  ($height*$width*2 + $height*$length*2 + $length*$width) *100 *1.5;
+        $area = $height*$width*2 + $height*$length*2 + $length*$width;
+        if($area <= 26.0){
+            //Sサイズのとき 24.82
+            $price_confirm = 8000;
+        } else if($area >= 33.5){
+            //Lサイズのとき 33.26
+            $price_confirm = 12000;
+        } else {
+            //それ以外（Mサイズ）
+            $price_confirm = 10000;
+        }
         $final_price = 0;
         $tsuke_pay = Auth::user()->tsuke_pay;
 

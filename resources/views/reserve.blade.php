@@ -434,7 +434,18 @@ $(function() {
         var length = Number(sizes[0]);
         var height = Number(sizes[1]);
         var width = Number(sizes[2]);
-        var price = (height*width*2 + height*length*2 + length*width) *100 *1.5;
+        // var price = (height*width*2 + height*length*2 + length*width) *100 *1.5;
+        var area = height*width*2 + height*length*2 + length*width;
+        if(area <= 26.0){
+            //Sサイズのとき 24.82
+            price = 8000;
+        } else if(area >= 33.5){
+            //Lサイズのとき 33.26
+            price = 12000;
+        } else {
+            //それ以外（Mサイズ）
+            price = 10000;
+        }
         var final_price = price - {{ Auth::user()->tsuke_pay }};
         if(final_price < 0){
             final_price = 0;
@@ -499,7 +510,18 @@ $(function() {
         var length = Number(sizes[0]);
         var height = Number(sizes[1]);
         var width = Number(sizes[2]);
-        var price = (height*width*2 + height*length*2 + length*width) *100 *1.5;
+        // var price = (height*width*2 + height*length*2 + length*width) *100 *1.5;
+        var area = height*width*2 + height*length*2 + length*width;
+        if(area <= 26.0){
+            //Sサイズのとき 24.82
+            price = 8000;
+        } else if(area >= 33.5){
+            //Lサイズのとき 33.26
+            price = 12000;
+        } else {
+            //それ以外（Mサイズ）
+            price = 10000;
+        }
         var final_price = price - {{ Auth::user()->tsuke_pay }};
         if(final_price < 0){
             final_price = 0;
