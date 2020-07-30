@@ -345,29 +345,38 @@
                 </p>
                 <div class="price-box-parent d-flex justify-content-center flex-wrap">
                     <div class="price-box">
-                        <img src="{{ asset('img/price_illust/compact.png') }}">
+                        <div>
+                            <span class="price-box-text3">Small Size</span>
+                        </div>
+                        <img src="{{ asset('img/price_illust/s_size.png') }}">
                         <div class="price-box-text">
-                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥3,000</span><span class="price-box-text1"></span>
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥8,000</span><span class="price-box-text1"></span>
                         </div>
                     </div>
                     <div class="price-box">
-                        <img src="{{ asset('img/price_illust/sedan.png') }}">
+                        <div>
+                            <span class="price-box-text3">Medium Size</span>
+                        </div>
+                        <img src="{{ asset('img/price_illust/m_size.png') }}">
                         <div class="price-box-text">
-                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥4,000</span><span class="price-box-text1"></span> 
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥10,000</span><span class="price-box-text1"></span> 
                         </div>
                     </div>
                     <div class="price-box">
-                        <img src="{{ asset('img/price_illust/hatchback.png') }}">
+                        <div>
+                            <span class="price-box-text3">Large Size</span>
+                        </div>
+                        <img src="{{ asset('img/price_illust/l_size.png') }}">
                         <div class="price-box-text">
-                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥5,000</span><span class="price-box-text1"></span>
+                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥12,000</span><span class="price-box-text1"></span>
                         </div>
                     </div>
-                    <div class="price-box">
+                    <!-- <div class="price-box">
                         <img src="{{ asset('img/price_illust/suv.png') }}">
                         <div class="price-box-text">
                             <span class="price-box-text1">1回/</span><span class="price-box-text2">¥6,000</span><span class="price-box-text1"></span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <!-- <div>
                     <button class="price-btn" type="button" onclick="window.open('{{ url('/simulation') }}','_blank')">洗車料金詳細はこちら</button>

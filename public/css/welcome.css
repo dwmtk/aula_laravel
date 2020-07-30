@@ -697,7 +697,7 @@ header{
     height:30px;
 }
 .price-box{
-    width:150px;
+    width:180px;
     margin:20px 70px;
 }
 .price-box img{
@@ -708,6 +708,13 @@ header{
     border-bottom:dashed;
     border-color:#FFF;
     border-width:1px;
+}
+.price-box-text3{
+    font-family: urw-din, sans-serif;
+    font-weight: 600;
+    font-style: italic;
+    font-size:25px;
+    white-space: nowrap;
 }
 .price-box-text1{
     font-family: urw-din, sans-serif;
@@ -721,6 +728,7 @@ header{
     font-style: italic;
     font-size:24px;
     color:#00718C;
+    margin-left:5px;
 }
 .price-btn{
     margin:50px 0 10px 0;
