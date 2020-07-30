@@ -36,8 +36,16 @@
             </div>
             <div class="header-text">
                 <img class="header-text-img" src="{{ asset('img/firstview_title.png') }}">
+                <p class="header-text-sub">
+                愛知県の洗車サービス “アウラ” は<br>
+                全く新しい洗車のカタチをお届けします。
+                </p>
                 <img class="header-text-img-logo-sm" src="{{ asset('img/logo.png') }}" >
                 <img class="header-text-img-sm" src="{{ asset('img/firstview_title_sm.png') }}">
+                <p class="header-text-sub-sm">
+                愛知県の洗車サービス“アウラ”は<br>
+                全く新しい洗車のカタチをお届けします。
+                </p>
             </div>
             <div>
                 <a href="{{ url('/') }}">

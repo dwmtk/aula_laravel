@@ -248,7 +248,7 @@ header{
     background-color:#a1d4d1;
     background-size:700px auto;
     background-repeat:no-repeat;
-}     
+}
 .header-img{
     float: right;
     max-width:100%;
@@ -261,6 +261,26 @@ header{
     animation-direction      : normal;    /* 終了後の動き */
     opacity:0;
     animation-fill-mode: forwards; /*これで値を保持*/
+}
+.header-text-sub{
+    margin-top:15px;
+    color:#fff;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 45px;
+    animation-name           : fadeIn-text-img;  /* ルール名 */
+    animation-duration       : 2s;            /* 実行時間 */
+    animation-timing-function: ease;          /* 動き速度 */
+    animation-delay          : 3.2s;            /* 開始遅延時間 */
+    animation-iteration-count: 1;     /* 再生回数 */
+    animation-direction      : normal;    /* 終了後の動き */
+    opacity:0;
+    animation-fill-mode: forwards; /*これで値を保持*/
+}
+.header-text-sub-sm{
+    display:none;
 }
 @keyframes fadeIn { /*animetion-nameで設定した値を書く*/
     from {
@@ -325,6 +345,27 @@ header{
     .svg-draw-sm, .header-img-sm{
         display:block;
     }
+    .header-text-sub{
+        display:none;
+    }
+    .header-text-sub-sm{
+        margin: 10px 0px 0px 2px;
+        color: #fff;
+        font-family: 'Noto Sans JP', sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        display: block;
+        letter-spacing: 1px;
+        line-height: 25px;
+        animation-name           : fadeIn-text-img;  /* ルール名 */
+        animation-duration       : 2s;            /* 実行時間 */
+        animation-timing-function: ease;          /* 動き速度 */
+        animation-delay          : 3s;            /* 開始遅延時間 */
+        animation-iteration-count: 1;     /* 再生回数 */
+        animation-direction      : normal;    /* 終了後の動き */
+        opacity:0;
+        animation-fill-mode: forwards;
+    }
 }
 
 /* ロゴ */
@@ -350,10 +391,10 @@ header{
 }
 .header-text-img{
     width:700px;
-    animation-name           : fadeIn-text-img;  /* ルール名 */
-    animation-duration       : 2s;            /* 実行時間 */
+    animation-name           : fadeIn;  /* ルール名 */
+    animation-duration       : 0.8s;            /* 実行時間 */
     animation-timing-function: ease;          /* 動き速度 */
-    animation-delay          : 3.2s;            /* 開始遅延時間 */
+    animation-delay          : 2s;            /* 開始遅延時間 */
     animation-iteration-count: 1;     /* 再生回数 */
     animation-direction      : normal;    /* 終了後の動き */
     opacity:0;
@@ -404,10 +445,10 @@ header{
         display:block;
         width:130px;
         margin:0 0 20px 5px;
-        animation-name           : fadeIn-text-img;  /* ルール名 */
-        animation-duration       : 2s;            /* 実行時間 */
+        animation-name           : fadeIn-sm;  /* ルール名 */
+        animation-duration       : 0.8s;            /* 実行時間 */
         animation-timing-function: ease;          /* 動き速度 */
-        animation-delay          : 3s;            /* 開始遅延時間 */
+        animation-delay          : 2s;            /* 開始遅延時間 */
         animation-iteration-count: 1;     /* 再生回数 */
         animation-direction      : normal;    /* 終了後の動き */
         opacity:0;
@@ -416,10 +457,10 @@ header{
     .header-text-img-sm{
         display:block;
         width:300px;
-        animation-name           : fadeIn-text-img;  /* ルール名 */
-        animation-duration       : 2s;            /* 実行時間 */
+        animation-name           : fadeIn-sm;  /* ルール名 */
+        animation-duration       : 0.8s;            /* 実行時間 */
         animation-timing-function: ease;          /* 動き速度 */
-        animation-delay          : 3s;            /* 開始遅延時間 */
+        animation-delay          : 2s;            /* 開始遅延時間 */
         animation-iteration-count: 1;     /* 再生回数 */
         animation-direction      : normal;    /* 終了後の動き */
         opacity:0;
