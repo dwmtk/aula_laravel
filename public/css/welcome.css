@@ -445,26 +445,26 @@ header{
         display:block;
         width:130px;
         margin:0 0 20px 5px;
-        animation-name           : fadeIn-sm;  /* ルール名 */
-        animation-duration       : 0.8s;            /* 実行時間 */
+        animation-name           : fadeIn-text-img;  /* ルール名 */
+        animation-duration       : 2s;            /* 実行時間 */
         animation-timing-function: ease;          /* 動き速度 */
-        animation-delay          : 2s;            /* 開始遅延時間 */
+        animation-delay          : 3s;            /* 開始遅延時間 */
         animation-iteration-count: 1;     /* 再生回数 */
         animation-direction      : normal;    /* 終了後の動き */
         opacity:0;
-        animation-fill-mode: forwards; /*これで値を保持*/
+        animation-fill-mode: forwards;
     }
     .header-text-img-sm{
         display:block;
         width:300px;
-        animation-name           : fadeIn-sm;  /* ルール名 */
-        animation-duration       : 0.8s;            /* 実行時間 */
+        animation-name           : fadeIn-text-img;  /* ルール名 */
+        animation-duration       : 2s;            /* 実行時間 */
         animation-timing-function: ease;          /* 動き速度 */
-        animation-delay          : 2s;            /* 開始遅延時間 */
+        animation-delay          : 3s;            /* 開始遅延時間 */
         animation-iteration-count: 1;     /* 再生回数 */
         animation-direction      : normal;    /* 終了後の動き */
         opacity:0;
-        animation-fill-mode: forwards; /*これで値を保持*/
+        animation-fill-mode: forwards;
     }
 
 }
