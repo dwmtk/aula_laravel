@@ -191,47 +191,48 @@
                         <div class="work-box m-1">
                             <div class="work-image"><img src="{{ asset('img/work_1.jpg') }}"></div>
                             <div>
-                                <p class="work-text1">東区 H.K様</p>
-                                <p class="work-text2">これまで洗車機を使っていましたが、もっと時短できないかな・・・と調べていた時、このサービスを発見。正直スマホ予約だけで大丈夫?と不安でしたが、車が勝手にピカピカになっており、仕事に使える時間が増え大満足です!!</p>
+                                <p class="work-text1">緑区 A.S様</p>
+                                <p class="work-text2">洗車機に入れても、すぐに汚れてしまう事に悩んでいた所、この出張洗車を知りました。勝手にやってくれるならまあいいかと思い予約。洗車後はボディがツヤツヤで、汚れもつきにくくなり、車に乗ること自体が楽しく感じるようになりました。</p>
                             </div>
                         </div>
                         <div class="work-box m-1">
                             <div class="work-image"><img src="{{ asset('img/work_2.jpg') }}"></div>
                             <div>
-                                <p class="work-text1">緑区 A.S様</p>
-                                <p class="work-text2">洗車機に入れても、すぐに汚れてしまう事に悩んでいた所、この出張洗車を知りました。勝手にやってくれるならまあいいかと思い予約。洗車後はボディがツヤツヤで、汚れもつきにくくなり、車に乗ること自体が楽しく感じるようになりました。</p>
+                                <p class="work-text1">東区 H.K様</p>
+                                <p class="work-text2">綺麗な車が好きで、洗車に時間を掛けていましたが、妻から洗車時間が長いとクレームが・・・。ネットで調べ、この洗車を知り、本当に綺麗になるのか半信半疑で依頼。結果、車の状態にも満足で、何より妻が嬉しそうで良かったです。</p>
                             </div>                    
                         </div>
                         <div class="work-box m-1">
-                            <div class="work-image"><img src="{{ asset('img/sample_10.jpg') }}"></div>
+                            <div class="work-image"><img src="{{ asset('img/work_3.jpg') }}"></div>
                             <div>
-                                <p class="work-text1">春日井市 D.M様</p>
-                                <p class="work-text2">仕事と旅行が多く、車がどんどん汚くなっていましたが、洗車がめんどくさくて放置・・・。そんな時このサービスを知り、すぐに予約。友人から車綺麗になったよねと言われるようになり、車で人に会いに行く度、やってよかったと実感します。</p>
+                                <p class="work-text1">東海市 G.T様</p>
+                                <p class="work-text2">これまで洗車機を使っていましたが、もっと時短できないかな・・・と調べていた時、このサービスを発見。正直スマホ予約だけで大丈夫?と不安でしたが、車が勝手にピカピカになっており、仕事に使える時間が増え大満足です!!</p>
                             </div>                
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center flex-nowrap">
+                    <!-- <div class="d-flex justify-content-center flex-nowrap">
                         <div class="work-box m-1">
-                            <div class="work-image"><img src="{{ asset('img/sample_11.jpg') }}"></div>
+                            <div class="work-image"><img src="{{ asset('img/') }}"></div>
                             <div>
-                                <p class="work-text1">東区 A.A 様</p>
-                                <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                                <p class="work-text1">春日井市 D.M様</p>
+                                <p class="work-text2">旅行が大好きなんですが、車はいつも乗るばかりで、洗車はめんどくさくて放置していました。そんな時このサービスを知り、すぐに予約。家族と友人から「車綺麗になったね!」と言われる度に、やってよかったと実感しています。</p>
                             </div>
                         </div>
                         <div class="work-box m-1">
-                            <div class="work-image"><img src="{{ asset('img/sample_12.jpg') }}"></div>
+                            <div class="work-image"><img src="{{ asset('img/') }}"></div>
                             <div>
-                                <p class="work-text1">東区 A.A 様</p>
-                                <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                                <p class="work-text1">一宮市 K.H様</p>
+                                <p class="work-text2">新車購入後、頻繁にガソリンスタンドで手洗洗車を依頼していました。しかし仕事に全力で取り組んでいると、洗車が出来ない事があり、凄く嫌でした。そんな時に出張洗車を知り、毎週のように洗車を依頼。愛車がいつも綺麗で幸せです!</p>
                             </div>
                         </div>
-                        <div class="work-box m-1"><div class="work-image"><img src="{{ asset('img/sample_08.jpg') }}"></div>
+                        <div class="work-box m-1">
+                            <div class="work-image"><img src="{{ asset('img/') }}"></div>
                             <div>
-                                <p class="work-text1">東区 A.A 様</p>
-                                <p class="work-text2">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                                <p class="work-text1">東区 S.M 様</p>
+                                <p class="work-text2">これまで手洗いで洗車していましたが、この珍しいサービスを発見。スマホだけで簡単に予約できる！！と言うのが第一印象でしたが、登録後次の予約は更に楽なので、出先から予約して、次確認した時には綺麗になっている体験を楽しんでいます。</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="work-box-parent-sm">
                     <div class="d-flex justify-content-center flex-nowrap">
@@ -242,10 +243,10 @@
                                 </div>
                                 <div class="work-text">
                                     <p class="work-text1-sm">
-                                        東区 A.A 様
+                                        緑区 A.S様
                                     </p>
                                     <p class="work-text2-sm">
-                                    毎回洗車場に持ってくことが面倒で、今回初めて出張洗車を依頼してみました。正直スマホ予約のみで、本当に来てくれるのか??という不安もありましたが、心配は無用でした。簡単に車がピカピカになり、大満足です!!
+                                        洗車機に入れても、すぐに汚れてしまう事に悩んでいた所、この出張洗車を知りました。勝手にやってくれるならまあいいかと思い予約。洗車後はボディがツヤツヤで、汚れもつきにくくなり、車に乗ること自体が楽しく感じるようになりました。
                                     </p>
                                 </div>
                             </div>
@@ -257,16 +258,16 @@
                                 </div>
                                 <div class="work-text">
                                     <p class="work-text1-sm">
-                                        東区 A.A 様
+                                        東区 H.K様
                                     </p>
                                     <p class="work-text2-sm">
-                                    これまで洗車機を使っていましたが、もっと時短できないかな・・・と調べていた時、このサービスを発見。正直スマホ予約だけで大丈夫?と不安でしたが、車が勝手にピカピカになっており、仕事に使える時間が増え大満足です!!
+                                        綺麗な車が好きで、洗車に時間を掛けていましたが、妻から洗車時間が長いとクレームが・・・。ネットで調べ、この洗車を知り、本当に綺麗になるのか半信半疑で依頼。結果、車の状態にも満足で、何より妻が嬉しそうで良かったです。
                                     </p>
                                 </div>
                             </div>           
                         </div>
                     </div>
-                    <div class="d-flex justify-content-center flex-nowrap">
+                    <!-- <div class="d-flex justify-content-center flex-nowrap">
                         <div class="work-box-sm m-1">
                             <div class="work-box-inner">
                                 <div class="work-image-sm">
@@ -297,7 +298,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </section>
 
