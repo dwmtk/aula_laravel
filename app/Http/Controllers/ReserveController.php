@@ -355,7 +355,7 @@ class ReserveController extends Controller
 
         } else {
             // 一時的に9割引き↓↓
-            $order->final_price = $order->final_price * 0.1;
+            // $order->final_price = $order->final_price * 0.1;
             // ここまで↑↑
 
             // ステータスを支払い前に選択

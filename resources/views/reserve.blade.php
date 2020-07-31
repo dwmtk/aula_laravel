@@ -315,7 +315,6 @@
                                 <p class="col-md-6 text-md-left text-sm-center final_price">￥0</p>
                                 <input type="hidden" name="final_price" value="0" id="final_price">
                             </div>
-                            <p class="text-center text-danger">※9割引きキャンペーン中※</p>
                         </div>
 
                         <div class="text-center pb-5">
@@ -451,9 +450,9 @@ $(function() {
             final_price = 0;
         };
         $(".price").text("￥" + price.toLocaleString());
-        // $(".final_price").text("￥" + final_price.toLocaleString());
+        $(".final_price").text("￥" + final_price.toLocaleString());
         // テストここから※本番は↑をコメント外し、↓をコメント化する。
-        $(".final_price").text("￥" +  (final_price* 0.1).toLocaleString() );
+        // $(".final_price").text("￥" +  (final_price* 0.1).toLocaleString() );
         // テストここまで
         $("#price").val(price);
         $("#final_price").val(final_price);
@@ -527,9 +526,9 @@ $(function() {
             final_price = 0;
         };
         $(".price").text("￥" + price.toLocaleString());
-        // $(".final_price").text("￥" + final_price.toLocaleString());
+        $(".final_price").text("￥" + final_price.toLocaleString());
         // テストここから※本番は↑をコメント外し、↓をコメント化する。
-        $(".final_price").text("￥" + (final_price* 0.1).toLocaleString() );
+        // $(".final_price").text("￥" + (final_price* 0.1).toLocaleString() );
         // テストここまで
         $("#price").val(price);
         $("#final_price").val(final_price);
