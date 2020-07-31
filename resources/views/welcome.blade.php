@@ -305,7 +305,9 @@
             <!-- Instagram -->
             <section id="instagram" class="text-center effect-fade">
                 <!-- コンテンツタイトル -->
-                <img class="instagram-title" src="{{ asset('img/instagram.png') }}">
+                <a href="https://www.instagram.com/aula_waterlesscarwash/" target="_blank">
+                    <img class="instagram-title" src="{{ asset('img/instagram.png') }}">
+                </a>
                 <!-- ライン -->
                 <div class="mb-5" style="position:relative;">
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:2px;"></div>
