@@ -42,7 +42,7 @@
 
                     
 
-                    <p><i class="fas fa-link p-2"></i>現在の予約状況<br>※試使用期間は予約キャンセル利用不可</p>
+                    <p><i class="fas fa-link p-2"></i>現在の予約状況</p>
                     @forelse ($orders as $order)
                     <div class="card mb-3">
                         <!--<div class="card-header bg-white text-center">No. {{ $loop->iteration }}</div>-->
@@ -69,11 +69,7 @@
                             <tr><td colspan="2">
                             <div class="d-flex text-center mx-auto" style="max-width:250px;">
                             
-                            @if(Auth::user()->user_type == "1" || Auth::user()->user_type == "2")
                             <a class="btn btn-sm btn-primary btn-lg flex-fill p-2" href="{{ action('ReserveController@cancelform', $order->order_id) }}" role="button" >予約キャンセル</a>
-                            @else
-                            <a class="btn btn-sm btn-primary btn-lg flex-fill p-2 disabled" tabindex="-1" href="{{ action('ReserveController@cancelform', $order->order_id) }}" role="button" aria-disabled="true">予約キャンセル</a>
-                            @endif
                             
                             </div>
                             </td></tr>

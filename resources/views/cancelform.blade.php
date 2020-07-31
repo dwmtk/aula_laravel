@@ -17,7 +17,7 @@
                     
                     <p><i class="fas fa-link p-2"></i>キャンセルする予約内容</p>
                     
-                    <table class="table table-sm table-primary table-borderless">
+                    <table class="table table-sm table-borderless mx-auto" style="width:400px;">
                     <tr><th scope="row">日付</th><td>{{ date('Y年m月d日',  strtotime($order->order_date)) }}</td></tr>
                     <tr><th scope="row">時間帯</th>
                     <td>
