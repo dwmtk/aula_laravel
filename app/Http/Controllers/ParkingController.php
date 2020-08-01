@@ -35,10 +35,10 @@ class ParkingController extends Controller
             'parking_detail' => ['nullable','string', 'max:255'],
         ]);
 
-        if( strpos($request->parking_city ,'名古屋') === false){
-            return redirect('parkinginfo')
-            ->with('message_error', "現在、名古屋市内のみ承っております。順次範囲拡大予定！");
-        }
+        // if( strpos($request->parking_city ,'名古屋') === false){
+        //     return redirect('parkinginfo')
+        //     ->with('message_error', "現在、名古屋市内のみ承っております。順次範囲拡大予定！");
+        // }
 
         //登録
         $parking = new T_Parkings();
@@ -81,10 +81,10 @@ class ParkingController extends Controller
             'parking_detail' => ['nullable','string', 'max:255'],
         ]);
 
-        if( strpos($request->parking_city ,'名古屋') === false){
-            return redirect('parkinginfo')
-            ->with('message_error', "現在、名古屋市内のみ承っております。順次範囲拡大予定！");
-        }
+        // if( strpos($request->parking_city ,'名古屋') === false){
+        //     return redirect('parkinginfo')
+        //     ->with('message_error', "現在、名古屋市内のみ承っております。順次範囲拡大予定！");
+        // }
 
         //更新
         \DB::table('t__parkings')
