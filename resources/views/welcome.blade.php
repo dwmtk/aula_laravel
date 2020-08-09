@@ -56,11 +56,10 @@
                 <a href="{{ url('/login') }}"><img class="login-btn" src="{{ asset('img/login.png') }}"></a>
                 <a href="{{ url('/login') }}"><img class="login-btn-sm" src="{{ asset('img/login_sm.png') }}"></a>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="none" id="svg-bg" class="effect-fade-header" style="">        
+            <!-- <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="none" id="svg-bg" class="effect-fade-header" style="">        
                 <path class="svg-draw" d="M0,0 v80 q10,10 20,0 t20,0 t20,0 t20,0 t20,0 v-80 Z" fill="#fff"></path>
                 <path class="svg-draw-sm" d="M0,0 v90 q10,10 30,0 t40,0 t40,0 v-90 Z" fill="#fff"></path>
-                <!-- <path d="M0,0 v80 q10,10 20,0 t20,0 t20,0 t20,0 t20,0 v-80 Z" fill="#fff"></path> -->
-            </svg>
+            </svg> -->
             <div id="nav-drawer">
                 <input id="nav-input" type="checkbox" class="nav-unshown">
                 <label id="nav-open" for="nav-input"><span></span><span></span><span></span><div>MENU</div></label>
@@ -105,20 +104,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="menu-bar" style="position:fixed; height:50px; width:100%; background-color:#a1d4d1; z-index:9998;">
-                <div>
-                    <a href="{{ url('/') }}">
-                        <img class="" src="{{ asset('img/logo.png') }}" style="position:absolute; width:130px; top:12px; left:10px;">
-                    </a>
-                <div>
-                <a href="{{ url('/login') }}"><img class="" src="{{ asset('img/login.png') }}" style="width:150px;"></a>
-                <a href="{{ url('/login') }}"><img class="" src="{{ asset('img/login_sm.png') }}" style="position:absolute; width:130px; top:12px; right:60px;"></a>
-                <div class="menu-nav" style="position:absolute; top:0px; right:0px;">
-                    <input id="nav-input" type="checkbox" class="nav-unshown">
-                    <label id="nav-open" for="nav-input"><span></span><span></span><span></span></label>
-                    <label class="nav-unshown" id="nav-close" for="nav-input"></label>
-                </div>
-            </div> -->
         </header>
 
         <main>
