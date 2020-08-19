@@ -79,6 +79,7 @@
                     <th scope="col">駐車場</th>
                     <th scope="col">車両</th>
                     <th scope="col">状況</th>
+                    <th scope="col">SNS</th>
                     <th scope="col"></th>
                 </tr>
             </thread>
@@ -114,6 +115,13 @@
                     済
                     @elseif( $order->status == 9)
                     取消
+                    @endif
+                </td>
+                <td>
+                    @if( $order->sns_check == 0 )
+                    ×
+                    @else
+                    〇    
                     @endif
                 </td>
                 <td>

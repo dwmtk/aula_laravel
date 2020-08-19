@@ -330,7 +330,14 @@ class ReserveController extends Controller
             $order->parking_detail = $request->parking_detail;
         }
 
-
+        // SNS投稿可否
+        if($request->sns_check == "true"){
+            // SNS投稿OKの場合
+            $order->sns_check = '1';
+        }else{
+            // SNS投稿NGの場合
+            $order->sns_check = '0';
+        }
 
         if($order->final_price == 0){
             // 支払い金額が0円の場合

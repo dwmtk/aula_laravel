@@ -378,6 +378,14 @@
                             <label class="form-check-label" for="defaultCheck3"><a href="{{ url('/terms') }}" target="_blank">利用規約</a>に同意する。</label>
                         </div>
 
+                        <div class="form-check text-center my-2">
+                            <input name="sns_check" type="hidden" value="false">
+                            <input class="form-check-input" type="checkbox" id="sns_check" name="sns_check" value="true" checked="checked">
+                            <label class="form-check-label" for="sns_check">
+                                SNSへのアップロードに同意する（任意）<br>※ナンバーなどの個人情報は伏せます
+                            </label>
+                        </div>
+
                         <div class="form-group row mb-3 mt-4">
                             <div class="col-md-6 offset-md-3 text-center">
                                 <button type="submit" class="btn btn-primary">
