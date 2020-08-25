@@ -13,6 +13,13 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    @if (session('message_error'))
+                        <div class="container mt-2">
+                            <div class="alert alert-danger">
+                            {{session('message_error')}}
+                            </div>
+                        </div>
+                    @endif
                     <div class="cal_wrapper mb-4">
                     <div class="googlecal">
 
@@ -243,7 +250,7 @@
                             <label for="parking_city" class="col-md-4 col-form-label text-md-right">市区町村 <span class="badge badge-danger">必須</span></label>
 
                             <div class="col-md-6">
-                                <input id="parking_city" type="parking_city" class="form-control @error('parking_city') is-invalid @enderror p-locality p-street-address p-extended-address" name="parking_city" value="{{ old('parking_city') }}" placeholder="例）名古屋市中区本丸" autocomplete="parking_city">
+                                <input id="parking_city" type="text" class="form-control @error('parking_city') is-invalid @enderror p-locality p-street-address p-extended-address" name="parking_city" value="{{ old('parking_city') }}" placeholder="例）名古屋市中区本丸" autocomplete="parking_city">
 
                                 @error('parking_city')
                                     <span class="invalid-feedback" role="alert">
@@ -257,7 +264,7 @@
                             <label for="parking_address" class="col-md-4 col-form-label text-md-right">番地 <span class="badge badge-danger">必須</span></label>
 
                             <div class="col-md-6">
-                                <input id="parking_address" type="Phone" class="form-control @error('parking_address') is-invalid @enderror" name="parking_address" value="{{ old('parking_address') }}" placeholder="例）１−１" autocomplete="parking_address">
+                                <input id="parking_address" type="text" class="form-control @error('parking_address') is-invalid @enderror" name="parking_address" value="{{ old('parking_address') }}" placeholder="例）１−１" autocomplete="parking_address">
 
                                 @error('parking_address')
                                     <span class="invalid-feedback" role="alert">
@@ -271,7 +278,7 @@
                             <label for="parking_building" class="col-md-4 col-form-label text-md-right">建物名 <span class="badge badge-secondary">任意</span></label>
 
                             <div class="col-md-6">
-                                <input id="parking_building" type="Phone" class="form-control @error('parking_building') is-invalid @enderror" name="parking_building" value="{{ old('parking_building') }}" placeholder="例）アウラビル" autocomplete="parking_building">
+                                <input id="parking_building" type="text" class="form-control @error('parking_building') is-invalid @enderror" name="parking_building" value="{{ old('parking_building') }}" placeholder="例）アウラビル" autocomplete="parking_building">
 
                                 @error('parking_building')
                                     <span class="invalid-feedback" role="alert">
@@ -297,101 +304,26 @@
                                     </span>
                                 @enderror
                             </div>
-                            
                         </div>
 
-                        <div class="container mt-5">
-                            <div class="row justify-content-center">
-                                <p class="col-md-6 text-md-right text-sm-center"><i class="fas fa-pencil-alt pr-1"></i>洗車金額：</p>
-                                <p class="col-md-6 text-md-left text-sm-center price">￥0</p>
-                                <input type="hidden" name="price" value="0" id="price">
+                        <div class="form-group row">
+                            <label for="coupon" class="col-md-4 col-form-label text-md-right">クーポン <span class="badge badge-secondary">任意</span></label>
+
+                            <div class="col-md-4">
+                                <input id="coupon" type="text" class="form-control @error('coupon') is-invalid @enderror" name="coupon" value="{{ old('coupon') }}" placeholder="例）Abc12">
                             </div>
-                            <div class="row justify-content-center">
-                                <p class="col-md-6 text-md-right text-sm-center"><i class="fas fa-pencil-alt pr-1"></i>前回キャンセル金額：</p>
-                                <p class="col-md-6 text-md-left text-sm-center">￥－{{ Auth::user()->tsuke_pay }}</p>
+                            <div class="col-md-2">
+                                <button class="btn btn-info" id="coupon_confirm" type="button"><span style="color:#fff;">確認</span></button>
                             </div>
-                            <div class="row justify-content-center">
-                                <p class="col-md-6 text-md-right text-sm-center"><i class="fas fa-pencil-alt pr-1"></i>お支払金額：</p>
-                                <p class="col-md-6 text-md-left text-sm-center final_price">￥0</p>
-                                <input type="hidden" name="final_price" value="0" id="final_price">
+                            <div class="col-md-12">
+                                <div class="text-center" id="result"></div>
                             </div>
                         </div>
 
                         <div class="text-center pb-5">
-                            <button type="button" class="btn btn-primary" onclick="location.href='#confirm'">
+                            <button type="submit" class="btn btn-primary">
                                 依頼内容確認
                             </button>
-                        </div>
-
-                        <div class="container pt-5" id="confirm">
-                            <table class="table table-sm offset-md-2 col-md-8 offset-md-2">
-                                <thead>
-                                    <tr>
-                                    <th scope="col" colspan="2" class="bg-primary text-white text-center">予約内容確認</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr><th scope="row">予約日</th><td id="0">---</td></tr>
-                                    <tr><th scope="row">時間帯</th><td id="1">---</td></tr>
-                                    <tr><th scope="row">メーカー</th><td id="2">---</td></tr>
-                                    <tr><th scope="row">車名</th><td id="3">---</td></tr>
-                                    <tr><th scope="row">車両年式</th><td id="4">---</td></tr>
-                                    <tr><th scope="row">ナンバー</th><td id="5">---</td></tr>
-                                    <tr><th scope="row">車色</th><td id="6">---</td></tr>
-                                    <tr><th scope="row">郵便番号</th><td id="7">---</td></tr>
-                                    <tr><th scope="row">都道府県</th><td id="8">---</td></tr>
-                                    <tr><th scope="row">市区町村</th><td id="9">---</td></tr>
-                                    <tr><th scope="row">番地</th><td id="10">---</td></tr>
-                                    <tr><th scope="row">建物名</th><td id="11">---</td></tr>
-                                    <tr><th scope="row">駐車場詳細</th><td id="12">---</td></tr>
-                                    <tr class="table-info"><th scope="row">お支払い料金</th><td id="13" class=" final_price">---</td></tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <div class="mx-auto overflow-auto bg-light my-5" style="max-width: 600px; max-height: 300px; font-size:90%;">
-                        <p class="m-1">
-                        <b>サービスご利用前のご確認事項</b><br><br>
-                        ・以下のような場合は、洗車ができない事がございますので、サービスご利用前にご確認下さい。<br><br>
-                        １. ご予約いただいた洗車日が雨天の時、または降水確率50％以上の場合。<br><br>
-                        ２.洗車スタッフ訪問時、ご予約いただいたお車が無い場合。<br>
-                        　(すぐに戻られる場合でも、洗車ができないことがありますので、ご注意下さい。)<br><br>
-                        ３.窓やサンルーフ等が開いている場合。<br><br>
-                        ４.お車、駐車場所の警報ブザーが鳴り、洗車ができない場合。<br><br>
-                        ５.洗車するお車の周囲に、60cm以上のスペースが確保されていない場合。<br><br>
-                        ６.タワー式駐車場、立体駐車場、コインパーキング、路上等、許可を得ている占有スペース以外での洗車の場合。<br><br>
-                        ７.洗車スタッフが敷地内及び、車庫内に入れない場合。<br><br>
-                        ８.マンション等の共用駐車場で洗車許可が下りない場合。<br><br>
-                        ９.洗車スタッフ訪問時に住所、車種等が、ご予約時に入力された内容と相違がある場合。<br><br>
-                        １０.車両全高が2mを超える場合。<br><br>
-                        １１.オフロードや、雪道を走行後等、大量の泥汚れや、虫汚れ等がある場合。<br><br>
-                        １２.その他、当社で洗車ができないと判断した場合。<br><br>
-                        *ご予約のキャンセルが発生した場合、当社が別途定めるキャンセルポリシーに則り、対応いたします。<br><br>
-                        ・その他注意事項<br>
-                        　　1. オープンカー等で使用される、外装の幌部分は洗う事ができません。<br><br>
-                        　　2.ミラーが畳まれている状態では、内側まで洗う事ができない場合があります。<br><br>
-                        </p>
-                        </div>
-
-                        <div class="form-check text-center">
-                            <input class="form-check-input" type="checkbox" id="defaultCheck3" required>
-                            <label class="form-check-label" for="defaultCheck3"><a href="{{ url('/terms') }}" target="_blank">利用規約</a>に同意する。</label>
-                        </div>
-
-                        <div class="form-check text-center my-2">
-                            <input name="sns_check" type="hidden" value="false">
-                            <input class="form-check-input" type="checkbox" id="sns_check" name="sns_check" value="true" checked="checked">
-                            <label class="form-check-label" for="sns_check">
-                                SNSへのアップロードに同意する（任意）<br>※ナンバーなどの個人情報は伏せます
-                            </label>
-                        </div>
-
-                        <div class="form-group row mb-3 mt-4">
-                            <div class="col-md-6 offset-md-3 text-center">
-                                <button type="submit" class="btn btn-primary">
-                                    依頼実行
-                                </button>
-                            </div>
                         </div>
                     </form>
 
@@ -553,7 +485,7 @@ $(function() {
             $('#1').text($('#shift option:selected').text());
         });
         $('#mycar').change(function() {
-            var mycar = $('#mycar option:selected').text()
+            var mycar = $('#mycar option:selected').text();
             var mycars = mycar.split(",");
             
             $('#2').text(mycars[0]);
@@ -606,6 +538,45 @@ $(function() {
         $('#parking_detail').change(function() {
             $('#12').text($('#parking_detail').val());
         });
+    });
+</script>
+
+<script>
+    // クーポン確認
+    $(function(){
+        $('#coupon_confirm').click(function() {
+            // コントローラーのメソッドに渡す値
+            var coupon = $('#coupon').val();
+            console.log(coupon);
+           
+            $.ajax({
+                headers: {
+                    // POSTのときはトークンの記述がないと"419 (unknown status)"になるので注意
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                // POSTだけではなく、GETのメソッドも呼び出せる
+                type:'GET',
+                // ルーティングで設定したURL
+                url:'reserve/' + coupon, // 引数も渡せる
+                dataType: 'json',
+            }).done(function (results){
+                console.log(results);
+                // 成功したときのコールバック
+                if( results == "" ){
+                    $('#result').text('利用不可能クーポンです。').css('color', 'red');
+                } else {
+                    $('#result').text('利用可能クーポンです。').css('color', 'green');
+                }
+            }).fail(function(jqXHR, textStatus, errorThrown){
+                // 失敗したときのコールバック
+                $('#result').css('color','red');
+                console.log("XMLHttpRequest : " + XMLHttpRequest.status);
+            　　console.log("textStatus     : " + textStatus);
+            　　console.log("errorThrown    : " + errorThrown.message);
+            }).always(function() {
+                // 成否に関わらず実行されるコールバック
+            });
+        })
     });
 </script>
 @endsection

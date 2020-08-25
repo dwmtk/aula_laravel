@@ -27,6 +27,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+// クーポン
+Route::get('/reserve/{request_coupon}', 'ReserveController@coupon_confirm');
+
 // 規約関連
 Route::get('/privacypolicy', function() {
     return view('privacypolicy');
@@ -44,6 +47,7 @@ Route::get('/simulation','SimulationController@info');
 // 予約関連
 Route::get('/reserve','ReserveController@reserveform');
 Route::post('/reserved','ReserveController@reserved');
+Route::post('/reserve_confirm','ReserveController@reserve_confirm');
 Route::get('/reservelog','ReserveController@reservelog');
 Route::get('/cancelform/{order_id}','ReserveController@cancelform');
 Route::post('/cancelform/{order_id}','ReserveController@cancel');

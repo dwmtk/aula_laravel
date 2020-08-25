@@ -29,6 +29,14 @@
                         </div>
                         </div>
                     @endif
+                    @if (session('message_error'))
+                        <div class="container mt-2">
+                        <div class="alert alert-danger">
+                            {{session('message_error')}}
+                        </div>
+                        </div>
+                    @endif
+
                     @if( Auth::user()->tsuke_pay != 0 )
                     <div class="pb-3 text-center">
                     <div class="alert alert-primary" role="alert">
@@ -76,10 +84,7 @@
                             </table>
 
                             </div>
-                            
                             </div>
-
-
                         </div>
                     </div>
                     @empty
@@ -87,44 +92,10 @@
                         <p>・現在の予約はありません。</p>
 
                     @endforelse
-
                 </div>
+                {{-- <a href="{{ action('ReserveController@coupon_confirm', 'Ruk12') }}">test</a> --}}
                 <div class="card-footer" style="background: #E8F3FF;">
-                    <!--
-                    <ul class="menu list-group list-group-horizontal-md list-group-item-primary">
-                        <a class="list-group-item list-group-item-action text-primary" href="{{ url('reserve') }}">
-                        <i class="fas fa-car pr-2 fa-lg"></i>洗車予約</a>
-
-                        <a class="list-group-item list-group-item-action text-primary" href="{{ url('reservelog') }}">
-                        <i class="fas fa-cog pr-2 fa-lg"></i>洗車履歴</a>
-
-                        <a class="list-group-item list-group-item-action text-primary" href="{{ url('personalinfo') }}">
-                        <i class="fas fa-user pr-2 fa-lg"></i>個人情報管理</a>
-                    </ul>
-
-                    <ul class="menu list-group list-group-horizontal-md">
-                        <a class="list-group-item list-group-item-action text-primary" href="{{ url('mycarinfo') }}">
-                        <i class="fas fa-key pr-2 fa-lg"></i>Myカー情報管理</a>
-
-                        <a class="list-group-item list-group-item-action text-primary" href="{{ url('parkinginfo') }}">
-                        <i class="fas fa-ban pr-2 fa-lg"></i>駐車場情報管理</a>
-                    </ul>
-                    </div>  
-                    -->   
-                    <!--
-                    <div class="">
-                    <table class="table menu table-hover table-responsive">
-                        <tr><td width="400"><a href="{{ url('reserve') }}"><i class="fas fa-car pr-5 fa-lg"></i>　　洗車予約</a></td></tr>
-                        <tr><td width="400"><a href="{{ url('reservelog') }}"><i class="fas fa-cog pr-5 fa-lg"></i>　　洗車履歴</a></td></tr>
-                        <tr><td width="400"><a href="{{ url('personalinfo') }}"><i class="fas fa-user pr-5 fa-lg"></i>　　個人情報管理</a></td></tr>
-                        <tr><td width="400"><a href="{{ url('mycarinfo') }}"><i class="fas fa-key pr-5 fa-lg"></i>　　Myカー情報管理</a></td></tr>
-                        <tr><td width="400"><a class="menu" href="{{ url('parkinginfo') }}"><i class="fas fa-ban pr-5 fa-lg"></i>　　駐車場情報管理</a></td></tr>
-                    </table>
-                    </div>
-                    -->
                     @include('layouts.menu')
-
-                    
             </div>
         </div>
     </div>
