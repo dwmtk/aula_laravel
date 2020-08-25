@@ -239,29 +239,41 @@ class ReserveController extends Controller
         if($request->coupon != ''){
             
             $coupon = M_Coupons::where('coupon_code', $request->coupon)->first();
-            if(!is_null($coupon) && $coupon->expiration_date >= date("Ymd") ){
-                // クーポンが存在する、かつ、利用期限内の場合
 
-                // クーポンの利用履歴を確認
-                $coupon_used = T_Coupons_used::where('coupon_code', $request->coupon)
-                ->where('user_id', Auth::id())->first();
+            if(!is_null($coupon)){
+                // クーポンが存在する場合
+                if( ($coupon->expiration_date_flg == 0)
+                    ||
+                    ( ($coupon->expiration_date_flg == 1) && ($coupon->expiration_date >= date("Ymd")) ) 
+                    ){
+                        // 「利用期限なし」、もしくは、「利用期限があり、かつ、利用期限内の場合」
 
-                if(is_null($coupon_used)){
-                    // 利用履歴が存在しない場合
-                    
-                    if($coupon->discount_type == "1") {
-                        // 定額
-                        $final_price = $coupon->discount_fee;
-                    } elseif($coupon->discount_type == "2") {
-                        // パーセント
-                        $final_price = $price * $coupon->discount_fee * 0.01;
-                    }            
-                    $shows['coupon'] = $coupon->describe_coupon;
+                        // クーポンの利用履歴を確認
+                        $coupon_used = T_Coupons_used::where('coupon_code', $request->coupon)
+                        ->where('user_id', Auth::id())->first();
+
+                        if(is_null($coupon_used)){
+                        // 利用履歴が存在しない場合
+                        
+                        if($coupon->discount_type == "1") {
+                            // 定額
+                            $final_price = $coupon->discount_fee;
+                        } elseif($coupon->discount_type == "2") {
+                            // パーセント
+                            $final_price = $price * $coupon->discount_fee * 0.01;
+                        }            
+                        $shows['coupon'] = $coupon->describe_coupon;
+                    } else {
+                        // エラーコード返すようにする。  
+                        return redirect('reserve')
+                        ->with('message_error', 'すでに利用済みのクーポンです。');           
+                    }
                 } else {
                     // エラーコード返すようにする。  
                     return redirect('reserve')
-                    ->with('message_error', 'すでに利用済みのクーポンです。');           
+                    ->with('message_error', '利用期限切れのクーポンです。');  
                 }
+
             } else {
                 // エラーコード返すようにする。
                 return redirect('reserve')
@@ -852,16 +864,22 @@ class ReserveController extends Controller
         // クーポンコードの存在有無
         $coupon = M_Coupons::where('coupon_code', $request_coupon)->first();
 
-        if(!is_null($coupon) && ( $coupon->expiration_date >= date("Ymd") ) ){
-            // クーポンが存在する、かつ、利用期限内の場合
+        if(!is_null($coupon)){
+            // クーポンが存在する場合
+            if( ($coupon->expiration_date_flg == 0)
+                ||
+                ( ($coupon->expiration_date_flg == 1) && ($coupon->expiration_date >= date("Ymd")) ) 
+                ){
+                // 「利用期限なし」、もしくは、「利用期限があり、かつ、利用期限内の場合」
+            
+                // クーポンの利用履歴を確認
+                $coupon_used = T_Coupons_used::where('coupon_code', $request_coupon)
+                ->where('user_id', Auth::id())->first();
 
-            // クーポンの利用履歴を確認
-            $coupon_used = T_Coupons_used::where('coupon_code', $request_coupon)
-            ->where('user_id', Auth::id())->first();
-
-            if(is_null($coupon_used)){
-                // 利用履歴が存在しない場合
-                return response()->json($coupon); // クーポン情報を返却
+                if(is_null($coupon_used)){
+                    // 利用履歴が存在しない場合
+                    return response()->json($coupon); // クーポン情報を返却
+                }
             }
         }
         // クーポンが存在しない、もしくは利用済みクーポンの場合
