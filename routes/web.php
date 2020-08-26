@@ -41,6 +41,11 @@ Route::get('/point', function() {
     return view('point');
 });
 
+// Q&A
+Route::get('/qa', function() {
+    return view('qa');
+});
+
 //料金シュミレーション
 Route::get('/simulation','SimulationController@info');
 
