@@ -56,7 +56,7 @@
                 <a href="{{ url('/login') }}"><img class="login-btn" src="{{ asset('img/login.png') }}"></a>
                 <a href="{{ url('/login') }}"><img class="login-btn-sm" src="{{ asset('img/login_sm.png') }}"></a>
             </div>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="none" id="svg-bg" class="effect-fade-header" style="">        
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" preserveAspectRatio="none" id="svg-bg" class="effect-fade-header">        
                 <path class="svg-draw" d="M0,0 v80 q10,10 20,0 t20,0 t20,0 t20,0 t20,0 v-80 Z" fill="#fff"></path>
                 <path class="svg-draw-sm" d="M0,0 v90 q10,10 30,0 t40,0 t40,0 v-90 Z" fill="#fff"></path>
             </svg>
@@ -173,54 +173,141 @@
                 <!-- コンテンツ -->
                 <style>
                     .w1{
-
+                        
                     }
                     .w2{
-
+                        /* background-color: #F2F2F2; */
+                        margin: 10px 10px 100px 10px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
                     }
+                    /* .w2:nth-child(even){
+                        flex-direction: row-reverse;
+                    } */
                     .w3{
-                        max-width:400px;
-                        height:200px;
+                        width: 700px;
                     }
                     .w5{
-                        max-width:400px;
-                        height:200px;
-                        text-align:left;
+                        width: 700px;
+                        text-align: left;
                         margin-left: 30px;
+                    }
+                    .w5:nth-child(2n){
+                        order: 1;
                     }
                     .w6{
                         font-family: 'Noto Sans JP', sans-serif;
-                        font-size: 16px;
-                        font-weight: 800;
+                        font-size: 20px;
+                        font-weight: 400;
+                        letter-spacing: 1px;
+                        border-bottom: solid #666666 0.5px;
                     }
                     .w7{
                         color:#00718C;
                         font-family: 'Noto Sans JP', sans-serif;
-                        font-size: 14px;
-                        font-weight: 600;
-                        margin-left: 20px;
+                        font-size: 18px;
+                        font-weight: 400;
+                        margin: 13px 0 0 0;
                     }
                     .w8{
                         font-family: 'Noto Sans JP', sans-serif;
-                        font-size: 12px;
-                        font-weight: 600;
-                        margin-left: 20px;
+                        font-size: 16px;
+                        font-weight: 300;
+                        margin: 10px 0 0 0px;
+                        letter-spacing: 0.9px;
+                        line-height: 25px;
                     }
                     @media (max-width:991px) {
+                        .w2{
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                        /* .w2:nth-child(even){
+                            flex-direction: column;
+                        } */
+                        .w3, .w5{
+                            max-width: 350px;
+                        }
+                        .w5{
+                            margin-top: 10px;
+                        }
                         .w5, .w7, .w8{
                             margin-left: 0;
+                        }
+                        .w6{
+                            font-size: 16px;
+                            font-weight: 400;
+                        }
+                        .w7{
+                            font-size: 14px;
+                            font-weight: 400;
+                        }
+                        .w8{
+                            font-size: 12px;
+                            font-weight: 400;
                         }
                     }
                 </style>
                 <div class="w1">
-                    <div class="w2 d-flex justify-content-center flex-md-row flex-column" style="margin:10px;">
-                        <div class="w3" style="">
+                    <div class="w2">
+                        <div class="w3">
                             <img class="w4" src="{{ asset('img/work-1.jpg') }}" style="width: 100%;">
                         </div>
-                        <div class="w5" style="">
+                        <div class="w5">
                             <div class="w6">外装洗車＆コーティング</div>
-                            <div class="w7" style="">ドアノブを掴む度、頬が緩んでしまうかもしれません。</div>
-                            <div class="w8" style="">ああああああああああああああああああああ</div>
+                            <div class="w7">ドアノブを掴む度、頬が緩んでしまうかもしれません。</div>
+                            <div class="w8">アウラが使用している洗車溶剤は、非イオン界面活性剤とポリマー剤が含まれています。この溶剤をボディに吹き付ける事で、ボディから汚れを分離し、水をたっぷり含んだマイクロファイバータオルで優しく拭き、汚れを取り除きます。もう一度ボディを丁寧に拭き上げる事で、ポリマーコーティングが施されます。撥水性を持った、スベスベで光沢あるボディをご堪能ください。</div>
+                        </div>
+                    </div>
+                    <div class="w2">
+                        <div class="w3">
+                            <img class="w4" src="{{ asset('img/work-2.jpg') }}" style="width: 100%;">
+                        </div>
+                        <div class="w5">
+                            <div class="w6">水垢除去</div>
+                            <div class="w7">しつこい黒いヤツと天ぷらの関係</div>
+                            <div class="w8">洗車機に入れてもなかなか落ちない黒い水垢、これ実は「油性の水垢」です。水垢には水性と油性の2種類がありますが、油性の水垢はなかなか取れないことが多く厄介です。なぜ取れにくいのか、それは大気中の油分・水滴に含まれるばい煙・ミネラルといった成分が染み付いているからです。使う度「汚れを含んだ油分」がついてしまうという点は、意外にも車とキッチンコンロは似ています。ただし、コンロは油はねカバーで汚れ対策ができますが・・・。油はねカバーをお車に装着する以外の対策をご検討のお客様には、ボディを傷つけない水垢専用の溶剤を使用し、愛車から「黒いヤツだけ」を取り除く、アウラの出張洗車がおすすめです。</div>
+                        </div>
+                    </div>
+                    <div class="w2">
+                        <div class="w3">
+                            <img class="w4" src="{{ asset('img/work-3.jpg') }}" style="width: 100%;">
+                        </div>
+                        <div class="w5">
+                            <div class="w6">ホイール洗浄&コーティング&タイヤワックス</div>
+                            <div class="w7">おしゃれは足元から</div>
+                            <div class="w8">茶色っぽい汚れがいつも付いているホイールとタイヤ・・・悪いのはあなたではありません。ホイールの汚れは、ブレーキを踏む度に少しずつ飛散するブレーキダストが原因です。タイヤの汚れは、タイヤに含まれる保護剤が原因で表面が茶色くなる事もあります。つまり原因を断つことは出来ないということです。それでも「綺麗な車に乗りたい!」とおっしゃるのであれば、お任せください。ホイールにはボディと同様の洗浄&コーティングを。タイヤには黒々とした艶と、撥水性を与えるシリコンコーティングを施し、足元を美しくメイクアップいたします。</div>
+                        </div>
+                    </div>
+                    <div class="w2">
+                        <div class="w3">
+                            <img class="w4" src="{{ asset('img/work-4.jpg') }}" style="width: 100%;">
+                        </div>
+                        <div class="w5">
+                            <div class="w6">虫&鳥の老廃物&ピッチタール除去</div>
+                            <div class="w7">ボディにへばりついた虫、鳥の老廃物・・・<br>放置していませんか?</div>
+                            <div class="w8">虫は、酸性、鳥の老廃物はアルカリ性の汚れである為、いずれも放置すると、ボディを溶かしてしまいます。もし虫や、鳥の老廃物がボディに付着してしまった場合は、早く取り除くことを強くお勧めします。もし面倒であれば、アウラにお任せください。ボディを削る成分の無い溶剤で、汚れを除去します。</div>
+                        </div>
+                    </div>
+                    <div class="w2">
+                        <div class="w3">
+                            <img class="w4" src="{{ asset('img/work-5.jpg') }}" style="width: 100%;">
+                        </div>
+                        <div class="w5">
+                            <div class="w6">フロント・リアガラスの超撥水コーティング</div>
+                            <div class="w7">雨天時1時間あたりの事故率は、晴天時の4.9倍という事実をご存知でしょうか?</div>
+                            <div class="w8">愛知県では年間114日間(2016年)も雨が降り、更に深夜雨天走行時の1時間当たりの事故率は晴天時の約7倍に・・・。アウラでは雨粒による視界不良対策として、前後ガラスに超撥水コーティングを施し、視認性向上及び、雨天時の安全性向上に貢献します。</div>
+                        </div>
+                    </div>
+                    <div class="w2">
+                        <div class="w3">
+                            <img class="w4" src="{{ asset('img/work-6.jpg') }}" style="width: 100%;">
+                        </div>
+                        <div class="w5">
+                            <div class="w6">バンパー部の未塗装樹脂コーティング</div>
+                            <div class="w7">愛車がSUVの皆さん!朗報です。<br>あの白いくすみが嘘のように・・・</div>
+                            <div class="w8">最近バンパーやフェンダー周辺の黒い未塗装樹脂が白く、くすんできていませんか??愛車を綺麗にしていても、避けることができない「直射日光」や「温度変化」により、黒々と輝いていたバンパー達は徐々に白くなってしまいます・・・。アウラでは、白くなってしまった樹脂に、新車のような黒さと艶を与えるコーティングを実施し、諦めていた樹脂のくすみを解消いたします。</div>
                         </div>
                     </div>
                 </div>
