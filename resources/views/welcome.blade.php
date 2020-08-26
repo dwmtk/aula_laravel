@@ -171,6 +171,60 @@
                     <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:2px;"></div>
                 </div>
                 <!-- コンテンツ -->
+                <style>
+                    .w1{
+
+                    }
+                    .w2{
+
+                    }
+                    .w3{
+                        max-width:400px;
+                        height:200px;
+                    }
+                    .w5{
+                        max-width:400px;
+                        height:200px;
+                        text-align:left;
+                        margin-left: 30px;
+                    }
+                    .w6{
+                        font-family: 'Noto Sans JP', sans-serif;
+                        font-size: 16px;
+                        font-weight: 800;
+                    }
+                    .w7{
+                        color:#00718C;
+                        font-family: 'Noto Sans JP', sans-serif;
+                        font-size: 14px;
+                        font-weight: 600;
+                        margin-left: 20px;
+                    }
+                    .w8{
+                        font-family: 'Noto Sans JP', sans-serif;
+                        font-size: 12px;
+                        font-weight: 600;
+                        margin-left: 20px;
+                    }
+                    @media (max-width:991px) {
+                        .w5, .w7, .w8{
+                            margin-left: 0;
+                        }
+                    }
+                </style>
+                <div class="w1">
+                    <div class="w2 d-flex justify-content-center flex-md-row flex-column" style="margin:10px;">
+                        <div class="w3" style="">
+                            <img class="w4" src="{{ asset('img/work-1.jpg') }}" style="width: 100%;">
+                        </div>
+                        <div class="w5" style="">
+                            <div class="w6">外装洗車＆コーティング</div>
+                            <div class="w7" style="">ドアノブを掴む度、頬が緩んでしまうかもしれません。</div>
+                            <div class="w8" style="">ああああああああああああああああああああ</div>
+                        </div>
+                    </div>
+                </div>
+                {{--
                 <div class="work-box-parent">
                     <div class="d-flex justify-content-center flex-nowrap">
                         <div class="work-box m-1">
@@ -218,6 +272,7 @@
                             </div>
                         </div>
                     </div>
+                
                 </div>
                 <div class="work-box-parent-sm">
                     <div class="d-flex justify-content-center flex-nowrap">
@@ -285,6 +340,7 @@
                         </div>
                     </div>
                 </div>
+                --}}
             </section>
 
             <!-- Instagram -->
@@ -359,16 +415,7 @@
                             <span class="price-box-text1">1回/</span><span class="price-box-text2">¥12,000</span><span class="price-box-text1"></span>
                         </div>
                     </div>
-                    <!-- <div class="price-box">
-                        <img src="{{ asset('img/price_illust/suv.png') }}">
-                        <div class="price-box-text">
-                            <span class="price-box-text1">1回/</span><span class="price-box-text2">¥6,000</span><span class="price-box-text1"></span>
-                        </div>
-                    </div> -->
                 </div>
-                <!-- <div>
-                    <button class="price-btn" type="button" onclick="window.open('{{ url('/simulation') }}','_blank')">洗車料金詳細はこちら</button>
-                </div> -->
                 <a href="{{ url('/simulation') }}"><img class="price-btn" src="{{ asset('img/simulation_button.png') }}"></a>
                 <a href="{{ url('/simulation') }}"><img class="price-btn-sm" src="{{ asset('img/simulation_button_sm.png') }}"></a>
             </section>
