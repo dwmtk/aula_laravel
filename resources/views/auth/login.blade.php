@@ -64,6 +64,7 @@
                                 @endif
                             </div>
                         </div>
+                        <div class="text-center pt-4 pb-2">新規登録は<a href="{{ url('register') }}">こちら。</a></div>
                     </form>
                 </div>
             </div>
