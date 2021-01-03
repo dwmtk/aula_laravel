@@ -30,6 +30,8 @@ class ReserveController extends Controller
     
     public function reserveform()
     {
+        return redirect('home')
+        ->with('message_error', '誠に申し訳ございません。現在、法人様以外の洗車予約を停止しています。');
         // 車種DBからプルダウン用のデータを取得
         // $car_makers = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min') , 'car_maker')
         // ->groupBy('car_maker')

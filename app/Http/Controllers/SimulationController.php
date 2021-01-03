@@ -17,6 +17,7 @@ class SimulationController extends Controller
 
     public function info()
     {
+        return view('welcome');
         // 車種DBからプルダウン用のデータを取得
         // $car_makers = M_Cars::select(\DB::raw('min(CAST(car_id AS SIGNED)) AS car_id_min') , 'car_maker')
         // ->groupBy('car_maker')

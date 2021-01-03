@@ -479,29 +479,6 @@
                 <a href="{{ url('/simulation') }}"><img class="price-btn-sm" src="{{ asset('img/simulation_button_sm.png') }}"></a>
             </section>
 
-            <!-- Instagram -->
-            <section id="instagram" class="text-center effect-fade">
-                <!-- コンテンツタイトル -->
-                <a href="https://www.instagram.com/aula_waterlesscarwash/" target="_blank">
-                    <img class="instagram-title" src="{{ asset('img/instagram.png') }}">
-                </a>
-                <!-- ライン -->
-                <div class="mb-5" style="position:relative;">
-                    <div style="position:absolute; background-color:#a1d4d1; top: 0; left: 50%; transform: translateX(-50%);width:120px; height:2px;"></div>
-                </div>
-                <!-- コンテンツ -->
-                <!-- SnapWidget -->
-                <div class="instagram-box">
-                    <script src="https://snapwidget.com/js/snapwidget.js"></script>
-                    <iframe src="https://snapwidget.com/embed/839929" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:100%; "></iframe>
-                </div>
-                <!-- SnapWidget -->
-                <div class="instagram-box-sm">
-                    <script src="https://snapwidget.com/js/snapwidget.js"></script>
-                    <iframe src="https://snapwidget.com/embed/851825" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:100%; ">
-                    </iframe>
-                </div>
-            </section>
 
 
             <!-- STAFF -->
@@ -601,12 +578,6 @@
                 if($(window).scrollTop() > position_work + 300){
                     // 要素が見えたときの動き 
                     $('#works').addClass('effect-scroll');
-                }
-                var top_instagram = $("#instagram").offset().top; // ターゲットの位置取得
-                var position_instagram = top_instagram - $(window).height();  // 発火させたい位置
-                if($(window).scrollTop() > position_instagram + 300){
-                    // 要素が見えたときの動き 
-                    $('#instagram').addClass('effect-scroll');
                 }
                 var top_price = $("#price").offset().top; // ターゲットの位置取得
                 var position_price = top_price - $(window).height();  // 発火させたい位置
